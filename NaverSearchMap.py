@@ -9,7 +9,7 @@ def find_addr(address):
         # 주소를 띄어쓰기로 분할
         words = address.split()
 
-        # 첫번째 단어를 포함하는 시트 찾기
+
         sheet_name = None
         for sheet in wb.sheetnames:
             if words[0] in sheet:
