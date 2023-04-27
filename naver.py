@@ -16,8 +16,8 @@ options = webdriver.ChromeOptions()
 # options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36")
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
-url1 = 'https://new.land.naver.com/houses?ms=37.329227,127.242315,16&a=VL:DDDGG:JWJT:SGJT:HOJT&b=B2:B1:B3&e=RETAIL'
-url2 = 'https://new.land.naver.com/houses?ms=37.482968,127.0634,16&a=VL:DDDGG:JWJT:SGJT:HOJT&b=B2:B1:B3&e=RETAIL'
+# url1 = 'https://new.land.naver.com/houses?ms=37.329227,127.242315,16&a=VL:DDDGG:JWJT:SGJT:HOJT&b=B2:B1:B3&e=RETAIL'
+# url2 = 'https://new.land.naver.com/houses?ms=37.482968,127.0634,16&a=VL:DDDGG:JWJT:SGJT:HOJT&b=B2:B1:B3&e=RETAIL'
 
 
 def wcsv(parse):
