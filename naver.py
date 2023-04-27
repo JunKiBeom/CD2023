@@ -1,14 +1,17 @@
 import time
 
+import pyautogui
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
 import csv
 
 options = webdriver.ChromeOptions()
 # options.add_argument('headless')
-# driver: WebDriver = webdriver.Chrome('./chromedriver',chrome_options=options)
+# options.add_argument('window-size=1920x1080')
+# options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36")
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
 url1 = 'https://new.land.naver.com/houses?ms=37.329227,127.242315,16&a=VL:DDDGG:JWJT:SGJT:HOJT&b=B2:B1:B3&e=RETAIL'
@@ -33,6 +36,21 @@ def wcsv(parse):
 
     type.clear(), text.clear(), spec.clear(), price.clear(), agent.clear()
     csvfile.close()
+
+def wscroll(driver):
+    element = driver.find_element(By.XPATH, '//*[@id="listContents1"]/div')
+
+    while element.text[-11:-4] == "Loading":
+        driver.execute_script("arguments[0].scrollBy(0, 1000)", element)
+
+
+def guiScroll():
+    pyautogui.moveTo(150, 500)
+    pyautogui.moveTo(151, 500) # 함수로 호출시 포인터 움직이지 않으면 스크롤이 진행이 안되어 한번 더 이동
+
+    for i in range(50):
+        pyautogui.scroll(-5000)
+        time.sleep(0.2)
 
 
 def parsing():
@@ -73,8 +91,14 @@ agent = []
 
 agent_name = []
 
-driver.get(input())
+# driver.get(input())
+driver.get("https://new.land.naver.com/houses?ms=37.5996,127.0624,16&a=VL:DDDGG:JWJT:SGJT:HOJT&b=B2:B1:B3&e=RETAIL")
 time.sleep(1)
+
+wscroll(driver)
+# guiScroll()
+# time.sleep(1)
+
 wcsv(parsing())
 
 driver.close()
