@@ -1,14 +1,14 @@
-import time
 import csv
-# import pyautogui
+import time
 
+import pyautogui
+import selenium
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
 import NaverSearchMap
-
 
 options = webdriver.ChromeOptions()
 # options.add_argument('headless')
@@ -42,17 +42,23 @@ def wcsv(parse):
 def wscroll(driver):
     element = driver.find_element(By.XPATH, '//*[@id="listContents1"]/div')
 
-    while element.text[-11:-4] == "Loading":
-        driver.execute_script("arguments[0].scrollBy(0, 1000)", element)
+    try:
+        while True:
+            driver.execute_script("arguments[0].scrollBy(0, 5000)", element)
+            driver.find_element(By.CLASS_NAME, 'loader')
+
+    except selenium.common.exceptions.NoSuchElementException:
+        pass
 
 
-# def guiScroll():
-#     pyautogui.moveTo(150, 500)
-#     pyautogui.moveTo(151, 500) # 함수로 호출시 포인터 움직이지 않으면 스크롤이 진행이 안되어 한번 더 이동
-#
-#     for i in range(50):
-#         pyautogui.scroll(-5000)
-#         time.sleep(0.2)
+
+def guiScroll():
+    pyautogui.moveTo(150, 500)
+    pyautogui.moveTo(151, 500) # 함수로 호출시 포인터 움직이지 않으면 스크롤이 진행이 안되어 한번 더 이동
+
+    for i in range(50):
+        pyautogui.scroll(-5000)
+        time.sleep(0.2)
 
 
 def parsing():
@@ -98,6 +104,7 @@ address = NaverSearchMap.find_addr(input())
 # print(address)
 url = f"https://new.land.naver.com/houses?ms={address[0][0]},{address[0][1]},16&a=VL:DDDGG:JWJT:SGJT:HOJT&b=B2:B1:B3&e=RETAIL"
 # print(url)
+driver.switch_to.window(driver.window_handles[0])
 driver.get(url)
 time.sleep(1)
 
