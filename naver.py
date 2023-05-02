@@ -8,7 +8,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-import NaverSearchMap
+import SearchMap
 
 options = webdriver.ChromeOptions()
 # options.add_argument('headless')
@@ -108,8 +108,9 @@ price = []  # 가격
 agent = []  # 공인중개사
 
 try:
-    address = NaverSearchMap.find_addr(input("주소압력 : "))
+    address = SearchMap.find_addr(input("주소압력 : "))
     url = f"https://new.land.naver.com/houses?ms={address[0][0]},{address[0][1]},16&a=VL:DDDGG:JWJT:SGJT:HOJT&b=B2:B1:B3&e=RETAIL"
+    # url = "https://new.land.naver.com/houses?ms=37.5954602,127.0510811,16&a=VL:DDDGG:JWJT:SGJT:HOJT&b=B2:B1:B3&e=RETAIL"
 except TypeError:
     print("정확한 주소를 입력해주세요!")
     exit()
