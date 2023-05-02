@@ -69,8 +69,8 @@ def oneroom(addr):
     '''
     DataFrame 생성 및 출력
     '''
-    colums = ["item_id", "sales_type", "deposit", "rent", "address1", "manage_cost"]
-    df = pd.DataFrame(items)[colums]
+    columns = ["item_id", "sales_type", "deposit", "rent", "address1", "manage_cost"]
+    df = pd.DataFrame(items)[columns]
     df = df[df["address1"].str.contains(addr)].reset_index(drop=True)
     df = df.rename(columns={"address1": "주소", "sales_type": "유형", "deposit": "보증금", "rent": "월세", "manage_cost": "관리비"})
 
