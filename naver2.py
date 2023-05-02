@@ -16,7 +16,7 @@ params = {
     "Accept-Encoding": "gzip",
     "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlJFQUxFU1RBVEUiLCJpYXQiOjE2ODI3OTMxMDYsImV4cCI6MTY4MjgwMzkwNn0.jKi_MV08WeGUsR3RFjIbPAw3oZSoRCdwBDV_ikafqhA",
     "Host": "new.land.naver.com",
-    "Referer": "https://new.land.naver.com/houses?ms=37.329227,127.242315,16&a=VL:DDDGG:JWJT:SGJT:HOJT&b=B2:B1:B3&e=RETAIL",
+    "Referer": "https://new.land.naver.com/",
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
 }  # 필수 Request header. 없으면 캡챠 에러 발생, authorization은 주기적으로 바뀐다고 함
 
@@ -31,25 +31,24 @@ response = requests.get(url, headers=params)  # 주소 입력 -> 위도&경도 �
 # print(response.json()["cortarNo"])
 
 response2 = requests.get(mkurl(), headers=params)  # 매물정보를 가져오기. 진짜 크롤링을 하는 부분
-# print(response2.text)
 items = response2.json()["articleList"]
 
 columns = ["articleNo", "realEstateTypeName", "tradeTypeName", "floorInfo", "rentPrc", "dealOrWarrantPrc", "area1", "area2",
           "direction", "tagList", "sameAddrMaxPrc", "cpName", "cpPcArticleUrl", "latitude", "longitude", "realtorName"]
 df = pd.DataFrame(items)[columns]
-df = df.rename(columns={"articleNo": "매물번호", "realEstateTypeName": "주거타입", "tradeTypeName": "타입", "floorInfo":  "해당층/총층",
-                        "rentPrc": "월세", "dealOrWarrantPrc": "보증금", "area1": "공급", "area2": "전용면적",
-                        "direction": "방향", "tagList": "특징", "sameAddrMaxPrc": "가격", "cpName": "제공",
-                        "cpPcArticleUrl": "URL", "latitude": "위도", "longitude": "경도", "realtorName": "중개사"})
 
-# print(df)
 while True:
     if response2.json()["isMoreData"] == True:
         page += 1
         response2 = requests.get(mkurl(), headers=params)
-        print(response2.json()["articleList"])
-        # df.concat(response2.json()["articleList"], ignore_index=True)
+        # print(response2.json()["articleList"])
+        df = pd.concat([df, pd.DataFrame(response2.json()["articleList"])[columns]])
     else:
         break
 
+df = df.rename(columns={"articleNo": "매물번호", "realEstateTypeName": "주거타입", "tradeTypeName": "타입", "floorInfo":  "해당층/총층",
+                        "rentPrc": "월세", "dealOrWarrantPrc": "보증금", "area1": "공급", "area2": "전용면적",
+                        "direction": "방향", "tagList": "특징", "sameAddrMaxPrc": "가격", "cpName": "제공",
+                        "cpPcArticleUrl": "URL", "latitude": "위도", "longitude": "경도", "realtorName": "중개사"})
+df = df.reset_index(drop=True) # 추가하면 인덱스가 틀어져서 리셋
 print(df)
