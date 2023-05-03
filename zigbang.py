@@ -63,8 +63,12 @@ def oneroom(addr):
     response = requests.post(url, params)
     # print("requests3:", response.status_code)
 
-    items = response.json()['items']
-    # print(items)
+    try:
+        items = response.json()['items']
+        # print(items)
+    except KeyError:
+        print("해당 지역에 등록된 매물이 없습니다!")
+        exit()
 
     '''
     DataFrame 생성 및 출력
