@@ -8,24 +8,38 @@ def find_addr(address):
     try:
         # 주소를 띄어쓰기로 분할
         words = address.split()
+        if words[0] == '충남':
+            words[0] = '충청남도'
+        elif words[0] == '충북':
+            words[0] = '충청북도'
+        elif words[0] == '경남':
+            words[0] = '경상남도'
+        elif words[0] == '경북':
+            words[0] = '경상북도'
+        elif words[0] == '전남':
+            words[0] = '전라남도'
+        elif words[0] == '전북':
+            words[0] = '전라북도'
 
 
+        # 첫 두 글자를 이용하여 시트 선택
         sheet_name = None
+        first_two_letters = words[0][:2]
+
         for sheet in wb.sheetnames:
-            if words[0] in sheet:
+            if first_two_letters in sheet:
                 sheet_name = sheet
                 break
 
         if sheet_name is None:
             return None
 
-        # 시트 선택
         sheet = wb[sheet_name]
 
         # 단어들을 포함하는 행 찾기
         matching_rows = []
         for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row, values_only=True):
-            if words[0] in str(row) and words[1] in str(row) and words[2] in str(row):
+            if words[1] in str(row) and words[1] in str(row) and words[2] in str(row):
                 if len(words) > 3:
                     if words[3] in str(row):
                         matching_rows.append(row)
