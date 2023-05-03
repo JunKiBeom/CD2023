@@ -35,7 +35,7 @@ def oneroom(addr):
     서울시, 광주시, 대구시, 제주도 등 문제 해결해야 df정상 사용 가능
     '''
     address = SearchMap.find_addr(addr)
-    # print(address)
+    print(address)
     lat, lng = address[0][0], address[0][1]
     geohash = geohash2.encode(lat, lng, precision=5)
 
