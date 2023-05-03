@@ -69,10 +69,14 @@ def oneroom(addr):
     '''
     DataFrame 생성 및 출력
     '''
-    columns = ["item_id", "sales_type", "deposit", "rent", "address1", "manage_cost"]
+    columns = ["item_id", "sales_type", "deposit", "rent", "address1", "manage_cost", "공급면적", "전용면적", "floor", "building_floor", "title", "random_location"]
     df = pd.DataFrame(items)[columns]
+    df['lat'] = df['random_location'].apply(lambda x: x['lat'])
+    df['lng'] = df['random_location'].apply(lambda x: x['lng'])
+
     df = df[df["address1"].str.contains(addr)].reset_index(drop=True)
-    df = df.rename(columns={"address1": "주소", "sales_type": "유형", "deposit": "보증금", "rent": "월세", "manage_cost": "관리비"})
+    df = df.rename(columns={"address1": "주소", "sales_type": "유형", "deposit": "보증금", "rent": "월세", "manage_cost": "관리비",
+                            "floor": "층", "building_floor": "총 층", "title": "제목", "lat": "위도", "lng": "경도"})
 
     return df
 
