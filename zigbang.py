@@ -4,7 +4,7 @@ import geohash2
 
 import SearchMap
 
-def oneroom(addr):
+def zigbang():
 
     '''
     동이름 넣으면 위도 경도 정보 반환하도록 1차 req
@@ -44,8 +44,7 @@ def oneroom(addr):
     '''
     geohash를 이용한 2차 req
     '''
-    url = f"https://apis.zigbang.com/v2/items?deposit_gteq=0&domain=zigbang\
-&geohash={geohash}&needHasNoFiltered=true&rent_gteq=0&sales_type_in=전세|월세&service_type_eq=원룸"
+    url = f"https://apis.zigbang.com/v2/items?deposit_gteq=0&domain=zigbang&geohash={geohash}&needHasNoFiltered=true&rent_gteq=0&sales_type_in=전세|월세&service_type_eq=원룸"
     response = requests.get(url)
     items = response.json()["items"]
     ids = [item["item_id"] for item in items]
@@ -74,7 +73,7 @@ def oneroom(addr):
     '''
     DataFrame 생성 및 출력
     '''
-    columns = ["item_id", "sales_type", "deposit", "rent", "address1", "manage_cost", "공급면적", "전용면적", "floor", "building_floor", "title", "random_location", "reg_date"]
+    columns = ["item_id", "sales_type", "service_type", "deposit", "rent", "address1", "manage_cost", "공급면적", "전용면적", "floor", "building_floor", "title", "random_location", "reg_date"]
     df = pd.DataFrame(items)[columns]
     df['lat'] = df['random_location'].apply(lambda x: x['lat'])
     df['lng'] = df['random_location'].apply(lambda x: x['lng'])
@@ -82,10 +81,13 @@ def oneroom(addr):
     df['URL'] = "https://www.zigbang.com/home/oneroom/items/" + df['item_id'].astype(str)
 
     df = df[df["address1"].str.contains(addr)].reset_index(drop=True)
-    df = df.rename(columns={"address1": "주소", "item_id": "관리번호", "sales_type": "유형", "deposit": "보증금", "rent": "월세", "manage_cost": "관리비",
+    df = df.rename(columns={"address1": "주소", "item_id": "관리번호", "sales_type": "유형", "service_type": "주거타입", "deposit": "보증금", "rent": "월세", "manage_cost": "관리비",
                             "floor": "해당 층", "building_floor": "전체 층", "title": "특징", "lat": "위도", "lng": "경도", "reg_date": "등록날짜"})
-    # df.to_csv("csv/직방_"+addr+".csv", encoding="UTF-8", index = None)
+    df.to_csv("csv/직방_"+addr+".csv", encoding="UTF-8", index = None)
     return df
 
-print(oneroom(input("Input : ")))
-# print(oneroom("서울특별시 관악구 신림동"))
+
+addr = input("Input : ")
+print(zigbang())
+
+# 직방은 빌라/투룸, 원룸 크롤링 결과가 동일함
