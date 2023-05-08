@@ -83,7 +83,7 @@ def oneroom(addr):
 
     df = df[df["address1"].str.contains(addr)].reset_index(drop=True)
     df = df.rename(columns={"address1": "주소", "item_id": "관리번호", "sales_type": "유형", "deposit": "보증금", "rent": "월세", "manage_cost": "관리비",
-                            "floor": "해당 층", "building_floor": "전체 층", "title": "제목", "lat": "위도", "lng": "경도", "reg_date": "등록날짜"})
+                            "floor": "해당 층", "building_floor": "전체 층", "title": "특징", "lat": "위도", "lng": "경도", "reg_date": "등록날짜"})
     # df.to_csv("csv/직방_"+addr+".csv", encoding="UTF-8", index = None)
     return df
 
