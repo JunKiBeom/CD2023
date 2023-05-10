@@ -87,5 +87,5 @@ def find_addr(address):
 # #        print(f"위도: {coordinate[0]}, 경도: {coordinate[1]}")
 # else:
 #     print("데이터를 찾을 수 없습니다.")
-address = input()
-print(address, find_addr(address))
+# address = input()
+# print(address, find_addr(address))
