@@ -43,7 +43,7 @@ def mkdf(url, flag):
         tag = "빌라.주택"
     elif flag == 1:
         tag = "원룸.투룸"
-    df.to_csv("csv/네이버_" + addr + "_" + tag + ".csv", encoding="UTF-8", index=None)
+    df.to_csv("csv/네이버_" + addr + "_" + tag + ".csv", sep="\\", encoding="UTF-8", index=None)
     print(df)
 
 params = {
