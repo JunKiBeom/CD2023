@@ -55,7 +55,7 @@ params = {
 }  # 필수 Request header. 없으면 캡챠 에러 발생, authorization은 주기적으로 바뀐다고 함
 
 try:
-    addr = input("주소압력 : ")
+    addr = input("주소입력 : ")
     address = SearchMap.find_addr(addr)
     url = f'https://new.land.naver.com/api/cortars?zoom=16&centerLat={address[0][0]}&centerLon={address[0][1]}'
 except TypeError:
