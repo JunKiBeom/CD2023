@@ -3,7 +3,7 @@ import openpyxl
 
 def find_addr(address):
     # 엑셀 파일 열기
-    wb = openpyxl.load_workbook('C:\\Users\\김인수\\Desktop\\자료\\캡스톤\\행정구역별좌표.xlsx')
+    wb = openpyxl.load_workbook('mapdata.xlsx')
 
     try:
         # 주소를 띄어쓰기로 분할
@@ -87,3 +87,5 @@ def find_addr(address):
 # #        print(f"위도: {coordinate[0]}, 경도: {coordinate[1]}")
 # else:
 #     print("데이터를 찾을 수 없습니다.")
+address = input()
+print(address, find_addr(address))
