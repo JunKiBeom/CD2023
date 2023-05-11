@@ -21,20 +21,26 @@ def find_addr(address):
         elif words[0] == '전북':
             words[0] = '전라북도'
 
-
-        # 첫 두 글자를 이용하여 시트 선택
+        # 첫 단어가 6가지 지역 중 하나인 경우 전체 단어를 비교하여 시트 선택
         sheet_name = None
-        first_two_letters = words[0][:2]
-
-        for sheet in wb.sheetnames:
-            if first_two_letters in sheet:
-                sheet_name = sheet
-                break
+        if words[0] in ['충청남도', '충청북도', '경상남도', '경상북도', '전라남도', '전라북도']:
+            for sheet in wb.sheetnames:
+                if words[0] in sheet:
+                    sheet_name = sheet
+                    break
+        else:
+            # 첫 두 글자를 이용하여 시트 선택
+            first_two_letters = words[0][:2]
+            for sheet in wb.sheetnames:
+                if first_two_letters in sheet:
+                    sheet_name = sheet
+                    break
 
         if sheet_name is None:
             return None
 
         sheet = wb[sheet_name]
+
 
         # 단어들을 포함하는 행 찾기
         matching_rows = []
@@ -81,3 +87,5 @@ def find_addr(address):
 # #        print(f"위도: {coordinate[0]}, 경도: {coordinate[1]}")
 # else:
 #     print("데이터를 찾을 수 없습니다.")
+# address = input()
+# print(address, find_addr(address))
