@@ -32,7 +32,7 @@ citySelect.addEventListener("change", function() {
         <option value="중구">중구</option>
         <option value="중랑구">중랑구</option>
     `;
-    } else if (city === "대전광역시") {
+    } else if (city === "대전시") {
         districtSelect.innerHTML = `
         <option value="동구">동구</option>
         <option value="중구">중구</option>
@@ -41,7 +41,7 @@ citySelect.addEventListener("change", function() {
         <option value="대덕구">대덕구</option>
         <!-- 다른 구들을 추가해 주세요 -->
     `;
-    } else if (city == "부산광역시") {
+    } else if (city == "부산시") {
         districtSelect.innerHTML = `
         <option value="강서구">강서구</option>
         <option value="금정구">금정구</option>
@@ -60,7 +60,7 @@ citySelect.addEventListener("change", function() {
         <option value="중구">중구</option>
         <option value="해운대구">해운대구</option>
     `;
-    } else if (city === "인천광역시") {
+    } else if (city === "인천시") {
         districtSelect.innerHTML = `
         <option value="강화군">강화군</option>
         <option value="계양구">계양구</option>
@@ -73,7 +73,7 @@ citySelect.addEventListener("change", function() {
         <option value="옹진군">옹진군</option>
         <option value="중구">중구</option>
     `;
-    } else if (city === "광주광역시") {
+    } else if (city === "광주시") {
         districtSelect.innerHTML = `
         <option value="광산구">광산구</option>
         <option value="남구">남구</option>
@@ -81,7 +81,7 @@ citySelect.addEventListener("change", function() {
         <option value="북구">북구</option>
         <option value="서구">서구</option>
     `;
-    } else if (city === "울산광역시") {
+    } else if (city === "울산시") {
         districtSelect.innerHTML = `
         <option value="남구">남구</option>
         <option value="동구">동구</option>
@@ -89,7 +89,7 @@ citySelect.addEventListener("change", function() {
         <option value="울주군">울주군</option>
         <option value="중구">중구</option>
     `;
-    } else if (city === "대구광역시") {
+    } else if (city === "대구시") {
         districtSelect.innerHTML = `
         <option value="남구">남구</option>
         <option value="달서구">달서구</option>
@@ -100,7 +100,7 @@ citySelect.addEventListener("change", function() {
         <option value="수성구">수성구</option>
         <option value="중구">중구</option>
     `;
-    } else if (city === "세종특별자치시") {
+    } else if (city === "세종시") {
         districtSelect.innerHTML = `
         <option value="세종시">세종시</option>
     `;
@@ -301,7 +301,7 @@ citySelect.addEventListener("change", function() {
         <option value="함양군">함양군</option>
         <option value="합천군">합천군</option>
     `;
-    } else if (city === "제주특별자치도") {
+    } else if (city === "제주도") {
         districtSelect.innerHTML = `
         <option value="서귀포시">서귀포시</option>
         <option value="제주시">제주시</option>
@@ -316,6 +316,10 @@ searchBtn.addEventListener("click", function() {
     const city = citySelect.value;
     const district = districtSelect.value;
     const address = document.getElementById("address").value;
+
+    const result = city + " " + district + " " + address
+    console.log(result)
+
 })
 
 // 주소 검색을 수행하는 코드를 추가해 주세요
