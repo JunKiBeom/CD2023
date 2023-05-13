@@ -310,17 +310,17 @@ citySelect.addEventListener("change", function() {
         districtSelect.innerHTML = `<option value="">구/군 선택</option>`;
     }
 })
-// "검색" 버튼 클릭 시 주소 검색 수행
-const searchBtn = document.getElementById("searchBtn");
-searchBtn.addEventListener("click", function() {
-    const city = citySelect.value;
-    const district = districtSelect.value;
-    const address = document.getElementById("address").value;
-
-    const result = city + " " + district + " " + address
-    console.log(result)
-
-})
+// // "검색" 버튼 클릭 시 주소 검색 수행
+// const searchBtn = document.getElementById("searchBtn");
+// searchBtn.addEventListener("click", function() {
+//     const city = citySelect.value;
+//     const district = districtSelect.value;
+//     const address = document.getElementById("address").value;
+//
+//     const result = city + " " + district + " " + address
+//     console.log(result)
+//
+// })
 
 // 주소 검색을 수행하는 코드를 추가해 주세요
 // 예: window.location.href = `/search?city=${city}&district=${district}`;
