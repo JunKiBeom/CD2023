@@ -1,14 +1,13 @@
 import csv
 import time
 
-import pyautogui
 import selenium
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-import SearchMap
+from capstone_webproject.rpa import SearchMap
 
 options = webdriver.ChromeOptions()
 # options.add_argument('headless')
