@@ -2,13 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>부동산 월세 가격비교</title>
+    <title>부동산 가격비교</title>
     <style>
         /* CSS 스타일을 추가해 주세요 */
     </style>
 </head>
 <body>
-<h1>부동산 월세 가격비교</h1>
+<h1>부동산 가격비교</h1>
 <div id="addressForm">
     <form action="addrget" method="POST"> {%csrf_token%}
         <label for="city">시/도:</label>
@@ -44,8 +44,8 @@
         <label for="address">상세 주소:</label>
         <input type="text" id="address" name="address">
 
-<!--        <input type="submit" value="검색" id="searchBtn" name="searchBtn" onclick="searchBtn()" class="btn_submit">-->
-                    <button id="searchBtn" onclick="searchBtn()">검색</button>
+        <!--        <input type="submit" value="검색" id="searchBtn" name="searchBtn" onclick="searchBtn()" class="btn_submit">-->
+        <button id="searchBtn" onclick="searchBtn()">검색</button>
         <script src="../static/js/searchBtn.js"></script>
     </form>
 </div>
