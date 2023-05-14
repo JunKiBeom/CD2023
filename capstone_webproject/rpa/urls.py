@@ -23,7 +23,7 @@ app_name = 'rpa'
 urlpatterns = [
     # path('', views.index, name='index'),
     path('', views.home, name='home'),
-    path('addrget/', views.addr_get, name='addr_get'),
+    path('addrget', views.addr_get, name='addrget'),
 
     path('test_home/', views.test_home, name='test_home'),
     path('products/', views.product_list, name='product_list'),
