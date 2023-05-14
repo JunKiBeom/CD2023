@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 import geohash2
 
-from . import SearchMap
+import SearchMap
 
 def zigbang(addr):
 
@@ -34,9 +34,16 @@ def zigbang(addr):
     기존에 만들어둔 지도 검색 함수 이용 이러면 request 횟수 1회 절약 가능
     서울시, 광주시, 대구시, 제주도 등 문제 해결해야 df정상 사용 가능
     '''
-    address = SearchMap.find_addr(addr)
+    try:
+        address = SearchMap.find_addr(addr)
+        lat, lng = address[0][0], address[0][1]
+    except TypeError:
+        print("정확한 주소를 입력해주세요!")
+        exit()
+    except IndexError:
+        print("정확한 주소를 입력해주세요!")
+        exit()
     # print(address)
-    lat, lng = address[0][0], address[0][1]
     geohash = geohash2.encode(lat, lng, precision=5)
 
     # print("requests1:", response.status_code)

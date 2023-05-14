@@ -1,7 +1,9 @@
 import json
+import os
+
 import pandas
 import requests
-from . import SearchMap
+import SearchMap
 
 '''
 loop문에서 page+=1 하면 url이 바뀌지 않아 url을 재생성 해야하는 문제 발생.
@@ -10,6 +12,8 @@ loop문에서 page+=1 하면 url이 바뀌지 않아 url을 재생성 해야하�
 page = 1  # URL 페이지 컨트롤을 위한 숫자
 
 cortarNo = 0
+
+addr = ""
 
 def mkurl():
     url2 = f'https://new.land.naver.com/api/articles?cortarNo={cortarNo}&order=rank&realEstateType=VL:DDDGG:JWJT:SGJT:HOJT&tradeType=B1:B2&tag=::::::::&rentPriceMin=0&rentPriceMax=900000000&priceMin=0&priceMax=900000000&areaMin=0&areaMax=900000000&oldBuildYears&recentlyBuildYears&minHouseHoldCount&maxHouseHoldCount&showArticle=false&sameAddressGroup=false&minMaintenanceCost&maxMaintenanceCost&priceType=RETAIL&directions=&page={page}&articleState'
@@ -40,8 +44,16 @@ def mkdf(url, flag):
         tag = "빌라.주택"
     elif flag == 1:
         tag = "원룸.투룸"
-    df = pandas.json_normalize(raw["articleList경"])
-    print(df)
+    df = pandas.json_normalize(raw["articleList"])
+    # print(df)
+
+    path1 = "csv"
+    if not os.path.isdir(path1):
+        os.mkdir(path1)
+    path2 = "jsons"
+    if not os.path.isdir(path2):
+        os.mkdir(path2)
+
     df.to_csv("csv/네이버_" + addr + "_" + tag + ".csv", sep=";", encoding="UTF-8", index=None)
     with open("jsons/네이버_" + addr + "_" + tag + ".json", 'w', encoding="UTF-8") as f:
         json.dump(raw, f, indent=4, ensure_ascii=False)
@@ -55,12 +67,16 @@ params = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
 }  # 필수 Request header. 없으면 캡챠 에러 발생, authorization은 주기적으로 바뀐다고 함
 
-def get_addr(addr):
+def get_addr(addrs):
     try:
-        # addr = input("주소입력 : ")
+        global addr
+        addr = addrs
         address = SearchMap.find_addr(addr)
         url = f'https://new.land.naver.com/api/cortars?zoom=16&centerLat={address[0][0]}&centerLon={address[0][1]}'
     except TypeError:
+        print("정확한 주소를 입력해주세요!")
+        exit()
+    except IndexError:
         print("정확한 주소를 입력해주세요!")
         exit()
 
