@@ -1,3 +1,6 @@
+import json
+import os
+
 import requests
 import pandas as pd
 import geohash2
@@ -69,6 +72,13 @@ def zigbang(addr):
     }
     response = requests.post(url, params)
     # print("requests3:", response.status_code)
+    raw = response.json()
+
+    path2 = "jsons"
+    if not os.path.isdir(path2):
+        os.mkdir(path2)
+    with open("jsons/직방_"+addr+".json", 'w', encoding="UTF-8") as f:
+        json.dump(raw, f, indent=4, ensure_ascii=False)
 
     try:
         items = response.json()['items']
@@ -90,7 +100,11 @@ def zigbang(addr):
     df = df[df["address1"].str.contains(addr)].reset_index(drop=True)
     df = df.rename(columns={"address1": "주소", "item_id": "관리번호", "sales_type": "유형", "service_type": "주거타입", "deposit": "보증금", "rent": "월세", "manage_cost": "관리비",
                             "floor": "해당 층", "building_floor": "전체 층", "title": "특징", "lat": "위도", "lng": "경도", "reg_date": "등록날짜"})
-    df.to_csv("csv/직방_"+addr+".csv", sep="\\", encoding="UTF-8", index = None)
+
+    path1 = "csv"
+    if not os.path.isdir(path1):
+        os.mkdir(path1)
+    df.to_csv("csv/직방_"+addr+".csv", sep=";", encoding="UTF-8", index = None)
     return df
 
 
