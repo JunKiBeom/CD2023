@@ -3,7 +3,8 @@ import os
 
 import pandas
 import requests
-import SearchMap
+
+from . import SearchMap
 
 '''
 loop문에서 page+=1 하면 url이 바뀌지 않아 url을 재생성 해야하는 문제 발생.

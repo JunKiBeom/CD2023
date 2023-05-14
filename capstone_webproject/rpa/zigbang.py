@@ -5,7 +5,7 @@ import requests
 import pandas as pd
 import geohash2
 
-import SearchMap
+from . import SearchMap
 
 def zigbang(addr):
 

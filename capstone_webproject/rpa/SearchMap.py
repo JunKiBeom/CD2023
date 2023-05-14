@@ -3,7 +3,7 @@ import openpyxl
 
 def find_addr(address):
     # 엑셀 파일 열기
-    wb = openpyxl.load_workbook('mapdata.xlsx')
+    wb = openpyxl.load_workbook('rpa/mapdata.xlsx')
 
     try:
         # 주소를 띄어쓰기로 분할
