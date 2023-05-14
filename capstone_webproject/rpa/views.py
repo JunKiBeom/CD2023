@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import naver2, zigbang
 
 def index(request):
@@ -26,7 +26,13 @@ def chart(request):
     # monthly_jeonse_data에 대한 월세+전세 차트 표시
 
 def addr_get(request):
-    addr = request.POST.get('searchBtn')
-    print(addr)
-    # zigbang(addr)
-    # naver2(addr)
+    city = request.POST.get('city')
+    district = request.POST.get('district')
+    address = request.POST.get('address')
+    # print(city, district, address)
+    result = city + " " + district + " " + address
+
+    # naver2(result)
+    # zigbang.zigbang(result)
+
+    return redirect('/')
