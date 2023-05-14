@@ -2,9 +2,9 @@ import requests
 import pandas as pd
 import geohash2
 
-import SearchMap
+from . import SearchMap
 
-def zigbang():
+def zigbang(addr):
 
     '''
     동이름 넣으면 위도 경도 정보 반환하도록 1차 req
@@ -87,7 +87,7 @@ def zigbang():
     return df
 
 
-addr = input("Input : ")
-print(zigbang())
+# addr = input("Input : ")
+# print(zigbang())
 
 # 직방은 빌라/투룸, 원룸 크롤링 결과가 동일함

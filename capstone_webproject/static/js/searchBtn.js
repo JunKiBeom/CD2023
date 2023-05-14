@@ -6,4 +6,5 @@ function searchBtn(){
 
     const result = city + " " + district + " " + address
     console.log(result)
+    return result
 }

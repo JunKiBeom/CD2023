@@ -1,13 +1,15 @@
 import json
 import pandas
 import requests
-import SearchMap
+from . import SearchMap
 
 '''
 loop문에서 page+=1 하면 url이 바뀌지 않아 url을 재생성 해야하는 문제 발생.
 코드 반복 줄이기 위해 함수로 처리
 '''
 page = 1  # URL 페이지 컨트롤을 위한 숫자
+
+cortarNo = 0
 
 def mkurl():
     url2 = f'https://new.land.naver.com/api/articles?cortarNo={cortarNo}&order=rank&realEstateType=VL:DDDGG:JWJT:SGJT:HOJT&tradeType=B1:B2&tag=::::::::&rentPriceMin=0&rentPriceMax=900000000&priceMin=0&priceMax=900000000&areaMin=0&areaMax=900000000&oldBuildYears&recentlyBuildYears&minHouseHoldCount&maxHouseHoldCount&showArticle=false&sameAddressGroup=false&minMaintenanceCost&maxMaintenanceCost&priceType=RETAIL&directions=&page={page}&articleState'
@@ -53,21 +55,23 @@ params = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
 }  # 필수 Request header. 없으면 캡챠 에러 발생, authorization은 주기적으로 바뀐다고 함
 
-try:
-    addr = input("주소입력 : ")
-    address = SearchMap.find_addr(addr)
-    url = f'https://new.land.naver.com/api/cortars?zoom=16&centerLat={address[0][0]}&centerLon={address[0][1]}'
-except TypeError:
-    print("정확한 주소를 입력해주세요!")
-    exit()
+def get_addr(addr):
+    try:
+        # addr = input("주소입력 : ")
+        address = SearchMap.find_addr(addr)
+        url = f'https://new.land.naver.com/api/cortars?zoom=16&centerLat={address[0][0]}&centerLon={address[0][1]}'
+    except TypeError:
+        print("정확한 주소를 입력해주세요!")
+        exit()
 
-response = requests.get(url, headers=params)  # 주소 입력 -> 위도&경도 반환하여 json 수집. 고유 ID인 cortarNo 활용
-response.encoding = "UTF-8"
-cortarNo = response.json()["cortarNo"]
+    response = requests.get(url, headers=params)  # 주소 입력 -> 위도&경도 반환하여 json 수집. 고유 ID인 cortarNo 활용
+    response.encoding = "UTF-8"
+    global cortarNo
+    cortarNo = response.json()["cortarNo"]
 
 '''
 for loop으로 돌려도 되지만 2개 뿐이라 시간복잡도 이득을 위해 그냥 2번 호출
 '''
-urls = mkurl()
-mkdf(urls[0], 0)
-mkdf(urls[1], 1)
+# urls = mkurl()
+# mkdf(urls[0], 0)
+# mkdf(urls[1], 1)
