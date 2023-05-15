@@ -42,10 +42,10 @@ def zigbang(addr):
         lat, lng = address[0][0], address[0][1]
     except TypeError:
         print("정확한 주소를 입력해주세요!")
-        exit()
+        return
     except IndexError:
         print("정확한 주소를 입력해주세요!")
-        exit()
+        return
     # print(address)
     geohash = geohash2.encode(lat, lng, precision=5)
 
@@ -85,7 +85,7 @@ def zigbang(addr):
         # print(items)
     except KeyError:
         print("해당 지역에 등록된 매물이 없습니다!")
-        exit()
+        return
 
     '''
     DataFrame 생성 및 출력

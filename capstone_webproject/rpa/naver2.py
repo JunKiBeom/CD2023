@@ -79,10 +79,10 @@ def get_addr(addrs):
         url = f'https://new.land.naver.com/api/cortars?zoom=16&centerLat={address[0][0]}&centerLon={address[0][1]}'
     except TypeError:
         print("정확한 주소를 입력해주세요!")
-        exit()
+        return
     except IndexError:
         print("정확한 주소를 입력해주세요!")
-        exit()
+        return
 
     response = requests.get(url, headers=params)  # 주소 입력 -> 위도&경도 반환하여 json 수집. 고유 ID인 cortarNo 활용
     response.encoding = "UTF-8"
