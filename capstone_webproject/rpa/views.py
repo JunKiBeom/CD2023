@@ -47,5 +47,5 @@ def addr_get(request):
     else:
         zigbang.zigbang(result)
         naver2.naver(result)
-    return redirect('/')
+    return redirect('/home')
     # return render(request, 'homealldata.html')

@@ -21,8 +21,8 @@ from . import views
 app_name = 'rpa'
 
 urlpatterns = [
-    # path('', views.index, name='index'),
-    path('', views.home, name='home'),
+    path('', views.index, name='index'),
+    path('home', views.home, name='home'),
     path('addrget', views.addr_get, name='addrget'),
 
     path('test_home/', views.test_home, name='test_home'),
