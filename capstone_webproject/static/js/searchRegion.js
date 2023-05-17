@@ -33,40 +33,6 @@ citySelect.addEventListener("change", function() {
         <option value="중구">중구</option>
         <option value="중랑구">중랑구</option>
     `;
-        if (districtSelect.value === "강남구") {
-            addressselect.innerHTML = `
-        <option value="개포동">개포동</option>
-        <option value="논현동">논현동</option>
-        <option value="대치동">대치동</option>
-        <option value="도곡동">도곡동</option>
-        <option value="삼성동">삼성동</option>
-        <option value="세곡동">세곡동</option>
-        <option value="수서동">수서동</option>
-        <option value="신사동">신사동</option>
-        <option value="압구정동">압구정동</option>
-        <option value="역삼동">역삼동</option>
-        <option value="율현동">율현동</option>
-        <option value="일원동">일원동</option>
-        <option value="자곡동">자곡동</option>
-        <option value="청담동">청담동</option>
-        <option value="포이동">포이동</option>
-        <option value="학동">학동</option>
-        <option value="현림동">현림동</option>
-        <option value="현충로">현충로</option>
-        <option value="화곡동">화곡동</option>
-            `;
-        }
-
-        else if (districtSelect.value === "강동구") {
-            addressselect.innerHTML = `
-        <option value="가나다">가나다</option>
-            `;
-        }
-
-
-
-
-
 // 다른 구들에 대한 조건문을 추가로 작성해주세요.
 
     } else if (city === "대전시") {
@@ -351,209 +317,477 @@ citySelect.addEventListener("change", function() {
 districtSelect.addEventListener("change", function() {
     // 서울시
     const district = districtSelect.value;
-    if (district === "강남구") {
+    if (districtSelect.value === '강남구') {
         addressselect.innerHTML = `
-        <option value="개포동">개포동</option>
-        <option value="논현동">논현동</option>
-        <option value="대치동">대치동</option>
-        <option value="도곡동">도곡동</option>
-        <option value="삼성동">삼성동</option>
-        <option value="세곡동">세곡동</option>
-        <option value="수서동">수서동</option>
-        <option value="신사동">신사동</option>
-        <option value="압구정동">압구정동</option>
-        <option value="역삼동">역삼동</option>
-        <option value="율현동">율현동</option>
-        <option value="일원동">일원동</option>
-        <option value="자곡동">자곡동</option>
-        <option value="청담동">청담동</option>
-        <option value="포이동">포이동</option>
-        <option value="학동">학동</option>
-        <option value="현림동">현림동</option>
-        <option value="현충로">현충로</option>
-        <option value="화곡동">화곡동</option>
-            <!-- 다른 동들을 추가해 주세요 -->
-        `;
-    } else if (district === "강동구") {
-        addressselect.innerHTML = `
-        <option value="강일동">강일동</option>
-        <option value="고덕동">고덕동</option>
-        <option value="길동">길동</option>
-        <option value="둔촌동">둔촌동</option>
-        <option value="명일동">명일동</option>
-        <option value="상일동">상일동</option>
-        <option value="성내동">성내동</option>
-        <option value="성수동">성수동</option>
-        <option value="암사동">암사동</option>
-        <option value="천호동">천호동</option>
-        `;
-    } else if (district === "강북구") {
-    addressselect.innerHTML = `
-    <option value="미아동">미아동</option>
-    <option value="번동">번동</option>
-    <option value="수유동">수유동</option>
-    <option value="삼각산동">삼각산동</option>
-    <option value="송중동">송중동</option>
-    <option value="송천동">송천동</option>
-    <option value="인수동">인수동</option>
-    <option value="월계동">월계동</option>
-    <option value="월북동">월북동</option>
-    <option value="장위동">장위동</option>
-
-    `;
-    } else if (district === "강서구") {
-        addressselect.innerHTML = `
-        <option value="가양동">가양동</option>
-        <option value="개화동">개화동</option>
-        <option value="공항동">공항동</option>
-        <option value="과해동">과해동</option>
-        <option value="내발산동">내발산동</option>
-        <option value="등촌동">등촌동</option>
-        <option value="마곡동">마곡동</option>
-        <option value="방화동">방화동</option>
-        <option value="염창동">염창동</option>
-        <option value="오곡동">오곡동</option>
-        <option value="외발산동">외발산동</option>
-        <option value="화곡동">화곡동</option>
-
-        `;
-    } else if (district === "관악구") {
-        addressselect.innerHTML = `
-        <option value="낙성대동">낙성대동</option>
-        <option value="난곡동">난곡동</option>
-        <option value="난향동">난향동</option>
-        <option value="난우중동">난우중동</option>
-        <option value="난향동">난향동</option>
-        <option value="난포동">난포동</option>
-        <option value="대학동">대학동</option>
-        <option value="미성동">미성동</option>
-        <option value="보라매동">보라매동</option>
-        <option value="봉천동">봉천동</option>
-        <option value="삼성동">삼성동</option>
-        <option value="서림동">서림동</option>
-        <option value="서원동">서원동</option>
-        <option value="신림동">신림동</option>
-        <option value="신사동">신사동</option>
-        <option value="신원동">신원동</option>
-        <option value="은천동">은천동</option>
-        <option value="인헌동">인헌동</option>
-        <option value="조원동">조원동</option>
-        <option value="중앙동">중앙동</option>
-        <option value="청룡동">청룡동</option>
-        <option value="청림동">청림동</option>
-        <option value="행운동">행운동</option>
-        <option value="흑석동">흑석동</option>
-
-        `;
-    } else if (district === "광진구") {
-        addressselect.innerHTML = `
-        <option value="광장동">광장동</option>
-        <option value="구의동">구의동</option>
-        <option value="군자동">군자동</option>
-        <option value="능동">능동</option>
-        <option value="자양동">자양동</option>
-        <option value="중곡동">중곡동</option>
-        <option value="화양동">화양동</option>
-
-        `;
-    } else if (district === "구로구") {
-        addressselect.innerHTML = `
-        <option value="가리봉동">가리봉동</option>
-        <option value="개봉동">개봉동</option>
-        <option value="고척동">고척동</option>
-        <option value="구로동">구로동</option>
-        <option value="궁동">궁동</option>
-        <option value="신도림동">신도림동</option>
-        <option value="오류동">오류동</option>
-        <option value="온수동">온수동</option>
-        <option value="천왕동">천왕동</option>
-        <option value="항동">항동</option>
-
-        `;
-    } else if (district === "금천구") {
-        addressselect.innerHTML = `
-        <option value="가산동">가산동</option>
-        <option value="독산동">독산동</option>
-        <option value="시흥동">시흥동</option>
-        `;
-    } else if (district === "노원구") {
-        addressselect.innerHTML = `
-
-        <option value="공릉동">공릉동</option>
-        <option value="상계동">상계동</option>
-        <option value="중계동">중계동</option>
-        <option value="하계동">하계동</option>
-        <option value="월계동">월계동</option>
-        `;
-    } else if (district === "도봉구") {
-        addressselect.innerHTML = `
-
-        <option value="가산동">도봉동</option>
-        <option value="가산동">방학동</option>
-        <option value="가산동">쌍문동</option>
-        <option value="가산동">창동</option>
-        `;
-    } else if (district === "동대문구") {
-        addressselect.innerHTML = `
-        // 동대문구에 해당하는 코드 내용
-        `;
-    } else if (district === "동작구") {
-        addressselect.innerHTML = `
-        // 동작구에 해당하는 코드 내용
-        `;
-    } else if (district === "마포구") {
-        addressselect.innerHTML = `
-        // 마포구에 해당하는 코드 내용
-        `;
-    } else if (district === "서대문구") {
-        addressselect.innerHTML = `
-        // 서대문구에 해당하는 코드 내용
-        `;
-    } else if (district === "서초구") {
-        addressselect.innerHTML = `
-        // 서초구에 해당하는 코드 내용
-        `;
-    } else if (district === "성동구") {
-        addressselect.innerHTML = `
-        // 성동구에 해당하는 코드 내용
-        `;
-    } else if (district === "성북구") {
-        addressselect.innerHTML = `
-        // 성북구에 해당하는 코드 내용
-        `;
-    } else if (district === "송파구") {
-        addressselect.innerHTML = `
-        // 송파구에 해당하는 코드 내용
-        `;
-    } else if (district === "양천구") {
-        addressselect.innerHTML = `
-        // 양천구에 해당하는 코드 내용
-        `;
-    } else if (district === "영등포구") {
-        addressselect.innerHTML = `
-        // 영등포구에 해당하는 코드 내용
-        `;
-    } else if (district === "용산구") {
-        addressselect.innerHTML = `
-        // 용산구에 해당하는 코드 내용
-        `;
-    } else if (district === "은평구") {
-        addressselect.innerHTML = `
-        // 은평구에 해당하는 코드 내용
-        `;
-    } else if (district === "종로구") {
-        addressselect.innerHTML = `
-        // 종로구에 해당하는 코드 내용
-        `;
-    } else if (district === "중구") {
-        addressselect.innerHTML = `
-        // 중구에 해당하는 코드 내용
-        `;
-    } else if (district === "중랑구") {
-        addressselect.innerHTML = `
-        // 중랑구에 해당하는 코드 내용
+            <option value='개포동'>개포동</option>
+            <option value='논현동'>논현동</option>
+            <option value='대치동'>대치동</option>
+            <option value='도곡동'>도곡동</option>
+            <option value='삼성동'>삼성동</option>
+            <option value='세곡동'>세곡동</option>
+            <option value='수서동'>수서동</option>
+            <option value='신사동'>신사동</option>
+            <option value='압구정동'>압구정동</option>
+            <option value='역삼동'>역삼동</option>
+            <option value='율현동'>율현동</option>
+            <option value='일원동'>일원동</option>
+            <option value='자곡동'>자곡동</option>
+            <option value='청담동'>청담동</option>
+            <option value='포이동'>포이동</option>
+            <option value='학동'>학동</option>
+            <option value='현림동'>현림동</option>
+            <option value='현충로'>현충로</option>
+            <option value='화곡동'>화곡동</option>
         `;
     }
+
+    else if (citySelect.value === '서울시' && districtSelect.value === '강동구') {
+        addressselect.innerHTML = `
+            <option value='고덕동'>고덕동</option>
+            <option value='길동'>길동</option>
+            <option value='둔촌동'>둔촌동</option>
+            <option value='명일동'>명일동</option>
+            <option value='상일동'>상일동</option>
+            <option value='성내동'>성내동</option>
+            <option value='암사동'>암사동</option>
+            <option value='천호동'>천호동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '강북구') {
+        addressselect.innerHTML = `
+            <option value='미아동'>미아동</option>
+            <option value='번동'>번동</option>
+            <option value='삼각산동'>삼각산동</option>
+            <option value='송중동'>송중동</option>
+            <option value='송천동'>송천동</option>
+            <option value='수유동'>수유동</option>
+            <option value='우이동'>우이동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '강서구') {
+        addressselect.innerHTML = `
+            <option value='가양동'>가양동</option>
+            <option value='공항동'>공항동</option>
+            <option value='내발산동'>내발산동</option>
+            <option value='등촌동'>등촌동</option>
+            <option value='마곡동'>마곡동</option>
+            <option value='염창동'>염창동</option>
+            <option value='외발산동'>외발산동</option>
+            <option value='화곡동'>화곡동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '관악구') {
+        addressselect.innerHTML = `
+            <option value='낙성대동'>낙성대동</option>
+            <option value='남현동'>남현동</option>
+            <option value='봉천동'>봉천동</option>
+            <option value='서원동'>서원동</option>
+            <option value='신림동'>신림동</option>
+            <option value='신사동'>신사동</option>
+            <option value='신원동'>신원동</option>
+            <option value='은천동'>은천동</option>
+            <option value='인헌동'>인헌동</option>
+            <option value='조원동'>조원동</option>
+            <option value='중앙동'>중앙동</option>
+            <option value='청림동'>청림동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '노원구') {
+        addressselect.innerHTML = `
+            <option value='공릉동'>공릉동</option>
+            <option value='상계동'>상계동</option>
+            <option value='월계동'>월계동</option>
+            <option value='중계동'>중계동</option>
+            <option value='하계동'>하계동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '도봉구') {
+        addressselect.innerHTML = `
+            <option value='도봉동'>도봉동</option>
+            <option value='도봉산동'>도봉산동</option>
+            <option value='방학동'>방학동</option>
+            <option value='쌍문동'>쌍문동</option>
+            <option value='창동'>창동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '동대문구') {
+        addressselect.innerHTML = `
+            <option value='답십리2동'>답십리2동</option>
+            <option value='답십리동'>답십리동</option>
+            <option value='신답동'>신답동</option>
+            <option value='신설동'>신설동</option>
+            <option value='용두동'>용두동</option>
+            <option value='이문동'>이문동</option>
+            <option value='장안동'>장안동</option>
+            <option value='장한평동'>장한평동</option>
+            <option value='전농동'>전농동</option>
+            <option value='제기동'>제기동</option>
+            <option value='청량리동'>청량리동</option>
+            <option value='회기동'>회기동</option>
+            <option value='휘경동'>휘경동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '동작구') {
+        addressselect.innerHTML = `
+            <option value='노량진동'>노량진동</option>
+            <option value='대방동'>대방동</option>
+            <option value='본동'>본동</option>
+            <option value='봉천동'>봉천동</option>
+            <option value='사당동'>사당동</option>
+            <option value='상도1동'>상도1동</option>
+            <option value='상도2동'>상도2동</option>
+            <option value='상도3동'>상도3동</option>
+            <option value='상도4동'>상도4동</option>
+            <option value='상도5동'>상도5동</option>
+            <option value='상도6동'>상도6동</option>
+            <option value='상도7동'>상도7동</option>
+            <option value='신대방동'>신대방동</option>
+            <option value='흑석동'>흑석동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '마포구') {
+        addressselect.innerHTML = `
+            <option value='당인동'>당인동</option>
+            <option value='도화동'>도화동</option>
+            <option value='동교동'>동교동</option>
+            <option value='망원동'>망원동</option>
+            <option value='상수동'>상수동</option>
+            <option value='상암동'>상암동</option>
+            <option value='서교동'>서교동</option>
+            <option value='성산동'>성산동</option>
+            <option value='신공덕동'>신공덕동</option>
+            <option value='신수동'>신수동</option>
+            <option value='신정동'>신정동</option>
+            <option value='아현동'>아현동</option>
+            <option value='연남동'>연남동</option>
+            <option value='염리동'>염리동</option>
+            <option value='용강동'>용강동</option>
+            <option value='중동'>중동</option>
+            <option value='창전동'>창전동</option>
+            <option value='토정동'>토정동</option>
+            <option value='하중동'>하중동</option>
+            <option value='합정동'>합정동</option>
+            <option value='홍은동'>홍은동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '서대문구') {
+        addressselect.innerHTML = `
+            <option value='남가좌동'>남가좌동</option>
+            <option value='북가좌동'>북가좌동</option>
+            <option value='북아현동'>북아현동</option>
+            <option value='신촌동'>신촌동</option>
+            <option value='연희동'>연희동</option>
+            <option value='창천동'>창천동</option>
+            <option value='천연동'>천연동</option>
+            <option value='충정로2가'>충정로2가</option>
+            <option value='홍은동'>홍은동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '서초구') {
+        addressselect.innerHTML = `
+            <option value='내곡동'>내곡동</option>
+            <option value='반포동'>반포동</option>
+            <option value='방배동'>방배동</option>
+            <option value='서초동'>서초동</option>
+            <option value='신원동'>신원동</option>
+            <option value='양재동'>양재동</option>
+            <option value='염곡동'>염곡동</option>
+            <option value='우면동'>우면동</option>
+            <option value='원지동'>원지동</option>
+            <option value='잠원동'>잠원동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '성동구') {
+        addressselect.innerHTML = `
+            <option value='금호동1가'>금호동1가</option>
+            <option value='금호동2가'>금호동2가</option>
+            <option value='금호동3가'>금호동3가</option>
+            <option value='금호동4가'>금호동4가</option>
+            <option value='도선동'>도선동</option>
+            <option value='마장동'>마장동</option>
+            <option value='사근동'>사근동</option>
+            <option value='상왕십리동'>상왕십리동</option>
+            <option value='성수동1가'>성수동1가</option>
+            <option value='성수동2가'>성수동2가</option>
+            <option value='송정동'>송정동</option>
+            <option value='옥수동'>옥수동</option>
+            <option value='용답동'>용답동</option>
+            <option value='응봉동'>응봉동</option>
+            <option value='하왕십리동'>하왕십리동</option>
+            <option value='행당동'>행당동</option>
+            <option value='홍익동'>홍익동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '성북구') {
+        addressselect.innerHTML = `
+            <option value='길음동'>길음동</option>
+            <option value='돈암동'>돈암동</option>
+            <option value='동선동'>동선동</option>
+            <option value='동소문동'>동소문동</option>
+            <option value='삼선동'>삼선동</option>
+            <option value='상월곡동'>상월곡동</option>
+            <option value='석관동'>석관동</option>
+            <option value='월곡동'>월곡동</option>
+            <option value='장위동'>장위동</option>
+            <option value='정릉동'>정릉동</option>
+            <option value='종암동'>종암동</option>
+            <option value='하월곡동'>하월곡동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '송파구') {
+        addressselect.innerHTML = `
+            <option value='가락동'>가락동</option>
+            <option value='문정동'>문정동</option>
+            <option value='방이동'>방이동</option>
+            <option value='삼전동'>삼전동</option>
+            <option value='석촌동'>석촌동</option>
+            <option value='송파동'>송파동</option>
+            <option value='신천동'>신천동</option>
+            <option value='오금동'>오금동</option>
+            <option value='잠실동'>잠실동</option>
+            <option value='장지동'>장지동</option>
+            <option value='풍납동'>풍납동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '양천구') {
+        addressselect.innerHTML = `
+            <option value='목동'>목동</option>
+            <option value='신도림동'>신도림동</option>
+            <option value='신월동'>신월동</option>
+            <option value='신정동'>신정동</option>
+            <option value='양평동'>양평동</option>
+            <option value='오류동'>오류동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '영등포구') {
+        addressselect.innerHTML = `
+            <option value='당산동'>당산동</option>
+            <option value='당산동1가'>당산동1가</option>
+            <option value='당산동2가'>당산동2가</option>
+            <option value='당산동3가'>당산동3가</option>
+            <option value='당산동4가'>당산동4가</option>
+            <option value='당산동5가'>당산동5가</option>
+            <option value='당산동6가'>당산동6가</option>
+            <option value='도림동'>도림동</option>
+            <option value='문래동1가'>문래동1가</option>
+            <option value='문래동2가'>문래동2가</option>
+            <option value='문래동3가'>문래동3가</option>
+            <option value='문래동4가'>문래동4가</option>
+            <option value='문래동5가'>문래동5가</option>
+            <option value='문래동6가'>문래동6가</option>
+            <option value='양평동2가'>양평동2가</option>
+            <option value='영등포동1가'>영등포동1가</option>
+            <option value='영등포동2가'>영등포동2가</option>
+            <option value='영등포동3가'>영등포동3가</option>
+            <option value='영등포동4가'>영등포동4가</option>
+            <option value='영등포동5가'>영등포동5가</option>
+            <option value='영등포동6가'>영등포동6가</option>
+            <option value='영등포동7가'>영등포동7가</option>
+            <option value='영등포동8가'>영등포동8가</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '용산구') {
+        addressselect.innerHTML = `
+            <option value='갈월동'>갈월동</option>
+            <option value='남영동'>남영동</option>
+            <option value='도원동'>도원동</option>
+            <option value='동빙고동'>동빙고동</option>
+            <option value='문배동'>문배동</option>
+            <option value='보광동'>보광동</option>
+            <option value='서빙고동'>서빙고동</option>
+            <option value='신계동'>신계동</option>
+            <option value='용문동'>용문동</option>
+            <option value='용산동1가'>용산동1가</option>
+            <option value='용산동2가'>용산동2가</option>
+            <option value='용산동3가'>용산동3가</option>
+            <option value='용산동4가'>용산동4가</option>
+            <option value='용산동5가'>용산동5가</option>
+            <option value='용산동6가'>용산동6가</option>
+            <option value='원효로2가'>원효로2가</option>
+            <option value='이촌동'>이촌동</option>
+            <option value='이태원동'>이태원동</option>
+            <option value='주성동'>주성동</option>
+            <option value='한강로1가'>한강로1가</option>
+            <option value='한강로2가'>한강로2가</option>
+            <option value='한강로3가'>한강로3가</option>
+            <option value='한남동'>한남동</option>
+            <option value='효창동'>효창동</option>
+            <option value='후암동'>후암동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '은평구') {
+        addressselect.innerHTML = `
+            <option value='갈현동'>갈현동</option>
+            <option value='구산동'>구산동</option>
+            <option value='녹번동'>녹번동</option>
+            <option value='불광동'>불광동</option>
+            <option value='수색동'>수색동</option>
+            <option value='신사동'>신사동</option>
+            <option value='역촌동'>역촌동</option>
+            <option value='증산동'>증산동</option>
+            <option value='진관동'>진관동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '종로구') {
+        addressselect.innerHTML = `
+            <option value='가회동'>가회동</option>
+            <option value='견지동'>견지동</option>
+            <option value='경운동'>경운동</option>
+            <option value='계동'>계동</option>
+            <option value='공평동'>공평동</option>
+            <option value='관수동'>관수동</option>
+            <option value='관철동'>관철동</option>
+            <option value='관훈동'>관훈동</option>
+            <option value='교남동'>교남동</option>
+            <option value='교북동'>교북동</option>
+            <option value='구기동'>구기동</option>
+            <option value='궁정동'>궁정동</option>
+            <option value='권농동'>권농동</option>
+            <option value='낙원동'>낙원동</option>
+            <option value='내수동'>내수동</option>
+            <option value='내자동'>내자동</option>
+            <option value='누상동'>누상동</option>
+            <option value='누하동'>누하동</option>
+            <option value='당주동'>당주동</option>
+            <option value='도렴동'>도렴동</option>
+            <option value='돈의동'>돈의동</option>
+            <option value='동숭동'>동숭동</option>
+            <option value='명륜1가'>명륜1가</option>
+            <option value='명륜2가'>명륜2가</option>
+            <option value='명륜3가'>명륜3가</option>
+            <option value='명륜4가'>명륜4가</option>
+            <option value='묘동'>묘동</option>
+            <option value='봉익동'>봉익동</option>
+            <option value='부암동'>부암동</option>
+            <option value='사간동'>사간동</option>
+            <option value='사직동'>사직동</option>
+            <option value='삼청동'>삼청동</option>
+            <option value='서린동'>서린동</option>
+            <option value='세종로'>세종로</option>
+            <option value='소격동'>소격동</option>
+            <option value='송월동'>송월동</option>
+            <option value='송현동'>송현동</option>
+            <option value='수송동'>수송동</option>
+            <option value='숭인동'>숭인동</option>
+            <option value='신교동'>신교동</option>
+            <option value='신문로1가'>신문로1가</option>
+            <option value='신문로2가'>신문로2가</option>
+            <option value='안국동'>안국동</option>
+            <option value='연건동'>연건동</option>
+            <option value='연지동'>연지동</option>
+            <option value='예지동'>예지동</option>
+            <option value='옥인동'>옥인동</option>
+            <option value='와룡동'>와룡동</option>
+            <option value='운니동'>운니동</option>
+            <option value='원남동'>원남동</option>
+            <option value='원서동'>원서동</option>
+            <option value='이화동'>이화동</option>
+            <option value='익선동'>익선동</option>
+            <option value='인사동'>인사동</option>
+            <option value='인의동'>인의동</option>
+            <option value='장사동'>장사동</option>
+            <option value='재동'>재동</option>
+            <option value='적선동'>적선동</option>
+            <option value='종로1가'>종로1가</option>
+            <option value='종로2가'>종로2가</option>
+            <option value='종로3가'>종로3가</option>
+            <option value='종로4가'>종로4가</option>
+            <option value='종로5가'>종로5가</option>
+            <option value='종로6가'>종로6가</option>
+            <option value='중학동'>중학동</option>
+            <option value='창성동'>창성동</option>
+            <option value='창신동'>창신동</option>
+            <option value='청운동'>청운동</option>
+            <option value='청진동'>청진동</option>
+            <option value='체부동'>체부동</option>
+            <option value='충신동'>충신동</option>
+            <option value='통의동'>통의동</option>
+            <option value='통인동'>통인동</option>
+            <option value='팔판동'>팔판동</option>
+            <option value='평동'>평동</option>
+            <option value='평창동'>평창동</option>
+            <option value='필운동'>필운동</option>
+            <option value='행촌동'>행촌동</option>
+            <option value='혜화동'>혜화동</option>
+            <option value='홍지동'>홍지동</option>
+            <option value='화동'>화동</option>
+            <option value='효자동'>효자동</option>
+            <option value='효제동'>효제동</option>
+            <option value='훈정동'>훈정동</option>
+        `;
+    }
+    else if (citySelect.value === '서울시' && districtSelect.value === '중구') {
+        addressselect.innerHTML = `
+            <option value='광희동1가'>광희동1가</option>
+            <option value='광희동2가'>광희동2가</option>
+            <option value='남대문로2가'>남대문로2가</option>
+            <option value='남대문로3가'>남대문로3가</option>
+            <option value='남대문로4가'>남대문로4가</option>
+            <option value='남대문로5가'>남대문로5가</option>
+            <option value='남산동1가'>남산동1가</option>
+            <option value='남산동2가'>남산동2가</option>
+            <option value='남산동3가'>남산동3가</option>
+            <option value='남창동'>남창동</option>
+            <option value='남학동'>남학동</option>
+            <option value='만리동1가'>만리동1가</option>
+            <option value='만리동2가'>만리동2가</option>
+            <option value='명동1가'>명동1가</option>
+            <option value='명동2가'>명동2가</option>
+            <option value='무학동'>무학동</option>
+            <option value='묵정동'>묵정동</option>
+            <option value='방산동'>방산동</option>
+            <option value='봉래동1가'>봉래동1가</option>
+            <option value='봉래동2가'>봉래동2가</option>
+            <option value='북창동'>북창동</option>
+            <option value='산림동'>산림동</option>
+            <option value='서소문동'>서소문동</option>
+            <option value='소공동'>소공동</option>
+            <option value='수표동'>수표동</option>
+            <option value='수하동'>수하동</option>
+            <option value='순화동'>순화동</option>
+            <option value='신당동'>신당동</option>
+            <option value='쌍림동'>쌍림동</option>
+            <option value='예관동'>예관동</option>
+            <option value='예장동'>예장동</option>
+            <option value='오장동'>오장동</option>
+            <option value='을지로3가'>을지로3가</option>
+            <option value='을지로4가'>을지로4가</option>
+            <option value='을지로5가'>을지로5가</option>
+            <option value='을지로6가'>을지로6가</option>
+            <option value='을지로7가'>을지로7가</option>
+            <option value='의주로1가'>의주로1가</option>
+            <option value='의주로2가'>의주로2가</option>
+            <option value='인현동1가'>인현동1가</option>
+            <option value='인현동2가'>인현동2가</option>
+            <option value='입정동'>입정동</option>
+            <option value='장교동'>장교동</option>
+            <option value='장충동1가'>장충동1가</option>
+            <option value='장충동2가'>장충동2가</option>
+            <option value='저동1가'>저동1가</option>
+            <option value='저동2가'>저동2가</option>
+            <option value='정동'>정동</option>
+            <option value='주교동'>주교동</option>
+            <option value='주자동'>주자동</option>
+            <option value='중림동'>중림동</option>
+            <option value='초동'>초동</option>
+            <option value='충무로1가'>충무로1가</option>
+            <option value='충무로2가'>충무로2가</option>
+            <option value='충무로3가'>충무로3가</option>
+            <option value='충무로4가'>충무로4가</option>
+            <option value='충무로5가'>충무로5가</option>
+            <option value='충정로1가'>충정로1가</option>
+            <option value='태평로1가'>태평로1가</option>
+            <option value='태평로2가'>태평로2가</option>
+            <option value='필동1가'>필동1가</option>
+            <option value='필동2가'>필동2가</option>
+            <option value='필동3가'>필동3가</option>
+            <option value='황학동'>황학동</option>
+            <option value='회현동1가'>회현동1가</option>
+            <option value='회현동2가'>회현동2가</option>
+            <option value='회현동3가'>회현동3가</option>
+            <option value='흥인동'>흥인동</option>
+        `;
+}
 
 
     // 다른 구에 대한 조건문을 추가로 작성해 주세요.
