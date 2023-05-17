@@ -235,7 +235,8 @@ citySelect.addEventListener("change", function() {
         <option value="익산시">익산시</option>
         <option value="임실군">임실군</option>
         <option value="장수군">장수군</option>
-        <option value="Jeonju-si">전주시</option>
+        <option value="전주시 덕진구">전주시 덕진구</option>
+        <option value="전주시 완산구">전주시 완산구</option>
         <option value="정읍시">정읍시</option>
         <option value="진안군">진안군</option>
     `;
@@ -2779,6 +2780,1902 @@ districtSelect.addEventListener("change", function() {
             <option value='팔탄면'>팔탄면</option>
             <option value='향남읍'>향남읍</option>
             <option value='황계동'>황계동</option>
+        `;
+    }else if (citySelect.value=== '강원도' && districtSelect.value === '강릉시') {
+        addressselect.innerHTML = `
+            <option value='강동면'>강동면</option>
+            <option value='강문동'>강문동</option>
+            <option value='견소동'>견소동</option>
+            <option value='교동'>교동</option>
+            <option value='구정면'>구정면</option>
+            <option value='금학동'>금학동</option>
+            <option value='난곡동'>난곡동</option>
+            <option value='남문동'>남문동</option>
+            <option value='남항진동'>남항진동</option>
+            <option value='내곡동'>내곡동</option>
+            <option value='노암동'>노암동</option>
+            <option value='담산동'>담산동</option>
+            <option value='대전동'>대전동</option>
+            <option value='두산동'>두산동</option>
+            <option value='명주동'>명주동</option>
+            <option value='박월동'>박월동</option>
+            <option value='병산동'>병산동</option>
+            <option value='사천면'>사천면</option>
+            <option value='성남동'>성남동</option>
+            <option value='성내동'>성내동</option>
+            <option value='성산면'>성산면</option>
+            <option value='송정동'>송정동</option>
+            <option value='신석동'>신석동</option>
+            <option value='안현동'>안현동</option>
+            <option value='연곡면'>연곡면</option>
+            <option value='옥계면'>옥계면</option>
+            <option value='왕산면'>왕산면</option>
+            <option value='용강동'>용강동</option>
+            <option value='운산동'>운산동</option>
+            <option value='운정동'>운정동</option>
+            <option value='월호평동'>월호평동</option>
+            <option value='유산동'>유산동</option>
+            <option value='임당동'>임당동</option>
+            <option value='입암동'>입암동</option>
+            <option value='장현동'>장현동</option>
+            <option value='저동'>저동</option>
+            <option value='주문진읍'>주문진읍</option>
+            <option value='죽헌동'>죽헌동</option>
+            <option value='지변동'>지변동</option>
+            <option value='청계동'>청계동</option>
+            <option value='초당동'>초당동</option>
+            <option value='포남동'>포남동</option>
+            <option value='학동'>학동</option>
+            <option value='홍제동'>홍제동</option>
+            <option value='회산동'>회산동</option>
+        `;
+    }
+    else if (citySelect.value=== '강원도' && districtSelect.value === '고성군') {
+        addressselect.innerHTML = `
+            <option value='간성읍'>간성읍</option>
+            <option value='거진읍'>거진읍</option>
+            <option value='수동면'>수동면</option>
+            <option value='죽왕면'>죽왕면</option>
+            <option value='토성면'>토성면</option>
+            <option value='현내면'>현내면</option>
+        `;
+    }
+    else if (citySelect.value=== '강원도' && districtSelect.value === '동해시') {
+        addressselect.innerHTML = `
+            <option value='괴란동'>괴란동</option>
+            <option value='구미동'>구미동</option>
+            <option value='구호동'>구호동</option>
+            <option value='귀운동'>귀운동</option>
+            <option value='나안동'>나안동</option>
+            <option value='내동'>내동</option>
+            <option value='단봉동'>단봉동</option>
+            <option value='달방동'>달방동</option>
+            <option value='대구동'>대구동</option>
+            <option value='대진동'>대진동</option>
+            <option value='동회동'>동회동</option>
+            <option value='만우동'>만우동</option>
+            <option value='망상동'>망상동</option>
+            <option value='묵호진동'>묵호진동</option>
+            <option value='발한동'>발한동</option>
+            <option value='부곡동'>부곡동</option>
+            <option value='북평동'>북평동</option>
+            <option value='비천동'>비천동</option>
+            <option value='삼화동'>삼화동</option>
+            <option value='송정동'>송정동</option>
+            <option value='쇄운동'>쇄운동</option>
+            <option value='신흥동'>신흥동</option>
+            <option value='심곡동'>심곡동</option>
+            <option value='어달동'>어달동</option>
+            <option value='용정동'>용정동</option>
+            <option value='이기동'>이기동</option>
+            <option value='이도동'>이도동</option>
+            <option value='이로동'>이로동</option>
+            <option value='지가동'>지가동</option>
+            <option value='지흥동'>지흥동</option>
+            <option value='천곡동'>천곡동</option>
+            <option value='초구동'>초구동</option>
+            <option value='추암동'>추암동</option>
+            <option value='평릉동'>평릉동</option>
+            <option value='호현동'>호현동</option>
+            <option value='효가동'>효가동</option>
+        `;
+    }
+    else if (citySelect.value=== '강원도' && districtSelect.value === '삼척시') {
+        addressselect.innerHTML = `
+            <option value='가곡면'>가곡면</option>
+            <option value='갈천동'>갈천동</option>
+            <option value='건지동'>건지동</option>
+            <option value='교동'>교동</option>
+            <option value='근덕면'>근덕면</option>
+            <option value='근산동'>근산동</option>
+            <option value='남양동'>남양동</option>
+            <option value='노곡면'>노곡면</option>
+            <option value='당저동'>당저동</option>
+            <option value='도계읍'>도계읍</option>
+            <option value='등봉동'>등봉동</option>
+            <option value='마달동'>마달동</option>
+            <option value='마평동'>마평동</option>
+            <option value='미로면'>미로면</option>
+            <option value='사직동'>사직동</option>
+            <option value='성남동'>성남동</option>
+            <option value='성내동'>성내동</option>
+            <option value='성북동'>성북동</option>
+            <option value='신기면'>신기면</option>
+            <option value='오분동'>오분동</option>
+            <option value='오사동'>오사동</option>
+            <option value='우지동'>우지동</option>
+            <option value='원당동'>원당동</option>
+            <option value='원덕읍'>원덕읍</option>
+            <option value='읍상동'>읍상동</option>
+            <option value='읍중동'>읍중동</option>
+            <option value='자원동'>자원동</option>
+            <option value='적노동'>적노동</option>
+            <option value='정상동'>정상동</option>
+            <option value='정하동'>정하동</option>
+            <option value='조비동'>조비동</option>
+            <option value='증산동'>증산동</option>
+            <option value='평전동'>평전동</option>
+            <option value='하장면'>하장면</option>
+        `;
+    }
+    else if (citySelect.value=== '강원도' && districtSelect.value === '속초시') {
+        addressselect.innerHTML = `
+            <option value='교동'>교동</option>
+            <option value='금호동'>금호동</option>
+            <option value='노학동'>노학동</option>
+            <option value='대포동'>대포동</option>
+            <option value='도문동'>도문동</option>
+            <option value='동명동'>동명동</option>
+            <option value='설악동'>설악동</option>
+            <option value='영랑동'>영랑동</option>
+            <option value='장사동'>장사동</option>
+            <option value='조양동'>조양동</option>
+            <option value='중앙동'>중앙동</option>
+            <option value='청학동'>청학동</option>
+        `;
+    }else if (citySelect.value=== '강원도' && districtSelect.value === '양구군') {
+        addressselect.innerHTML = `
+            <option value='국토정중앙면'>국토정중앙면</option>
+            <option value='동면'>동면</option>
+            <option value='방산면'>방산면</option>
+            <option value='양구읍'>양구읍</option>
+            <option value='해안면'>해안면</option>
+        `;
+    }
+    else if (citySelect.value=== '강원도' && districtSelect.value === '양양군') {
+        addressselect.innerHTML = `
+            <option value='강현면'>강현면</option>
+            <option value='서면'>서면</option>
+            <option value='손양면'>손양면</option>
+            <option value='양양읍'>양양읍</option>
+        `;
+    }else if (citySelect.value=== '강원도' && districtSelect.value === '영월군') {
+        addressselect.innerHTML = `
+            <option value='김삿갓면'>김삿갓면</option>
+            <option value='남면'>남면</option>
+            <option value='무릉도원면'>무릉도원면</option>
+            <option value='북면'>북면</option>
+            <option value='산솔면'>산솔면</option>
+            <option value='상동읍'>상동읍</option>
+            <option value='영월읍'>영월읍</option>
+            <option value='주천면'>주천면</option>
+            <option value='한반도면'>한반도면</option>
+        `;
+    }
+    else if (citySelect.value=== '강원도' && districtSelect.value === '인제군') {
+        addressselect.innerHTML = `
+            <option value='기린면'>기린면</option>
+            <option value='남면'>남면</option>
+            <option value='북면'>북면</option>
+            <option value='상남면'>상남면</option>
+            <option value='서화면'>서화면</option>
+            <option value='인제읍'>인제읍</option>
+        `;
+    }else if (citySelect.value=== '강원도' && districtSelect.value === '원주시') {
+        addressselect.innerHTML = `
+            <option value='가현동'>가현동</option>
+            <option value='개운동'>개운동</option>
+            <option value='관설동'>관설동</option>
+            <option value='귀래면'>귀래면</option>
+            <option value='단구동'>단구동</option>
+            <option value='명륜동'>명륜동</option>
+            <option value='무실동'>무실동</option>
+            <option value='문막읍'>문막읍</option>
+            <option value='반곡동'>반곡동</option>
+            <option value='봉산동'>봉산동</option>
+            <option value='부론면'>부론면</option>
+            <option value='소초면'>소초면</option>
+            <option value='신림면'>신림면</option>
+            <option value='우산동'>우산동</option>
+            <option value='원동'>원동</option>
+            <option value='인동'>인동</option>
+            <option value='일산동'>일산동</option>
+            <option value='중앙동'>중앙동</option>
+            <option value='지정면'>지정면</option>
+            <option value='태장동'>태장동</option>
+            <option value='판부면'>판부면</option>
+            <option value='평원동'>평원동</option>
+            <option value='학성동'>학성동</option>
+            <option value='행구동'>행구동</option>
+            <option value='호저면'>호저면</option>
+            <option value='흥업면'>흥업면</option>
+        `;
+    }else if (citySelect.value=== '강원도' && districtSelect.value === '정선군') {
+        addressselect.innerHTML = `
+            <option value='고한읍'>고한읍</option>
+            <option value='남면'>남면</option>
+            <option value='북평면'>북평면</option>
+            <option value='사북읍'>사북읍</option>
+            <option value='신동읍'>신동읍</option>
+            <option value='여량면'>여량면</option>
+            <option value='임계면'>임계면</option>
+            <option value='정선읍'>정선읍</option>
+            <option value='화암면'>화암면</option>
+        `;
+    }
+    else if (citySelect.value=== '강원도' && districtSelect.value === '철원군') {
+        addressselect.innerHTML = `
+            <option value='갈말읍'>갈말읍</option>
+            <option value='근남면'>근남면</option>
+            <option value='근동면'>근동면</option>
+            <option value='근북면'>근북면</option>
+            <option value='김화읍'>김화읍</option>
+            <option value='동송읍'>동송읍</option>
+            <option value='서면'>서면</option>
+            <option value='원남면'>원남면</option>
+            <option value='원동면'>원동면</option>
+            <option value='임남면'>임남면</option>
+            <option value='철원읍'>철원읍</option>
+        `;
+    }
+    else if (citySelect.value=== '강원도' && districtSelect.value === '춘천시') {
+        addressselect.innerHTML = `
+            <option value='교동'>교동</option>
+            <option value='근화동'>근화동</option>
+            <option value='낙원동'>낙원동</option>
+            <option value='남면'>남면</option>
+            <option value='남산면'>남산면</option>
+            <option value='동내면'>동내면</option>
+            <option value='동면'>동면</option>
+            <option value='동산면'>동산면</option>
+            <option value='봉의동'>봉의동</option>
+            <option value='북산면'>북산면</option>
+            <option value='사농동'>사농동</option>
+            <option value='사북면'>사북면</option>
+            <option value='삼천동'>삼천동</option>
+            <option value='서면'>서면</option>
+            <option value='석사동'>석사동</option>
+            <option value='소양로1가'>소양로1가</option>
+            <option value='소양로2가'>소양로2가</option>
+            <option value='소양로3가'>소양로3가</option>
+            <option value='소양로4가'>소양로4가</option>
+            <option value='송암동'>송암동</option>
+            <option value='신동'>신동</option>
+            <option value='신북읍'>신북읍</option>
+            <option value='약사동'>약사동</option>
+            <option value='옥천동'>옥천동</option>
+            <option value='온의동'>온의동</option>
+            <option value='요선동'>요선동</option>
+            <option value='우두동'>우두동</option>
+            <option value='운교동'>운교동</option>
+            <option value='조양동'>조양동</option>
+            <option value='죽림동'>죽림동</option>
+            <option value='중도동'>중도동</option>
+            <option value='중앙로1가'>중앙로1가</option>
+            <option value='중앙로2가'>중앙로2가</option>
+            <option value='중앙로3가'>중앙로3가</option>
+            <option value='칠전동'>칠전동</option>
+            <option value='퇴계동'>퇴계동</option>
+            <option value='효자동'>효자동</option>
+            <option value='후평동'>후평동</option>
+        `;
+    }else if (citySelect.value=== '강원도' && districtSelect.value === '태백시') {
+        addressselect.innerHTML = `
+            <option value='금천동'>금천동</option>
+            <option value='동점동'>동점동</option>
+            <option value='문곡동'>문곡동</option>
+            <option value='백산동'>백산동</option>
+            <option value='상사미동'>상사미동</option>
+            <option value='소도동'>소도동</option>
+            <option value='원동'>원동</option>
+            <option value='장성동'>장성동</option>
+            <option value='적각동'>적각동</option>
+            <option value='조탄동'>조탄동</option>
+            <option value='창죽동'>창죽동</option>
+            <option value='철암동'>철암동</option>
+            <option value='통동'>통동</option>
+            <option value='하사미동'>하사미동</option>
+            <option value='혈동'>혈동</option>
+            <option value='화전동'>화전동</option>
+            <option value='황지동'>황지동</option>
+        `;
+    }
+    else if (citySelect.value=== '강원도' && districtSelect.value === '평창군') {
+        addressselect.innerHTML = `
+            <option value='대관령면'>대관령면</option>
+            <option value='대화면'>대화면</option>
+            <option value='미탄면'>미탄면</option>
+            <option value='방림면'>방림면</option>
+            <option value='봉평면'>봉평면</option>
+            <option value='용평면'>용평면</option>
+            <option value='진부면'>진부면</option>
+            <option value='평창읍'>평창읍</option>
+        `;
+    }
+    else if (citySelect.value=== '강원도' && districtSelect.value === '홍천군') {
+        addressselect.innerHTML = `
+            <option value='남면'>남면</option>
+            <option value='내면'>내면</option>
+            <option value='내촌면'>내촌면</option>
+            <option value='두촌면'>두촌면</option>
+            <option value='북방면'>북방면</option>
+            <option value='서면'>서면</option>
+            <option value='서석면'>서석면</option>
+            <option value='영귀미면'>영귀미면</option>
+            <option value='홍천읍'>홍천읍</option>
+            <option value='화촌면'>화촌면</option>
+        `;
+    }else if (citySelect.value=== '강원도' && districtSelect.value === '횡성군') {
+        addressselect.innerHTML = `
+            <option value='갑천면'>갑천면</option>
+            <option value='강림면'>강림면</option>
+            <option value='공근면'>공근면</option>
+            <option value='둔내면'>둔내면</option>
+            <option value='서원면'>서원면</option>
+            <option value='안흥면'>안흥면</option>
+            <option value='우천면'>우천면</option>
+            <option value='청일면'>청일면</option>
+            <option value='횡성읍'>횡성읍</option>
+        `;
+    }else if (citySelect.value=== '충청북도' && districtSelect.value === '청주시 상당구') {
+        addressselect.innerHTML = `
+            <option value='영동'>영동</option>
+            <option value='북문로1가'>북문로1가</option>
+            <option value='북문로2가'>북문로2가</option>
+            <option value='북문로3가'>북문로3가</option>
+            <option value='남문로1가'>남문로1가</option>
+            <option value='남문로2가'>남문로2가</option>
+            <option value='문화동'>문화동</option>
+            <option value='서운동'>서운동</option>
+            <option value='서문동'>서문동</option>
+            <option value='남주동'>남주동</option>
+            <option value='석교동'>석교동</option>
+            <option value='수동'>수동</option>
+            <option value='탑동'>탑동</option>
+            <option value='대성동'>대성동</option>
+            <option value='영운동'>영운동</option>
+            <option value='금천동'>금천동</option>
+            <option value='용담동'>용담동</option>
+            <option value='명암동'>명암동</option>
+            <option value='산성동'>산성동</option>
+            <option value='용암동'>용암동</option>
+            <option value='용정동'>용정동</option>
+            <option value='방서동'>방서동</option>
+            <option value='평촌동'>평촌동</option>
+            <option value='지북동'>지북동</option>
+            <option value='운동동'>운동동</option>
+            <option value='월오동'>월오동</option>
+            <option value='낭성면'>낭성면</option>
+        `;
+    }
+    else if (citySelect.value=== '충청북도' && districtSelect.value === '청주시 서원구') {
+        addressselect.innerHTML = `
+            <option value='사직동'>사직동</option>
+            <option value='사창동'>사창동</option>
+            <option value='모충동'>모충동</option>
+            <option value='산남동'>산남동</option>
+            <option value='미평동'>미평동</option>
+            <option value='분평동'>분평동</option>
+            <option value='수곡동'>수곡동</option>
+            <option value='성화동'>성화동</option>
+            <option value='개신동'>개신동</option>
+            <option value='죽림동'>죽림동</option>
+            <option value='장성동'>장성동</option>
+            <option value='장암동'>장암동</option>
+            <option value='남이면'>남이면</option>
+            <option value='현도면'>현도면</option>
+        `;
+    }
+    else if (citySelect.value=== '충청북도' && districtSelect.value === '청주시 흥덕구') {
+        addressselect.innerHTML = `
+            <option value='운천동'>운천동</option>
+            <option value='신봉동'>신봉동</option>
+            <option value='가경동'>가경동</option>
+            <option value='복대동'>복대동</option>
+            <option value='봉명동'>봉명동</option>
+            <option value='송정동'>송정동</option>
+            <option value='강서동'>강서동</option>
+            <option value='석곡동'>석곡동</option>
+            <option value='휴암동'>휴암동</option>
+            <option value='신전동'>신전동</option>
+            <option value='현암동'>현암동</option>
+            <option value='동막동'>동막동</option>
+            <option value='수의동'>수의동</option>
+            <option value='지동동'>지동동</option>
+            <option value='서촌동'>서촌동</option>
+            <option value='신성동'>신성동</option>
+            <option value='평동'>평동</option>
+            <option value='신대동'>신대동</option>
+            <option value='남촌동'>남촌동</option>
+            <option value='내곡동'>내곡동</option>
+            <option value='상신동'>상신동</option>
+            <option value='원평동'>원평동</option>
+            <option value='문암동'>문암동</option>
+            <option value='송절동'>송절동</option>
+            <option value='화계동'>화계동</option>
+            <option value='외북동'>외북동</option>
+            <option value='향정동'>향정동</option>
+            <option value='비하동'>비하동</option>
+            <option value='석소동'>석소동</option>
+            <option value='정봉동'>정봉동</option>
+            <option value='신촌동'>신촌동</option>
+            <option value='오송읍'>오송읍</option>
+            <option value='강내면'>강내면</option>
+            <option value='옥산면'>옥산면</option>
+        `;
+    }
+    else if (citySelect.value=== '충청북도' && districtSelect.value === '청주시 청원구') {
+        addressselect.innerHTML = `
+            <option value='우암동'>우암동</option>
+            <option value='내덕동'>내덕동</option>
+            <option value='율량동'>율량동</option>
+            <option value='사천동'>사천동</option>
+            <option value='주성동'>주성동</option>
+            <option value='주중동'>주중동</option>
+            <option value='정상동'>정상동</option>
+            <option value='정하동'>정하동</option>
+            <option value='정북동'>정북동</option>
+            <option value='오동동'>오동동</option>
+            <option value='외남동'>외남동</option>
+            <option value='외평동'>외평동</option>
+            <option value='외하동'>외하동</option>
+            <option value='내수읍'>내수읍</option>
+            <option value='오창읍'>오창읍</option>
+            <option value='북이면'>북이면</option>
+        `;
+    }else if (citySelect.value=== '충청북도' && districtSelect.value === '괴산군') {
+        addressselect.innerHTML = `
+            <option value='감물면'>감물면</option>
+            <option value='괴산읍'>괴산읍</option>
+            <option value='문광면'>문광면</option>
+            <option value='불정면'>불정면</option>
+            <option value='사리면'>사리면</option>
+            <option value='소수면'>소수면</option>
+            <option value='연풍면'>연풍면</option>
+            <option value='장연면'>장연면</option>
+            <option value='청안면'>청안면</option>
+            <option value='청천면'>청천면</option>
+            <option value='칠성면'>칠성면</option>
+        `;
+    }else if (citySelect.value=== '충청북도' && districtSelect.value === '단양군') {
+        addressselect.innerHTML = `
+            <option value='가곡면'>가곡면</option>
+            <option value='단성면'>단성면</option>
+            <option value='단양읍'>단양읍</option>
+            <option value='대강면'>대강면</option>
+            <option value='매포읍'>매포읍</option>
+            <option value='어상천면'>어상천면</option>
+            <option value='영춘면'>영춘면</option>
+            <option value='적성면'>적성면</option>
+        `;
+    }else if (citySelect.value=== '충청북도' && districtSelect.value === '보은군') {
+        addressselect.innerHTML = `
+            <option value='내북면'>내북면</option>
+            <option value='마로면'>마로면</option>
+            <option value='보은읍'>보은읍</option>
+            <option value='산외면'>산외면</option>
+            <option value='삼승면'>삼승면</option>
+            <option value='속리산면'>속리산면</option>
+            <option value='수한면'>수한면</option>
+            <option value='장안면'>장안면</option>
+            <option value='탄부면'>탄부면</option>
+            <option value='회남면'>회남면</option>
+            <option value='회인면'>회인면</option>
+        `;
+    }else if (citySelect.value=== '충청북도' && districtSelect.value === '영동군') {
+        addressselect.innerHTML = `
+            <option value='매곡면'>매곡면</option>
+            <option value='상촌면'>상촌면</option>
+            <option value='심천면'>심천면</option>
+            <option value='양강면'>양강면</option>
+            <option value='양산면'>양산면</option>
+            <option value='영동읍'>영동읍</option>
+            <option value='용산면'>용산면</option>
+            <option value='용화면'>용화면</option>
+            <option value='추풍령면'>추풍령면</option>
+            <option value='학산면'>학산면</option>
+            <option value='황간면'>황간면</option>
+        `;
+    }else if (citySelect.value=== '충청북도' && districtSelect.value === '옥천군') {
+        addressselect.innerHTML = `
+            <option value='군북면'>군북면</option>
+            <option value='군서면'>군서면</option>
+            <option value='동이면'>동이면</option>
+            <option value='안남면'>안남면</option>
+            <option value='안내면'>안내면</option>
+            <option value='옥천읍'>옥천읍</option>
+            <option value='이원면'>이원면</option>
+            <option value='청산면'>청산면</option>
+            <option value='청성면'>청성면</option>
+        `;
+    }else if (citySelect.value=== '충청북도' && districtSelect.value === '음성군') {
+        addressselect.innerHTML = `
+            <option value='감곡면'>감곡면</option>
+            <option value='금왕읍'>금왕읍</option>
+            <option value='대소면'>대소면</option>
+            <option value='맹동면'>맹동면</option>
+            <option value='삼성면'>삼성면</option>
+            <option value='생극면'>생극면</option>
+            <option value='소이면'>소이면</option>
+            <option value='원남면'>원남면</option>
+            <option value='음성읍'>음성읍</option>
+        `;
+    }else if (citySelect.value=== '충청북도' && districtSelect.value === '제천시') {
+        addressselect.innerHTML = `
+            <option value='강제동'>강제동</option>
+            <option value='고명동'>고명동</option>
+            <option value='고암동'>고암동</option>
+            <option value='교동'>교동</option>
+            <option value='금성면'>금성면</option>
+            <option value='남천동'>남천동</option>
+            <option value='대랑동'>대랑동</option>
+            <option value='덕산면'>덕산면</option>
+            <option value='동현동'>동현동</option>
+            <option value='두학동'>두학동</option>
+            <option value='명동'>명동</option>
+            <option value='명지동'>명지동</option>
+            <option value='모산동'>모산동</option>
+            <option value='백운면'>백운면</option>
+            <option value='봉양읍'>봉양읍</option>
+            <option value='산곡동'>산곡동</option>
+            <option value='서부동'>서부동</option>
+            <option value='송학면'>송학면</option>
+            <option value='수산면'>수산면</option>
+            <option value='신동'>신동</option>
+            <option value='신백동'>신백동</option>
+            <option value='신월동'>신월동</option>
+            <option value='영천동'>영천동</option>
+            <option value='왕암동'>왕암동</option>
+            <option value='의림동'>의림동</option>
+            <option value='자작동'>자작동</option>
+            <option value='장락동'>장락동</option>
+            <option value='중앙로1가'>중앙로1가</option>
+            <option value='중앙로2가'>중앙로2가</option>
+            <option value='천남동'>천남동</option>
+            <option value='청전동'>청전동</option>
+            <option value='청풍면'>청풍면</option>
+            <option value='하소동'>하소동</option>
+            <option value='한수면'>한수면</option>
+            <option value='화산동'>화산동</option>
+            <option value='흑석동'>흑석동</option>
+        `;
+    }else if (citySelect.value=== '충청북도' && districtSelect.value === '증평군') {
+        addressselect.innerHTML = `
+            <option value='도안면'>도안면</option>
+            <option value='증평읍'>증평읍</option>
+        `;
+    }else if (citySelect.value=== '충청북도' && districtSelect.value === '진천군') {
+        addressselect.innerHTML = `
+            <option value='광혜원면'>광혜원면</option>
+            <option value='덕산읍'>덕산읍</option>
+            <option value='문백면'>문백면</option>
+            <option value='백곡면'>백곡면</option>
+            <option value='이월면'>이월면</option>
+            <option value='진천읍'>진천읍</option>
+            <option value='초평면'>초평면</option>
+        `;
+    }else if (citySelect.value=== '충청북도' && districtSelect.value === '충주시') {
+        addressselect.innerHTML = `
+            <option value='가주동'>가주동</option>
+            <option value='교현동'>교현동</option>
+            <option value='금가면'>금가면</option>
+            <option value='금릉동'>금릉동</option>
+            <option value='노은면'>노은면</option>
+            <option value='단월동'>단월동</option>
+            <option value='달천동'>달천동</option>
+            <option value='대소원면'>대소원면</option>
+            <option value='동량면'>동량면</option>
+            <option value='목벌동'>목벌동</option>
+            <option value='목행동'>목행동</option>
+            <option value='문화동'>문화동</option>
+            <option value='봉방동'>봉방동</option>
+            <option value='산척면'>산척면</option>
+            <option value='살미면'>살미면</option>
+            <option value='성남동'>성남동</option>
+            <option value='성내동'>성내동</option>
+            <option value='성서동'>성서동</option>
+            <option value='소태면'>소태면</option>
+            <option value='수안보면'>수안보면</option>
+            <option value='신니면'>신니면</option>
+            <option value='안림동'>안림동</option>
+            <option value='앙성면'>앙성면</option>
+            <option value='엄정면'>엄정면</option>
+            <option value='연수동'>연수동</option>
+            <option value='용관동'>용관동</option>
+            <option value='용두동'>용두동</option>
+            <option value='용산동'>용산동</option>
+            <option value='용탄동'>용탄동</option>
+            <option value='종민동'>종민동</option>
+            <option value='주덕읍'>주덕읍</option>
+            <option value='중앙탑면'>중앙탑면</option>
+            <option value='지현동'>지현동</option>
+            <option value='직동'>직동</option>
+            <option value='충의동'>충의동</option>
+            <option value='충인동'>충인동</option>
+            <option value='칠금동'>칠금동</option>
+            <option value='풍동'>풍동</option>
+            <option value='호암동'>호암동</option>
+        `;
+    }else if (citySelect.value=== '충청남도' && districtSelect.value === '천안시 동남구') {
+        addressselect.innerHTML = `
+            <option value='광덕면'>광덕면</option>
+            <option value='구룡동'>구룡동</option>
+            <option value='구성동'>구성동</option>
+            <option value='다가동'>다가동</option>
+            <option value='대흥동'>대흥동</option>
+            <option value='동면'>동면</option>
+            <option value='목천읍'>목천읍</option>
+            <option value='문화동'>문화동</option>
+            <option value='병천면'>병천면</option>
+            <option value='봉명동'>봉명동</option>
+        `;
+    }else if (citySelect.value=== '충청남도' && districtSelect.value === '천안시 서북구') {
+        addressselect.innerHTML = `
+            <option value='두정동'>두정동</option>
+            <option value='백석동'>백석동</option>
+            <option value='부대동'>부대동</option>
+            <option value='불당동'>불당동</option>
+            <option value='성거읍'>성거읍</option>
+            <option value='성성동'>성성동</option>
+            <option value='성정동'>성정동</option>
+            <option value='성환읍'>성환읍</option>
+            <option value='신당동'>신당동</option>
+            <option value='쌍용동'>쌍용동</option>
+            <option value='업성동'>업성동</option>
+            <option value='와촌동'>와촌동</option>
+            <option value='입장면'>입장면</option>
+            <option value='직산읍'>직산읍</option>
+            <option value='차암동'>차암동</option>
+        `;
+    }else if (citySelect.value=== '충청남도' && districtSelect.value === '계룡시') {
+        addressselect.innerHTML = `
+            <option value='금암동'>금암동</option>
+            <option value='두마면'>두마면</option>
+            <option value='신도안면'>신도안면</option>
+            <option value='엄사면'>엄사면</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '공주시') {
+        addressselect.innerHTML = `
+            <option value='검상동'>검상동</option>
+            <option value='계룡면'>계룡면</option>
+            <option value='교동'>교동</option>
+            <option value='금성동'>금성동</option>
+            <option value='금학동'>금학동</option>
+            <option value='금흥동'>금흥동</option>
+            <option value='동현동'>동현동</option>
+            <option value='무릉동'>무릉동</option>
+            <option value='반죽동'>반죽동</option>
+            <option value='반포면'>반포면</option>
+            <option value='봉정동'>봉정동</option>
+            <option value='봉황동'>봉황동</option>
+            <option value='사곡면'>사곡면</option>
+            <option value='산성동'>산성동</option>
+            <option value='상왕동'>상왕동</option>
+            <option value='석장리동'>석장리동</option>
+            <option value='소학동'>소학동</option>
+            <option value='송선동'>송선동</option>
+            <option value='신관동'>신관동</option>
+            <option value='신기동'>신기동</option>
+            <option value='신풍면'>신풍면</option>
+            <option value='쌍신동'>쌍신동</option>
+            <option value='오곡동'>오곡동</option>
+            <option value='옥룡동'>옥룡동</option>
+            <option value='우성면'>우성면</option>
+            <option value='웅진동'>웅진동</option>
+            <option value='월미동'>월미동</option>
+            <option value='월송동'>월송동</option>
+            <option value='유구읍'>유구읍</option>
+            <option value='의당면'>의당면</option>
+            <option value='이인면'>이인면</option>
+            <option value='정안면'>정안면</option>
+            <option value='주미동'>주미동</option>
+            <option value='중동'>중동</option>
+            <option value='중학동'>중학동</option>
+            <option value='탄천면'>탄천면</option>
+            <option value='태봉동'>태봉동</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '금산군') {
+        addressselect.innerHTML = `
+            <option value='군북면'>군북면</option>
+            <option value='금산읍'>금산읍</option>
+            <option value='금성면'>금성면</option>
+            <option value='남이면'>남이면</option>
+            <option value='남일면'>남일면</option>
+            <option value='복수면'>복수면</option>
+            <option value='부리면'>부리면</option>
+            <option value='제원면'>제원면</option>
+            <option value='진산면'>진산면</option>
+            <option value='추부면'>추부면</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '논산시') {
+        addressselect.innerHTML = `
+            <option value='가야곡면'>가야곡면</option>
+            <option value='강경읍'>강경읍</option>
+            <option value='강산동'>강산동</option>
+            <option value='관촉동'>관촉동</option>
+            <option value='광석면'>광석면</option>
+            <option value='내동'>내동</option>
+            <option value='노성면'>노성면</option>
+            <option value='대교동'>대교동</option>
+            <option value='덕지동'>덕지동</option>
+            <option value='등화동'>등화동</option>
+            <option value='반월동'>반월동</option>
+            <option value='벌곡면'>벌곡면</option>
+            <option value='부적면'>부적면</option>
+            <option value='부창동'>부창동</option>
+            <option value='상월면'>상월면</option>
+            <option value='성동면'>성동면</option>
+            <option value='양촌면'>양촌면</option>
+            <option value='연무읍'>연무읍</option>
+            <option value='연산면'>연산면</option>
+            <option value='은진면'>은진면</option>
+            <option value='지산동'>지산동</option>
+            <option value='채운면'>채운면</option>
+            <option value='취암동'>취암동</option>
+            <option value='화지동'>화지동</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '당진시') {
+        addressselect.innerHTML = `
+            <option value='고대면'>고대면</option>
+            <option value='구룡동'>구룡동</option>
+            <option value='대덕동'>대덕동</option>
+            <option value='대호지면'>대호지면</option>
+            <option value='면천면'>면천면</option>
+            <option value='사기소동'>사기소동</option>
+            <option value='석문면'>석문면</option>
+            <option value='송산면'>송산면</option>
+            <option value='송악읍'>송악읍</option>
+            <option value='수청동'>수청동</option>
+            <option value='순성면'>순성면</option>
+            <option value='시곡동'>시곡동</option>
+            <option value='신평면'>신평면</option>
+            <option value='용연동'>용연동</option>
+            <option value='우강면'>우강면</option>
+            <option value='우두동'>우두동</option>
+            <option value='원당동'>원당동</option>
+            <option value='읍내동'>읍내동</option>
+            <option value='정미면'>정미면</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '보령시') {
+        addressselect.innerHTML = `
+            <option value='궁촌동'>궁촌동</option>
+            <option value='남곡동'>남곡동</option>
+            <option value='남포면'>남포면</option>
+            <option value='내항동'>내항동</option>
+            <option value='대천동'>대천동</option>
+            <option value='동대동'>동대동</option>
+            <option value='명천동'>명천동</option>
+            <option value='미산면'>미산면</option>
+            <option value='성주면'>성주면</option>
+            <option value='신흑동'>신흑동</option>
+            <option value='오천면'>오천면</option>
+            <option value='요암동'>요암동</option>
+            <option value='웅천읍'>웅천읍</option>
+            <option value='주교면'>주교면</option>
+            <option value='주산면'>주산면</option>
+            <option value='주포면'>주포면</option>
+            <option value='죽정동'>죽정동</option>
+            <option value='천북면'>천북면</option>
+            <option value='청라면'>청라면</option>
+            <option value='청소면'>청소면</option>
+            <option value='화산동'>화산동</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '부여군') {
+        addressselect.innerHTML = `
+            <option value='구룡면'>구룡면</option>
+            <option value='규암면'>규암면</option>
+            <option value='남면'>남면</option>
+            <option value='내산면'>내산면</option>
+            <option value='부여읍'>부여읍</option>
+            <option value='석성면'>석성면</option>
+            <option value='세도면'>세도면</option>
+            <option value='양화면'>양화면</option>
+            <option value='옥산면'>옥산면</option>
+            <option value='외산면'>외산면</option>
+            <option value='은산면'>은산면</option>
+            <option value='임천면'>임천면</option>
+            <option value='장암면'>장암면</option>
+            <option value='초촌면'>초촌면</option>
+            <option value='충화면'>충화면</option>
+            <option value='홍산면'>홍산면</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '서산시') {
+        addressselect.innerHTML = `
+            <option value='갈산동'>갈산동</option>
+            <option value='고북면'>고북면</option>
+            <option value='대산읍'>대산읍</option>
+            <option value='덕지천동'>덕지천동</option>
+            <option value='동문동'>동문동</option>
+            <option value='부석면'>부석면</option>
+            <option value='석남동'>석남동</option>
+            <option value='석림동'>석림동</option>
+            <option value='성연면'>성연면</option>
+            <option value='수석동'>수석동</option>
+            <option value='양대동'>양대동</option>
+            <option value='예천동'>예천동</option>
+            <option value='오남동'>오남동</option>
+            <option value='온석동'>온석동</option>
+            <option value='운산면'>운산면</option>
+            <option value='음암면'>음암면</option>
+            <option value='인지면'>인지면</option>
+            <option value='잠홍동'>잠홍동</option>
+            <option value='장동'>장동</option>
+            <option value='죽성동'>죽성동</option>
+            <option value='지곡면'>지곡면</option>
+            <option value='팔봉면'>팔봉면</option>
+            <option value='해미면'>해미면</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '서천군') {
+        addressselect.innerHTML = `
+            <option value='기산면'>기산면</option>
+            <option value='마산면'>마산면</option>
+            <option value='마서면'>마서면</option>
+            <option value='문산면'>문산면</option>
+            <option value='비인면'>비인면</option>
+            <option value='서면'>서면</option>
+            <option value='서천읍'>서천읍</option>
+            <option value='시초면'>시초면</option>
+            <option value='장항읍'>장항읍</option>
+            <option value='종천면'>종천면</option>
+            <option value='판교면'>판교면</option>
+            <option value='한산면'>한산면</option>
+            <option value='화양면'>화양면</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '아산시') {
+        addressselect.innerHTML = `
+            <option value='권곡동'>권곡동</option>
+            <option value='기산동'>기산동</option>
+            <option value='남동'>남동</option>
+            <option value='도고면'>도고면</option>
+            <option value='둔포면'>둔포면</option>
+            <option value='득산동'>득산동</option>
+            <option value='모종동'>모종동</option>
+            <option value='방축동'>방축동</option>
+            <option value='배미동'>배미동</option>
+            <option value='배방읍'>배방읍</option>
+            <option value='법곡동'>법곡동</option>
+            <option value='선장면'>선장면</option>
+            <option value='송악면'>송악면</option>
+            <option value='신동'>신동</option>
+            <option value='신인동'>신인동</option>
+            <option value='신창면'>신창면</option>
+            <option value='실옥동'>실옥동</option>
+            <option value='염치읍'>염치읍</option>
+            <option value='영인면'>영인면</option>
+            <option value='온천동'>온천동</option>
+            <option value='용화동'>용화동</option>
+            <option value='음봉면'>음봉면</option>
+            <option value='인주면'>인주면</option>
+            <option value='장존동'>장존동</option>
+            <option value='점양동'>점양동</option>
+            <option value='좌부동'>좌부동</option>
+            <option value='초사동'>초사동</option>
+            <option value='탕정면'>탕정면</option>
+            <option value='풍기동'>풍기동</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '예산군') {
+        addressselect.innerHTML = `
+            <option value='고덕면'>고덕면</option>
+            <option value='광시면'>광시면</option>
+            <option value='대술면'>대술면</option>
+            <option value='대흥면'>대흥면</option>
+            <option value='덕산면'>덕산면</option>
+            <option value='봉산면'>봉산면</option>
+            <option value='삽교읍'>삽교읍</option>
+            <option value='신암면'>신암면</option>
+            <option value='신양면'>신양면</option>
+            <option value='예산읍'>예산읍</option>
+            <option value='오가면'>오가면</option>
+            <option value='응봉면'>응봉면</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '청양군') {
+        addressselect.innerHTML = `
+            <option value='남양면'>남양면</option>
+            <option value='대치면'>대치면</option>
+            <option value='목면'>목면</option>
+            <option value='비봉면'>비봉면</option>
+            <option value='운곡면'>운곡면</option>
+            <option value='장평면'>장평면</option>
+            <option value='정산면'>정산면</option>
+            <option value='청남면'>청남면</option>
+            <option value='청양읍'>청양읍</option>
+            <option value='화성면'>화성면</option>
+        `;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '태안군') {
+        addressselect.innerHTML = `
+		<option value='고남면'>고남면</option>
+		<option value='근흥면'>근흥면</option>
+		<option value='소원면'>소원면</option>
+		<option value='안면읍'>안면읍</option>
+		<option value='원북면'>원북면</option>
+		<option value='이원면'>이원면</option>
+		<option value='태안읍'>태안읍</option>
+	`;
+    }
+    else if (citySelect.value=== '충청남도' && districtSelect.value === '홍성군') {
+        addressselect.innerHTML = `
+            <option value='갈산면'>갈산면</option>
+            <option value='결성면'>결성면</option>
+            <option value='광천읍'>광천읍</option>
+            <option value='구항면'>구항면</option>
+            <option value='금마면'>금마면</option>
+            <option value='서부면'>서부면</option>
+            <option value='은하면'>은하면</option>
+            <option value='장곡면'>장곡면</option>
+            <option value='홍동면'>홍동면</option>
+            <option value='홍북읍'>홍북읍</option>
+            <option value='홍성읍'>홍성읍</option>
+        `;
+    }else if (citySelect.value=== '전라북도' && districtSelect.value === '고창군') {
+        addressselect.innerHTML = `
+            <option value='고수면'>고수면</option>
+            <option value='고창읍'>고창읍</option>
+            <option value='공음면'>공음면</option>
+            <option value='대산면'>대산면</option>
+            <option value='무장면'>무장면</option>
+            <option value='부안면'>부안면</option>
+            <option value='상하면'>상하면</option>
+            <option value='성내면'>성내면</option>
+            <option value='성송면'>성송면</option>
+            <option value='신림면'>신림면</option>
+            <option value='심원면'>심원면</option>
+            <option value='아산면'>아산면</option>
+            <option value='해리면'>해리면</option>
+            <option value='흥덕면'>흥덕면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '군산시') {
+        addressselect.innerHTML = `
+            <option value='개복동'>개복동</option>
+            <option value='개사동'>개사동</option>
+            <option value='개정동'>개정동</option>
+            <option value='개정면'>개정면</option>
+            <option value='경암동'>경암동</option>
+            <option value='경장동'>경장동</option>
+            <option value='구암동'>구암동</option>
+            <option value='금광동'>금광동</option>
+            <option value='금동'>금동</option>
+            <option value='금암동'>금암동</option>
+            <option value='나운동'>나운동</option>
+            <option value='나포면'>나포면</option>
+            <option value='내초동'>내초동</option>
+            <option value='내흥동'>내흥동</option>
+            <option value='대명동'>대명동</option>
+            <option value='대야면'>대야면</option>
+            <option value='동흥남동'>동흥남동</option>
+            <option value='둔율동'>둔율동</option>
+            <option value='명산동'>명산동</option>
+            <option value='문화동'>문화동</option>
+            <option value='미룡동'>미룡동</option>
+            <option value='미원동'>미원동</option>
+            <option value='미장동'>미장동</option>
+            <option value='비응도동'>비응도동</option>
+            <option value='사정동'>사정동</option>
+            <option value='산북동'>산북동</option>
+            <option value='삼학동'>삼학동</option>
+            <option value='서수면'>서수면</option>
+            <option value='서흥남동'>서흥남동</option>
+            <option value='선양동'>선양동</option>
+            <option value='성산면'>성산면</option>
+            <option value='소룡동'>소룡동</option>
+            <option value='송창동'>송창동</option>
+            <option value='송풍동'>송풍동</option>
+            <option value='수송동'>수송동</option>
+            <option value='신관동'>신관동</option>
+            <option value='신영동'>신영동</option>
+            <option value='신창동'>신창동</option>
+            <option value='신풍동'>신풍동</option>
+            <option value='신흥동'>신흥동</option>
+            <option value='영동'>영동</option>
+            <option value='영화동'>영화동</option>
+            <option value='오룡동'>오룡동</option>
+            <option value='오식도동'>오식도동</option>
+            <option value='옥구읍'>옥구읍</option>
+            <option value='옥도면'>옥도면</option>
+            <option value='옥산면'>옥산면</option>
+            <option value='옥서면'>옥서면</option>
+            <option value='월명동'>월명동</option>
+            <option value='임피면'>임피면</option>
+            <option value='장미동'>장미동</option>
+            <option value='장재동'>장재동</option>
+            <option value='조촌동'>조촌동</option>
+            <option value='죽성동'>죽성동</option>
+            <option value='중동'>중동</option>
+            <option value='중앙로1가'>중앙로1가</option>
+            <option value='중앙로2가'>중앙로2가</option>
+            <option value='중앙로3가'>중앙로3가</option>
+            <option value='지곡동'>지곡동</option>
+            <option value='창성동'>창성동</option>
+            <option value='평화동'>평화동</option>
+            <option value='해망동'>해망동</option>
+            <option value='회현면'>회현면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '김제시') {
+        addressselect.innerHTML = `
+            <option value='갈공동'>갈공동</option>
+            <option value='검산동'>검산동</option>
+            <option value='광활면'>광활면</option>
+            <option value='교동'>교동</option>
+            <option value='금구면'>금구면</option>
+            <option value='금산면'>금산면</option>
+            <option value='난봉동'>난봉동</option>
+            <option value='도장동'>도장동</option>
+            <option value='만경읍'>만경읍</option>
+            <option value='명덕동'>명덕동</option>
+            <option value='백구면'>백구면</option>
+            <option value='백산면'>백산면</option>
+            <option value='백학동'>백학동</option>
+            <option value='복죽동'>복죽동</option>
+            <option value='봉남면'>봉남면</option>
+            <option value='부량면'>부량면</option>
+            <option value='상동동'>상동동</option>
+            <option value='서암동'>서암동</option>
+            <option value='서정동'>서정동</option>
+            <option value='성덕면'>성덕면</option>
+            <option value='순동'>순동</option>
+            <option value='신곡동'>신곡동</option>
+            <option value='신덕동'>신덕동</option>
+            <option value='신월동'>신월동</option>
+            <option value='양전동'>양전동</option>
+            <option value='연정동'>연정동</option>
+            <option value='오정동'>오정동</option>
+            <option value='옥산동'>옥산동</option>
+            <option value='요촌동'>요촌동</option>
+            <option value='용동'>용동</option>
+            <option value='용지면'>용지면</option>
+            <option value='월봉동'>월봉동</option>
+            <option value='월성동'>월성동</option>
+            <option value='입석동'>입석동</option>
+            <option value='장화동'>장화동</option>
+            <option value='제월동'>제월동</option>
+            <option value='죽산면'>죽산면</option>
+            <option value='진봉면'>진봉면</option>
+            <option value='청하면'>청하면</option>
+            <option value='하동'>하동</option>
+            <option value='황산동'>황산동</option>
+            <option value='황산면'>황산면</option>
+            <option value='흥사동'>흥사동</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '남원시') {
+        addressselect.innerHTML = `
+            <option value='갈치동'>갈치동</option>
+            <option value='고죽동'>고죽동</option>
+            <option value='광치동'>광치동</option>
+            <option value='금지면'>금지면</option>
+            <option value='내척동'>내척동</option>
+            <option value='노암동'>노암동</option>
+            <option value='대강면'>대강면</option>
+            <option value='덕과면'>덕과면</option>
+            <option value='도통동'>도통동</option>
+            <option value='동충동'>동충동</option>
+            <option value='보절면'>보절면</option>
+            <option value='사매면'>사매면</option>
+            <option value='산곡동'>산곡동</option>
+            <option value='산내면'>산내면</option>
+            <option value='산동면'>산동면</option>
+            <option value='송동면'>송동면</option>
+            <option value='수지면'>수지면</option>
+            <option value='식정동'>식정동</option>
+            <option value='신정동'>신정동</option>
+            <option value='쌍교동'>쌍교동</option>
+            <option value='아영면'>아영면</option>
+            <option value='어현동'>어현동</option>
+            <option value='왕정동'>왕정동</option>
+            <option value='운주면'>운주면</option>
+            <option value='월락동'>월락동</option>
+            <option value='이백면'>이백면</option>
+            <option value='인월면'>인월면</option>
+            <option value='조산동'>조산동</option>
+            <option value='주생면'>주생면</option>
+            <option value='주천면'>주천면</option>
+            <option value='죽항동'>죽항동</option>
+            <option value='천거동'>천거동</option>
+            <option value='하정동'>하정동</option>
+            <option value='향교동'>향교동</option>
+            <option value='화정동'>화정동</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '무주군') {
+        addressselect.innerHTML = `
+            <option value='무주읍'>무주읍</option>
+            <option value='무풍면'>무풍면</option>
+            <option value='부남면'>부남면</option>
+            <option value='설천면'>설천면</option>
+            <option value='안성면'>안성면</option>
+            <option value='적상면'>적상면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '부안군') {
+        addressselect.innerHTML = `
+            <option value='계화면'>계화면</option>
+            <option value='동진면'>동진면</option>
+            <option value='변산면'>변산면</option>
+            <option value='보안면'>보안면</option>
+            <option value='부안읍'>부안읍</option>
+            <option value='상서면'>상서면</option>
+            <option value='위도면'>위도면</option>
+            <option value='주산면'>주산면</option>
+            <option value='줄포면'>줄포면</option>
+            <option value='진서면'>진서면</option>
+            <option value='하서면'>하서면</option>
+            <option value='행안면'>행안면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '순창군') {
+        addressselect.innerHTML = `
+            <option value='구림면'>구림면</option>
+            <option value='금과면'>금과면</option>
+            <option value='동계면'>동계면</option>
+            <option value='복흥면'>복흥면</option>
+            <option value='순창읍'>순창읍</option>
+            <option value='쌍치면'>쌍치면</option>
+            <option value='유등면'>유등면</option>
+            <option value='인계면'>인계면</option>
+            <option value='적성면'>적성면</option>
+            <option value='팔덕면'>팔덕면</option>
+            <option value='풍산면'>풍산면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '완주군') {
+        addressselect.innerHTML = `
+            <option value='경천면'>경천면</option>
+            <option value='고산면'>고산면</option>
+            <option value='구이면'>구이면</option>
+            <option value='동상면'>동상면</option>
+            <option value='봉동읍'>봉동읍</option>
+            <option value='비봉면'>비봉면</option>
+            <option value='삼례읍'>삼례읍</option>
+            <option value='상관면'>상관면</option>
+            <option value='소양면'>소양면</option>
+            <option value='용진읍'>용진읍</option>
+            <option value='운주면'>운주면</option>
+            <option value='이서면'>이서면</option>
+            <option value='화산면'>화산면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '익산시') {
+        addressselect.innerHTML = `
+            <option value='갈산동'>갈산동</option>
+            <option value='금강동'>금강동</option>
+            <option value='금마면'>금마면</option>
+            <option value='남중동'>남중동</option>
+            <option value='낭산면'>낭산면</option>
+            <option value='덕기동'>덕기동</option>
+            <option value='동산동'>동산동</option>
+            <option value='마동'>마동</option>
+            <option value='만석동'>만석동</option>
+            <option value='망성면'>망성면</option>
+            <option value='모현동1가'>모현동1가</option>
+            <option value='모현동2가'>모현동2가</option>
+            <option value='목천동'>목천동</option>
+            <option value='부송동'>부송동</option>
+            <option value='삼기면'>삼기면</option>
+            <option value='석암동'>석암동</option>
+            <option value='석왕동'>석왕동</option>
+            <option value='석탄동'>석탄동</option>
+            <option value='성당면'>성당면</option>
+            <option value='송학동'>송학동</option>
+            <option value='신동'>신동</option>
+            <option value='신용동'>신용동</option>
+            <option value='신창동'>신창동</option>
+            <option value='어양동'>어양동</option>
+            <option value='여산면'>여산면</option>
+            <option value='영등동'>영등동</option>
+            <option value='오산면'>오산면</option>
+            <option value='왕궁면'>왕궁면</option>
+            <option value='용동면'>용동면</option>
+            <option value='용안면'>용안면</option>
+            <option value='용제동'>용제동</option>
+            <option value='웅포면'>웅포면</option>
+            <option value='은기동'>은기동</option>
+            <option value='인화동1가'>인화동1가</option>
+            <option value='인화동2가'>인화동2가</option>
+            <option value='임상동'>임상동</option>
+            <option value='정족동'>정족동</option>
+            <option value='주현동'>주현동</option>
+            <option value='중앙동1가'>중앙동1가</option>
+            <option value='중앙동2가'>중앙동2가</option>
+            <option value='중앙동3가'>중앙동3가</option>
+            <option value='창인동1가'>창인동1가</option>
+            <option value='창인동2가'>창인동2가</option>
+            <option value='춘포면'>춘포면</option>
+            <option value='팔봉동'>팔봉동</option>
+            <option value='함라면'>함라면</option>
+            <option value='함열읍'>함열읍</option>
+            <option value='현영동'>현영동</option>
+            <option value='황등면'>황등면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '임실군') {
+        addressselect.innerHTML = `
+            <option value='강진면'>강진면</option>
+            <option value='관촌면'>관촌면</option>
+            <option value='덕치면'>덕치면</option>
+            <option value='삼계면'>삼계면</option>
+            <option value='성수면'>성수면</option>
+            <option value='신덕면'>신덕면</option>
+            <option value='신평면'>신평면</option>
+            <option value='오수면'>오수면</option>
+            <option value='운암면'>운암면</option>
+            <option value='임실읍'>임실읍</option>
+            <option value='지사면'>지사면</option>
+            <option value='청웅면'>청웅면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '장수군') {
+        addressselect.innerHTML = `
+            <option value='계남면'>계남면</option>
+            <option value='계북면'>계북면</option>
+            <option value='번암면'>번암면</option>
+            <option value='산서면'>산서면</option>
+            <option value='장계면'>장계면</option>
+            <option value='장수읍'>장수읍</option>
+            <option value='천천면'>천천면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '정읍시') {
+        addressselect.innerHTML = `
+            <option value='감곡면'>감곡면</option>
+            <option value='고부면'>고부면</option>
+            <option value='공평동'>공평동</option>
+            <option value='과교동'>과교동</option>
+            <option value='교암동'>교암동</option>
+            <option value='구룡동'>구룡동</option>
+            <option value='금붕동'>금붕동</option>
+            <option value='내장동'>내장동</option>
+            <option value='농소동'>농소동</option>
+            <option value='덕천면'>덕천면</option>
+            <option value='망제동'>망제동</option>
+            <option value='부전동'>부전동</option>
+            <option value='북면'>북면</option>
+            <option value='산내면'>산내면</option>
+            <option value='산외면'>산외면</option>
+            <option value='삼산동'>삼산동</option>
+            <option value='상동'>상동</option>
+            <option value='상평동'>상평동</option>
+            <option value='소성면'>소성면</option>
+            <option value='송산동'>송산동</option>
+            <option value='수성동'>수성동</option>
+            <option value='시기동'>시기동</option>
+            <option value='신월동'>신월동</option>
+            <option value='신정동'>신정동</option>
+            <option value='신태인읍'>신태인읍</option>
+            <option value='쌍암동'>쌍암동</option>
+            <option value='연지동'>연지동</option>
+            <option value='영원면'>영원면</option>
+            <option value='영파동'>영파동</option>
+            <option value='옹동면'>옹동면</option>
+            <option value='용계동'>용계동</option>
+            <option value='용산동'>용산동</option>
+            <option value='이평면'>이평면</option>
+            <option value='입암면'>입암면</option>
+            <option value='장명동'>장명동</option>
+            <option value='정우면'>정우면</option>
+            <option value='진산동'>진산동</option>
+            <option value='칠보면'>칠보면</option>
+            <option value='태인면'>태인면</option>
+            <option value='하모동'>하모동</option>
+            <option value='하북동'>하북동</option>
+            <option value='흑암동'>흑암동</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '진안군') {
+        addressselect.innerHTML = `
+            <option value='동향면'>동향면</option>
+            <option value='마령면'>마령면</option>
+            <option value='백운면'>백운면</option>
+            <option value='부귀면'>부귀면</option>
+            <option value='상전면'>상전면</option>
+            <option value='안천면'>안천면</option>
+            <option value='용담면'>용담면</option>
+            <option value='정천면'>정천면</option>
+            <option value='주천면'>주천면</option>
+            <option value='진안읍'>진안읍</option>
+        `;
+    }else if (citySelect.value=== '전라북도' && districtSelect.value === '전주시 덕진구') {
+        addressselect.innerHTML = `
+            <option value='강흥동'>강흥동</option>
+            <option value='고랑동'>고랑동</option>
+            <option value='금상동'>금상동</option>
+            <option value='금암동'>금암동</option>
+            <option value='남정동'>남정동</option>
+            <option value='덕진동1가'>덕진동1가</option>
+            <option value='덕진동2가'>덕진동2가</option>
+            <option value='도덕동'>도덕동</option>
+            <option value='도도동'>도도동</option>
+            <option value='만성동'>만성동</option>
+            <option value='반월동'>반월동</option>
+            <option value='산정동'>산정동</option>
+            <option value='성덕동'>성덕동</option>
+            <option value='송천동1가'>송천동1가</option>
+            <option value='송천동2가'>송천동2가</option>
+            <option value='여의동'>여의동</option>
+            <option value='여의동2가'>여의동2가</option>
+            <option value='용정동'>용정동</option>
+            <option value='우아동1가'>우아동1가</option>
+            <option value='우아동2가'>우아동2가</option>
+            <option value='우아동3가'>우아동3가</option>
+            <option value='원동'>원동</option>
+            <option value='인후동1가'>인후동1가</option>
+            <option value='인후동2가'>인후동2가</option>
+            <option value='장동'>장동</option>
+            <option value='전미동1가'>전미동1가</option>
+            <option value='전미동2가'>전미동2가</option>
+            <option value='중동'>중동</option>
+            <option value='진북동'>진북동</option>
+            <option value='팔복동1가'>팔복동1가</option>
+            <option value='팔복동2가'>팔복동2가</option>
+            <option value='팔복동3가'>팔복동3가</option>
+            <option value='팔복동4가'>팔복동4가</option>
+            <option value='호성동1가'>호성동1가</option>
+            <option value='호성동2가'>호성동2가</option>
+            <option value='호성동3가'>호성동3가</option>
+            <option value='화전동'>화전동</option>
+        `;
+    }
+    else if (citySelect.value=== '전라북도' && districtSelect.value === '전주시 완산구') {
+        addressselect.innerHTML = `
+            <option value='경원동1가'>경원동1가</option>
+            <option value='경원동2가'>경원동2가</option>
+            <option value='경원동3가'>경원동3가</option>
+            <option value='고사동'>고사동</option>
+            <option value='교동'>교동</option>
+            <option value='남노송동'>남노송동</option>
+            <option value='다가동1가'>다가동1가</option>
+            <option value='다가동2가'>다가동2가</option>
+            <option value='다가동3가'>다가동3가</option>
+            <option value='다가동4가'>다가동4가</option>
+            <option value='대성동'>대성동</option>
+            <option value='동서학동'>동서학동</option>
+            <option value='동완산동'>동완산동</option>
+            <option value='삼천동1가'>삼천동1가</option>
+            <option value='삼천동2가'>삼천동2가</option>
+            <option value='삼천동3가'>삼천동3가</option>
+            <option value='상림동'>상림동</option>
+            <option value='색장동'>색장동</option>
+            <option value='서노송동'>서노송동</option>
+            <option value='서서학동'>서서학동</option>
+            <option value='서신동'>서신동</option>
+            <option value='서완산동1가'>서완산동1가</option>
+            <option value='서완산동2가'>서완산동2가</option>
+            <option value='석구동'>석구동</option>
+            <option value='용복동'>용복동</option>
+            <option value='원당동'>원당동</option>
+            <option value='전동'>전동</option>
+            <option value='전동3가'>전동3가</option>
+            <option value='중노송동'>중노송동</option>
+            <option value='중앙동1가'>중앙동1가</option>
+            <option value='중앙동2가'>중앙동2가</option>
+            <option value='중앙동3가'>중앙동3가</option>
+            <option value='중앙동4가'>중앙동4가</option>
+            <option value='중인동'>중인동</option>
+            <option value='중화산동1가'>중화산동1가</option>
+            <option value='중화산동2가'>중화산동2가</option>
+            <option value='태평동'>태평동</option>
+            <option value='평화동1가'>평화동1가</option>
+            <option value='평화동2가'>평화동2가</option>
+            <option value='평화동3가'>평화동3가</option>
+            <option value='풍남동1가'>풍남동1가</option>
+            <option value='풍남동2가'>풍남동2가</option>
+            <option value='풍남동3가'>풍남동3가</option>
+            <option value='효자동1가'>효자동1가</option>
+            <option value='효자동2가'>효자동2가</option>
+            <option value='효자동3가'>효자동3가</option>
+        `;
+    }else if (citySelect.value=== '전라남도' && districtSelect.value === '강진군') {
+        addressselect.innerHTML = `
+            <option value='강진읍'>강진읍</option>
+            <option value='군동면'>군동면</option>
+            <option value='대구면'>대구면</option>
+            <option value='마량면'>마량면</option>
+            <option value='병영면'>병영면</option>
+            <option value='성전면'>성전면</option>
+            <option value='신전면'>신전면</option>
+            <option value='옴천면'>옴천면</option>
+            <option value='작천면'>작천면</option>
+            <option value='칠량면'>칠량면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '고흥군') {
+        addressselect.innerHTML = `
+            <option value='고흥읍'>고흥읍</option>
+            <option value='과역면'>과역면</option>
+            <option value='금산면'>금산면</option>
+            <option value='남양면'>남양면</option>
+            <option value='대서면'>대서면</option>
+            <option value='도덕면'>도덕면</option>
+            <option value='도양읍'>도양읍</option>
+            <option value='도화면'>도화면</option>
+            <option value='동일면'>동일면</option>
+            <option value='두원면'>두원면</option>
+            <option value='봉래면'>봉래면</option>
+            <option value='영남면'>영남면</option>
+            <option value='점암면'>점암면</option>
+            <option value='포두면'>포두면</option>
+            <option value='풍양면'>풍양면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '곡성군') {
+        addressselect.innerHTML = `
+            <option value='겸면'>겸면</option>
+            <option value='고달면'>고달면</option>
+            <option value='곡성읍'>곡성읍</option>
+            <option value='목사동면'>목사동면</option>
+            <option value='삼기면'>삼기면</option>
+            <option value='석곡면'>석곡면</option>
+            <option value='오곡면'>오곡면</option>
+            <option value='오산면'>오산면</option>
+            <option value='옥과면'>옥과면</option>
+            <option value='입면'>입면</option>
+            <option value='죽곡면'>죽곡면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '광양시') {
+        addressselect.innerHTML = `
+            <option value='광양읍'>광양읍</option>
+            <option value='광영동'>광영동</option>
+            <option value='금호동'>금호동</option>
+            <option value='다압면'>다압면</option>
+            <option value='도이동'>도이동</option>
+            <option value='마동'>마동</option>
+            <option value='봉강면'>봉강면</option>
+            <option value='성황동'>성황동</option>
+            <option value='옥곡면'>옥곡면</option>
+            <option value='옥룡면'>옥룡면</option>
+            <option value='중군동'>중군동</option>
+            <option value='중동'>중동</option>
+            <option value='진상면'>진상면</option>
+            <option value='진월면'>진월면</option>
+            <option value='태인동'>태인동</option>
+            <option value='황금동'>황금동</option>
+            <option value='황길동'>황길동</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '구례군') {
+        addressselect.innerHTML = `
+            <option value='간전면'>간전면</option>
+            <option value='광의면'>광의면</option>
+            <option value='구례읍'>구례읍</option>
+            <option value='마산면'>마산면</option>
+            <option value='문척면'>문척면</option>
+            <option value='산동면'>산동면</option>
+            <option value='용방면'>용방면</option>
+            <option value='토지면'>토지면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '나주시') {
+        addressselect.innerHTML = `
+            <option value='경현동'>경현동</option>
+            <option value='공산면'>공산면</option>
+            <option value='과원동'>과원동</option>
+            <option value='관정동'>관정동</option>
+            <option value='금계동'>금계동</option>
+            <option value='금성동'>금성동</option>
+            <option value='금천면'>금천면</option>
+            <option value='남외동'>남외동</option>
+            <option value='남평읍'>남평읍</option>
+            <option value='노안면'>노안면</option>
+            <option value='다도면'>다도면</option>
+            <option value='다시면'>다시면</option>
+            <option value='대기동'>대기동</option>
+            <option value='대호동'>대호동</option>
+            <option value='동강면'>동강면</option>
+            <option value='동수동'>동수동</option>
+            <option value='문평면'>문평면</option>
+            <option value='반남면'>반남면</option>
+            <option value='보산동'>보산동</option>
+            <option value='봉황면'>봉황면</option>
+            <option value='부덕동'>부덕동</option>
+            <option value='빛가람동'>빛가람동</option>
+            <option value='산포면'>산포면</option>
+            <option value='삼도동'>삼도동</option>
+            <option value='삼영동'>삼영동</option>
+            <option value='서내동'>서내동</option>
+            <option value='성북동'>성북동</option>
+            <option value='세지면'>세지면</option>
+            <option value='송월동'>송월동</option>
+            <option value='송촌동'>송촌동</option>
+            <option value='안창동'>안창동</option>
+            <option value='영산동'>영산동</option>
+            <option value='오량동'>오량동</option>
+            <option value='왕곡면'>왕곡면</option>
+            <option value='용산동'>용산동</option>
+            <option value='운곡동'>운곡동</option>
+            <option value='이창동'>이창동</option>
+            <option value='죽림동'>죽림동</option>
+            <option value='진포동'>진포동</option>
+            <option value='청동'>청동</option>
+            <option value='토계동'>토계동</option>
+            <option value='평산동'>평산동</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '담양군') {
+        addressselect.innerHTML = `
+            <option value='가사문학면'>가사문학면</option>
+            <option value='고서면'>고서면</option>
+            <option value='금성면'>금성면</option>
+            <option value='담양읍'>담양읍</option>
+            <option value='대덕면'>대덕면</option>
+            <option value='대전면'>대전면</option>
+            <option value='무정면'>무정면</option>
+            <option value='봉산면'>봉산면</option>
+            <option value='수북면'>수북면</option>
+            <option value='용면'>용면</option>
+            <option value='월산면'>월산면</option>
+            <option value='창평면'>창평면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '목포시') {
+        addressselect.innerHTML = `
+            <option value='경동1가'>경동1가</option>
+            <option value='경동2가'>경동2가</option>
+            <option value='광동1가'>광동1가</option>
+            <option value='광동2가'>광동2가</option>
+            <option value='광동3가'>광동3가</option>
+            <option value='금동1가'>금동1가</option>
+            <option value='금동2가'>금동2가</option>
+            <option value='금화동'>금화동</option>
+            <option value='남교동'>남교동</option>
+            <option value='달동'>달동</option>
+            <option value='대성동'>대성동</option>
+            <option value='대안동'>대안동</option>
+            <option value='대양동'>대양동</option>
+            <option value='대의동1가'>대의동1가</option>
+            <option value='대의동2가'>대의동2가</option>
+            <option value='대의동3가'>대의동3가</option>
+            <option value='동명동'>동명동</option>
+            <option value='만호동'>만호동</option>
+            <option value='명륜동'>명륜동</option>
+            <option value='무안동'>무안동</option>
+            <option value='보광동1가'>보광동1가</option>
+            <option value='보광동2가'>보광동2가</option>
+            <option value='보광동3가'>보광동3가</option>
+            <option value='복만동'>복만동</option>
+            <option value='북교동'>북교동</option>
+            <option value='산정동'>산정동</option>
+            <option value='상동'>상동</option>
+            <option value='상락동1가'>상락동1가</option>
+            <option value='상락동2가'>상락동2가</option>
+            <option value='서산동'>서산동</option>
+            <option value='석현동'>석현동</option>
+            <option value='수강동1가'>수강동1가</option>
+            <option value='수강동2가'>수강동2가</option>
+            <option value='양동'>양동</option>
+            <option value='연산동'>연산동</option>
+            <option value='영해동1가'>영해동1가</option>
+            <option value='영해동2가'>영해동2가</option>
+            <option value='옥암동'>옥암동</option>
+            <option value='온금동'>온금동</option>
+            <option value='용당동'>용당동</option>
+            <option value='용해동'>용해동</option>
+            <option value='유달동'>유달동</option>
+            <option value='유동'>유동</option>
+            <option value='율도동'>율도동</option>
+            <option value='죽교동'>죽교동</option>
+            <option value='죽동'>죽동</option>
+            <option value='중동1가'>중동1가</option>
+            <option value='중동2가'>중동2가</option>
+            <option value='중앙동1가'>중앙동1가</option>
+            <option value='중앙동2가'>중앙동2가</option>
+            <option value='중앙동3가'>중앙동3가</option>
+            <option value='창평동'>창평동</option>
+            <option value='축복동1가'>축복동1가</option>
+            <option value='축복동2가'>축복동2가</option>
+            <option value='축복동3가'>축복동3가</option>
+            <option value='측후동'>측후동</option>
+            <option value='항동'>항동</option>
+            <option value='해안동1가'>해안동1가</option>
+            <option value='해안동2가'>해안동2가</option>
+            <option value='해안동3가'>해안동3가</option>
+            <option value='해안동4가'>해안동4가</option>
+            <option value='행복동1가'>행복동1가</option>
+            <option value='행복동2가'>행복동2가</option>
+            <option value='호남동'>호남동</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '무안군') {
+        addressselect.innerHTML = `
+            <option value='망운면'>망운면</option>
+            <option value='몽탄면'>몽탄면</option>
+            <option value='무안읍'>무안읍</option>
+            <option value='삼향읍'>삼향읍</option>
+            <option value='운남면'>운남면</option>
+            <option value='일로읍'>일로읍</option>
+            <option value='청계면'>청계면</option>
+            <option value='해제면'>해제면</option>
+            <option value='현경면'>현경면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '보성군') {
+        addressselect.innerHTML = `
+            <option value='겸백면'>겸백면</option>
+            <option value='노동면'>노동면</option>
+            <option value='득량면'>득량면</option>
+            <option value='문덕면'>문덕면</option>
+            <option value='미력면'>미력면</option>
+            <option value='벌교읍'>벌교읍</option>
+            <option value='보성읍'>보성읍</option>
+            <option value='복내면'>복내면</option>
+            <option value='웅치면'>웅치면</option>
+            <option value='율어면'>율어면</option>
+            <option value='조성면'>조성면</option>
+            <option value='회천면'>회천면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '순천시') {
+        addressselect.innerHTML = `
+            <option value='가곡동'>가곡동</option>
+            <option value='교량동'>교량동</option>
+            <option value='금곡동'>금곡동</option>
+            <option value='낙안면'>낙안면</option>
+            <option value='남내동'>남내동</option>
+            <option value='남정동'>남정동</option>
+            <option value='대대동'>대대동</option>
+            <option value='대룡동'>대룡동</option>
+            <option value='덕암동'>덕암동</option>
+            <option value='덕월동'>덕월동</option>
+            <option value='동외동'>동외동</option>
+            <option value='매곡동'>매곡동</option>
+            <option value='별량면'>별량면</option>
+            <option value='삼거동'>삼거동</option>
+            <option value='상사면'>상사면</option>
+            <option value='생목동'>생목동</option>
+            <option value='서면'>서면</option>
+            <option value='송광면'>송광면</option>
+            <option value='승주읍'>승주읍</option>
+            <option value='안풍동'>안풍동</option>
+            <option value='야흥동'>야흥동</option>
+            <option value='연향동'>연향동</option>
+            <option value='영동'>영동</option>
+            <option value='옥천동'>옥천동</option>
+            <option value='와룡동'>와룡동</option>
+            <option value='왕지동'>왕지동</option>
+            <option value='외서면'>외서면</option>
+            <option value='월등면'>월등면</option>
+            <option value='인월동'>인월동</option>
+            <option value='인제동'>인제동</option>
+            <option value='장천동'>장천동</option>
+            <option value='저전동'>저전동</option>
+            <option value='조곡동'>조곡동</option>
+            <option value='조례동'>조례동</option>
+            <option value='주암면'>주암면</option>
+            <option value='풍덕동'>풍덕동</option>
+            <option value='해룡면'>해룡면</option>
+            <option value='행동'>행동</option>
+            <option value='홍내동'>홍내동</option>
+            <option value='황전면'>황전면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '신안군') {
+        addressselect.innerHTML = `
+            <option value='도초면'>도초면</option>
+            <option value='비금면'>비금면</option>
+            <option value='신의면'>신의면</option>
+            <option value='안좌면'>안좌면</option>
+            <option value='암태면'>암태면</option>
+            <option value='압해읍'>압해읍</option>
+            <option value='임자면'>임자면</option>
+            <option value='자은면'>자은면</option>
+            <option value='장산면'>장산면</option>
+            <option value='증도면'>증도면</option>
+            <option value='지도읍'>지도읍</option>
+            <option value='팔금면'>팔금면</option>
+            <option value='하의면'>하의면</option>
+            <option value='흑산면'>흑산면</option>
+        `;
+    }else if (citySelect.value=== '전라남도' && districtSelect.value === '여수시') {
+        addressselect.innerHTML = `
+            <option value='경호동'>경호동</option>
+            <option value='고소동'>고소동</option>
+            <option value='공화동'>공화동</option>
+            <option value='관문동'>관문동</option>
+            <option value='광무동'>광무동</option>
+            <option value='교동'>교동</option>
+            <option value='국동'>국동</option>
+            <option value='군자동'>군자동</option>
+            <option value='낙포동'>낙포동</option>
+            <option value='남면'>남면</option>
+            <option value='남산동'>남산동</option>
+            <option value='덕충동'>덕충동</option>
+            <option value='돌산읍'>돌산읍</option>
+            <option value='동산동'>동산동</option>
+            <option value='둔덕동'>둔덕동</option>
+            <option value='만흥동'>만흥동</option>
+            <option value='묘도동'>묘도동</option>
+            <option value='문수동'>문수동</option>
+            <option value='미평동'>미평동</option>
+            <option value='봉강동'>봉강동</option>
+            <option value='봉계동'>봉계동</option>
+            <option value='봉산동'>봉산동</option>
+            <option value='삼산면'>삼산면</option>
+            <option value='상암동'>상암동</option>
+            <option value='서교동'>서교동</option>
+            <option value='선원동'>선원동</option>
+            <option value='소라면'>소라면</option>
+            <option value='소호동'>소호동</option>
+            <option value='수정동'>수정동</option>
+            <option value='시전동'>시전동</option>
+            <option value='신기동'>신기동</option>
+            <option value='신덕동'>신덕동</option>
+            <option value='신월동'>신월동</option>
+            <option value='안산동'>안산동</option>
+            <option value='여서동'>여서동</option>
+            <option value='여천동'>여천동</option>
+            <option value='연등동'>연등동</option>
+            <option value='오림동'>오림동</option>
+            <option value='오천동'>오천동</option>
+            <option value='웅천동'>웅천동</option>
+            <option value='월내동'>월내동</option>
+            <option value='월하동'>월하동</option>
+            <option value='율촌면'>율촌면</option>
+            <option value='적량동'>적량동</option>
+            <option value='종화동'>종화동</option>
+            <option value='주삼동'>주삼동</option>
+            <option value='중앙동'>중앙동</option>
+            <option value='중흥동'>중흥동</option>
+            <option value='충무동'>충무동</option>
+            <option value='평여동'>평여동</option>
+            <option value='학동'>학동</option>
+            <option value='학용동'>학용동</option>
+            <option value='해산동'>해산동</option>
+            <option value='호명동'>호명동</option>
+            <option value='화양면'>화양면</option>
+            <option value='화장동'>화장동</option>
+            <option value='화정면'>화정면</option>
+            <option value='화치동'>화치동</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '영광군') {
+        addressselect.innerHTML = `
+            <option value='군남면'>군남면</option>
+            <option value='낙월면'>낙월면</option>
+            <option value='대마면'>대마면</option>
+            <option value='묘량면'>묘량면</option>
+            <option value='백수읍'>백수읍</option>
+            <option value='법성면'>법성면</option>
+            <option value='불갑면'>불갑면</option>
+            <option value='염산면'>염산면</option>
+            <option value='영광읍'>영광읍</option>
+            <option value='홍농읍'>홍농읍</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '영암군') {
+        addressselect.innerHTML = `
+            <option value='군서면'>군서면</option>
+            <option value='금정면'>금정면</option>
+            <option value='덕진면'>덕진면</option>
+            <option value='도포면'>도포면</option>
+            <option value='미암면'>미암면</option>
+            <option value='삼호읍'>삼호읍</option>
+            <option value='서호면'>서호면</option>
+            <option value='시종면'>시종면</option>
+            <option value='신북면'>신북면</option>
+            <option value='영암읍'>영암읍</option>
+            <option value='학산면'>학산면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '완도군') {
+        addressselect.innerHTML = `
+            <option value='고금면'>고금면</option>
+            <option value='군외면'>군외면</option>
+            <option value='금당면'>금당면</option>
+            <option value='금일읍'>금일읍</option>
+            <option value='노화읍'>노화읍</option>
+            <option value='보길면'>보길면</option>
+            <option value='생일면'>생일면</option>
+            <option value='소안면'>소안면</option>
+            <option value='신지면'>신지면</option>
+            <option value='약산면'>약산면</option>
+            <option value='완도읍'>완도읍</option>
+            <option value='청산면'>청산면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '장성군') {
+        addressselect.innerHTML = `
+            <option value='동화면'>동화면</option>
+            <option value='북이면'>북이면</option>
+            <option value='북하면'>북하면</option>
+            <option value='삼계면'>삼계면</option>
+            <option value='삼서면'>삼서면</option>
+            <option value='서삼면'>서삼면</option>
+            <option value='장성읍'>장성읍</option>
+            <option value='진원면'>진원면</option>
+            <option value='황룡면'>황룡면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '장흥군') {
+        addressselect.innerHTML = `
+            <option value='관산읍'>관산읍</option>
+            <option value='대덕읍'>대덕읍</option>
+            <option value='부산면'>부산면</option>
+            <option value='안양면'>안양면</option>
+            <option value='용산면'>용산면</option>
+            <option value='유치면'>유치면</option>
+            <option value='장동면'>장동면</option>
+            <option value='장평면'>장평면</option>
+            <option value='장흥읍'>장흥읍</option>
+            <option value='회진면'>회진면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '진도군') {
+        addressselect.innerHTML = `
+            <option value='고군면'>고군면</option>
+            <option value='군내면'>군내면</option>
+            <option value='의신면'>의신면</option>
+            <option value='임회면'>임회면</option>
+            <option value='조도면'>조도면</option>
+            <option value='지산면'>지산면</option>
+            <option value='진도읍'>진도읍</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '함평군') {
+        addressselect.innerHTML = `
+            <option value='나산면'>나산면</option>
+            <option value='대동면'>대동면</option>
+            <option value='손불면'>손불면</option>
+            <option value='신광면'>신광면</option>
+            <option value='엄다면'>엄다면</option>
+            <option value='월야면'>월야면</option>
+            <option value='학교면'>학교면</option>
+            <option value='함평읍'>함평읍</option>
+            <option value='해보면'>해보면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '해남군') {
+        addressselect.innerHTML = `
+            <option value='계곡면'>계곡면</option>
+            <option value='문내면'>문내면</option>
+            <option value='북일면'>북일면</option>
+            <option value='북평면'>북평면</option>
+            <option value='산이면'>산이면</option>
+            <option value='송지면'>송지면</option>
+            <option value='옥천면'>옥천면</option>
+            <option value='해남읍'>해남읍</option>
+            <option value='현산면'>현산면</option>
+            <option value='화산면'>화산면</option>
+            <option value='화원면'>화원면</option>
+            <option value='황산면'>황산면</option>
+        `;
+    }
+    else if (citySelect.value=== '전라남도' && districtSelect.value === '화순군') {
+        addressselect.innerHTML = `
+            <option value='능주면'>능주면</option>
+            <option value='도곡면'>도곡면</option>
+            <option value='도암면'>도암면</option>
+            <option value='동면'>동면</option>
+            <option value='동복면'>동복면</option>
+            <option value='백아면'>백아면</option>
+            <option value='사평면'>사평면</option>
+            <option value='이서면'>이서면</option>
+            <option value='이양면'>이양면</option>
+            <option value='청풍면'>청풍면</option>
+            <option value='춘양면'>춘양면</option>
+            <option value='한천면'>한천면</option>
+            <option value='화순읍'>화순읍</option>
         `;
     }
 
