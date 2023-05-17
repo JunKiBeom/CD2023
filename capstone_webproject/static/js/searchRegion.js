@@ -1,6 +1,7 @@
 // "시/도" 선택 시 해당 시의 "시/구/군" 옵션을 동적으로 변경
 const citySelect = document.getElementById("city");
 const districtSelect = document.getElementById("district");
+const addressselect = document.getElementById("address")
 
 citySelect.addEventListener("change", function() {
     const city = citySelect.value;
@@ -32,6 +33,12 @@ citySelect.addEventListener("change", function() {
         <option value="중구">중구</option>
         <option value="중랑구">중랑구</option>
     `;
+        if (districtSelect.value === "강남구") {
+            addressselect.innerHTML = `
+            <option value="개포동">개포동</option>
+            <option value="논현동">논현동</option>
+            `;
+        }
     } else if (city === "대전시") {
         districtSelect.innerHTML = `
         <option value="동구">동구</option>
