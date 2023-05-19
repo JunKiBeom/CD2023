@@ -1,10 +1,67 @@
 import numpy as np
 import pandas as pd
 import re
+import json
+from pandas.io.json import json_normalize
 
 ### csv파일 열기
-df_zig = pd.read_csv('C:/Users/ksc/Desktop/캡스톤 데이터 수집 및 전처리/Sample_zig1.csv', sep = '\\')
-df_nav = pd.read_csv('C:/Users/ksc/Desktop/캡스톤 데이터 수집 및 전처리/sample_naver1.csv', sep = '\\')
+# info_zig = json.loads('jsons/직방_서울시 강남구 대치동.json')
+# info_nav = json.loads('jsons/네이버_서울시 강남구 대치동_원룸.투룸.json')
+
+with open('../jsons/직방_서울시 강남구 대치동.json', encoding='UTF-8') as file_zig:
+    info_zig = json.load(file_zig)
+with open('../jsons/네이버_서울시 강남구 대치동_원룸.투룸.json', encoding='UTF-8') as file_nav:
+    info_nav = json.load(file_nav)
+
+# print(info_nav.keys())
+
+df_zig = pd.json_normalize(info_zig['items'])
+df_nav = pd.json_normalize(info_nav['articleList'])
+print(df_nav.columns)
+
+# df_zig = df_zig[['item_id','service_type','sales_type','floor','building_floor','rent','deposit','공급면적','전용면적','title','url','item_id','reg_date']]
+# df_nav = df_nav[['realEstateTypeName','tradeTypeName','floorInfo','rentPrc','dealOrWarrantPrc','area1','area2','articleFeatureDesctagList','direction','cpPcArticleUrl','articleConfirmYmd']]
+# print(df_zig)
+# print(df_nav)
+
+df_nav['url'] = df_nav['cpPcArticleUrl']
+df_nav['floors'] = df_nav['floorInfo']
+df_nav['reg_date'] = pd.to_datetime(df_nav['articleConfirmYmd']).dt.date
+df_nav['title'] = df_nav['articleFeatureDesc'].str.replace(pat=r'[^\w\s]', repl=r'', regex=True) + df_nav['tagList'].str.replace(pat=r'[^\w\s]', repl=r'', regex=True) + df_nav['direction']
+
+
+df_nav = df_nav[['articleNo', 'realEstateTypeName', 'tradeTypeName', 'floors', 'rentPrc', 'dealOrWarrantPrc',
+                 'area1', 'area2', 'title', 'url', 'reg_date', 'latitude', 'longitude']]
+
+df_nav = df_nav.rename(columns={"rentPrc": "rent_price", "floors": "floor", "area1": "supply_area", "area2": "use_area",
+                                "title": "content", "reg_date": "date"})
+
+print(df_nav.columns.values)
+
+
+model_objects = []
+    for _, row in df_nav.iterrows():
+        model_obj = Product(
+            flag = row['flag'],
+            item_id = row['item_id'],
+            address = row['address'],
+            service_type = row['service_type'],
+            sales_type = row['sales_type'],
+            floor = row['floor'],
+            rent_price = row['rent_price'],
+            deposit = row['deposit'],
+            supply_area = row['supply_area'],
+            use_area = row['use_area'],
+            content = row['content'],
+            url = row['url'],
+            date = row['date'],
+            latitude = row['latitude'],
+            longitude = row['longitude'],
+        )
+        model_objects.append(model_obj)
+
+    # MySQL에 모델 객체 저장
+    Product.objects.bulk_create(model_objects)
 
 
 # 데이터프레임 열 분리
@@ -116,7 +173,7 @@ def calculate_deposit(s):
 df_total['보증금'] = df_total['보증금'].apply(calculate_deposit)
 
 # 결과 출력
-# print(df_total['보증금'])
+print(df_total['보증금'])
 
 
 # 등록날짜(연월일) 추출
@@ -142,7 +199,7 @@ df_total["ppa"] = round(df_total["price_score"] / df_total["전용면적"], 2)
 print(df_total)
 
 # 데이터프레임을 csv파일로 저장
-df_total.to_csv('C:/Users/ksc/Desktop/캡스톤 데이터 수집 및 전처리/estate_dataframe1.csv', encoding='euc-kr', index = None)   # index = None 옵션은 앞에 인덱스(번호) 제거
+# df_total.to_csv('C:/Users/ksc/Desktop/캡스톤 데이터 수집 및 전처리/estate_dataframe1.csv', encoding='euc-kr', index = None)   # index = None 옵션은 앞에 인덱스(번호) 제거
 
 
 
