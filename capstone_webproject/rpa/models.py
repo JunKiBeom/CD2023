@@ -8,7 +8,7 @@ class Product(models.Model):
     # description = models.TextField()
 
     flag = models.CharField(max_length=20)
-    item_id = models.IntegerField()
+    item_id = models.CharField(max_length=15)
     address = models.CharField(max_length=20)
     service_type = models.CharField(max_length=10)
     sales_type = models.CharField(max_length=4)
@@ -19,7 +19,7 @@ class Product(models.Model):
     use_area = models.IntegerField(null=True)
     content = models.TextField(null=True)
     url = models.TextField(null=True)
-    date = models.CharField(max_length=8, null=True)
+    date = models.DateField(null=True)
     latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True)
     longitude = models.DecimalField(max_digits=10, decimal_places=7, null=True)
     gen_date = models.DateField(default = timezone.now)
