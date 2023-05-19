@@ -39,10 +39,15 @@
             <option value="">시/구/군 선택</option>
         </select>
 
+        <label for="address">시/구/군:</label>
+        <select id="address" name="address">
+            <option value="">읍/면/동 선택</option>
+        </select>
+
         <script src="../static/js/searchRegion.js"></script>
 
-        <label for="address">상세 주소:</label>
-        <input type="text" id="address" name="address">
+<!--        <label for="address">상세 주소:</label>-->
+<!--        <input type="text" id="address" name="address">-->
 
         <!--        <input type="submit" value="검색" id="searchBtn" name="searchBtn" onclick="searchBtn()" class="btn_submit">-->
         <button id="searchBtn" onclick="searchBtn()">검색</button>
