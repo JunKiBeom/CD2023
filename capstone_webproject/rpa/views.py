@@ -14,6 +14,11 @@ def home(request):
 def test_home(request):
     return render(request, 'test_home.html')
 
+def djangotest(request):
+    return render(request, 'djangotest.html')
+def skyscanner(request):
+    return render(request, 'skyscanner.html')
+
 
 def product_list(request):
     products = Product.objects.all()
