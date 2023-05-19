@@ -19,9 +19,9 @@ class Product(models.Model):
     use_area = models.IntegerField(null=True)
     content = models.TextField(null=True)
     url = models.TextField(null=True)
-    date = models.CharField(max_length=8)
-    # latitude = models.
-    # longitude = models.
+    date = models.CharField(max_length=8, null=True)
+    latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True)
+    longitude = models.DecimalField(max_digits=10, decimal_places=7, null=True)
     gen_date = models.DateField(default = timezone.now)
 
     class Meta:
