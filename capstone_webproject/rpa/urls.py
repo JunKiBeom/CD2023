@@ -28,6 +28,7 @@ urlpatterns = [
     path('test_home/', views.test_home, name='test_home'),
     path('djangotest/', views.djangotest, name='djangotest'),
     path('skyscanner/', views.skyscanner, name='skyscanner'),
+    path('showlist/', views.showlist, name='showlist'),
     path('products/', views.product_list, name='product_list'),
     path('products/<int:pk>/', views.product_detail, name='product_detail'),
     path('chart/', views.chart, name='chart'),
