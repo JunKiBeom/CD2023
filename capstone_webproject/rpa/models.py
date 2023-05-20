@@ -23,9 +23,11 @@ class Product(models.Model):
     latitude = models.DecimalField(max_digits=9, decimal_places=6, null=True)
     longitude = models.DecimalField(max_digits=10, decimal_places=7, null=True)
     gen_date = models.DateField(default = timezone.now)
+    price_score = models.DecimalField(max_digits=9, decimal_places=2)
+    ppa = models.DecimalField(max_digits=9, decimal_places=2)
 
     class Meta:
         unique_together = ("flag", "item_id")
 
     def __str__(self):
-        return str(self.flag) + str(self.item_id) + str(self.address)
+        return str(self.flag) + ", " + str(self.item_id) + ", " + str(self.address)
