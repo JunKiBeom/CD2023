@@ -60,6 +60,7 @@ def mkdf(url, flag):
     df.to_csv("csv/네이버_" + addr + "_" + tag + ".csv", sep=";", encoding="UTF-8", index=None)
     with open("jsons/네이버_" + addr + "_" + tag + ".json", 'w', encoding="UTF-8") as f:
         json.dump(raw, f, indent=4, ensure_ascii=False)
+    f.close()
 
 
 params = {
