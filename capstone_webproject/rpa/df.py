@@ -27,7 +27,12 @@ def mk_fn():
 def df_zig():
     print("Run ZigBang")
     df_z = pd.read_json(file_zig)
-    df_z = pd.json_normalize(df_z['items'])
+
+    try:
+        df_z = pd.json_normalize(df_z['items'])
+    except KeyError:
+        print("해당 지역에 등록된 매물이 없습니다!")
+        return
 
     df_z['url'] = "https://www.zigbang.com/home/oneroom/items/" + df_z['item_id'].astype(str)
     df_z['floors'] = df_z['floor'] + "/" + df_z['building_floor']
@@ -87,6 +92,8 @@ def df_naver():
 
     df_nav = pd.concat([df_nav1, df_nav2]).drop_duplicates('articleNo').reset_index(drop=True)
 
+    df_nav = df_nav[df_nav.area2 != 0.0].reset_index(drop=True)
+
     df_nav['flag'] = '네이버 부동산'
     df_nav['address'] = addr
     # df_nav['content'] = df_nav['articleFeatureDesc'].astype(str) +" / " + df_n['tagList'].astype(str) +" / " + df_n['direction'].astype(str)
@@ -94,7 +101,7 @@ def df_naver():
     df_nav['url'] = df_nav['cpPcArticleUrl']
     df_nav['floor'] = df_nav['floorInfo']
     df_nav['reg_date'] = pd.to_datetime(df_nav['articleConfirmYmd']).dt.date
-    df_nav['rentPrc'] = df_nav['rentPrc'].fillna(0)
+    df_nav["dealOrWarrantPrc"] = df_nav["dealOrWarrantPrc"].fillna(0)
 
     # '보증금' 열에 계산 함수를 적용합니다.
     df_nav["dealOrWarrantPrc"] = df_nav["dealOrWarrantPrc"].apply(str)
@@ -107,6 +114,7 @@ def df_naver():
     df_nav['content'] = df_nav['content'].str.replace(r'\r\n', '', regex=True)
 
     deposit = df_nav["dealOrWarrantPrc"].apply(float)
+    df_nav["rentPrc"] = df_nav["rentPrc"].str.replace(',', '').fillna(0)
     month = df_nav["rentPrc"].apply(float)
     df_nav.loc[df_nav["tradeTypeName"] == "월세", "price_score"] = deposit + month * 100
     df_nav.loc[df_nav["tradeTypeName"] == "전세", "price_score"] = deposit
@@ -126,6 +134,7 @@ def df_naver():
     return df_nav
 
 def df_to_db(df):
+    print("Df to DB")
     model_objects = []
     for _, row in df.iterrows():
         model_obj = Product(
