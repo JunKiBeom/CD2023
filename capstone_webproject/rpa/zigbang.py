@@ -79,33 +79,34 @@ def zigbang(addr):
         os.mkdir(path2)
     with open("jsons/직방_"+addr+".json", 'w', encoding="UTF-8") as f:
         json.dump(raw, f, indent=4, ensure_ascii=False)
+    f.close()
 
-    try:
-        items = response.json()['items']
-        # print(items)
-    except KeyError:
-        print("해당 지역에 등록된 매물이 없습니다!")
-        return
-
-    '''
-    DataFrame 생성 및 출력
-    '''
-    columns = ["item_id", "sales_type", "service_type", "deposit", "rent", "address1", "manage_cost", "공급면적", "전용면적", "floor", "building_floor", "title", "random_location", "reg_date"]
-    df = pd.DataFrame(items)[columns]
-    df['lat'] = df['random_location'].apply(lambda x: x['lat'])
-    df['lng'] = df['random_location'].apply(lambda x: x['lng'])
-    df = df.drop('random_location', axis=1)
-    df['URL'] = "https://www.zigbang.com/home/oneroom/items/" + df['item_id'].astype(str)
-
-    df = df[df["address1"].str.contains(addr)].reset_index(drop=True)
-    df = df.rename(columns={"address1": "주소", "item_id": "관리번호", "sales_type": "유형", "service_type": "주거타입", "deposit": "보증금", "rent": "월세", "manage_cost": "관리비",
-                            "floor": "해당 층", "building_floor": "전체 층", "title": "특징", "lat": "위도", "lng": "경도", "reg_date": "등록날짜"})
-
-    path1 = "csv"
-    if not os.path.isdir(path1):
-        os.mkdir(path1)
-    df.to_csv("csv/직방_"+addr+".csv", sep=";", encoding="UTF-8", index = None)
-    return df
+    # try:
+    #     items = response.json()['items']
+    #     # print(items)
+    # except KeyError:
+    #     print("해당 지역에 등록된 매물이 없습니다!")
+    #     return
+    #
+    # '''
+    # DataFrame 생성 및 출력
+    # '''
+    # columns = ["item_id", "sales_type", "service_type", "deposit", "rent", "address1", "manage_cost", "공급면적", "전용면적", "floor", "building_floor", "title", "random_location", "reg_date"]
+    # df = pd.DataFrame(items)[columns]
+    # df['lat'] = df['random_location'].apply(lambda x: x['lat'])
+    # df['lng'] = df['random_location'].apply(lambda x: x['lng'])
+    # df = df.drop('random_location', axis=1)
+    # df['URL'] = "https://www.zigbang.com/home/oneroom/items/" + df['item_id'].astype(str)
+    #
+    # df = df[df["address1"].str.contains(addr)].reset_index(drop=True)
+    # df = df.rename(columns={"address1": "주소", "item_id": "관리번호", "sales_type": "유형", "service_type": "주거타입", "deposit": "보증금", "rent": "월세", "manage_cost": "관리비",
+    #                         "floor": "해당 층", "building_floor": "전체 층", "title": "특징", "lat": "위도", "lng": "경도", "reg_date": "등록날짜"})
+    #
+    # path1 = "csv"
+    # if not os.path.isdir(path1):
+    #     os.mkdir(path1)
+    # df.to_csv("csv/직방_"+addr+".csv", sep=";", encoding="UTF-8", index = None)
+    # return df
 
 
 # addr = input("Input : ")

@@ -19,7 +19,8 @@ def djangotest(request):
 def skyscanner(request):
     return render(request, 'skyscanner.html')
 
-
+def showlist(request):
+    return render(request, 'showlist.html')
 def product_list(request):
     products = Product.objects.all()
     return render(request, 'product_list.html', {'products': products})
@@ -52,5 +53,5 @@ def addr_get(request):
     else:
         zigbang.zigbang(result)
         naver2.naver(result)
-    return redirect('/home')
+    return redirect('/showlist')
     # return render(request, 'homealldata.html')
