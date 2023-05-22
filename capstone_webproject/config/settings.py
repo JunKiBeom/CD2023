@@ -87,18 +87,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'rpa',
-        'USER': 'root',
-        'PASSWORD': 'Rlqja@@3179',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
