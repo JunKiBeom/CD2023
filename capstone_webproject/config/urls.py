@@ -15,17 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path, re_path
-from django.views.static import serve
+from django.urls import include, path
 
-from capstone_webproject.config import settings
 
 urlpatterns = [
     path('', include('rpa.urls')),
     path('admin/', admin.site.urls),
 ]
-if settings.DEBUG is False:
-    urlpatterns += [
-        # re_path(r'^{{본인 media_url 값}}/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}), # 나는 uploads
-        re_path(r'^{{static}}/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}) # 나는 static
-    ]
