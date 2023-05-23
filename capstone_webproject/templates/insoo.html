@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>부동산 가격비교</title>
+    <style>
+        /* CSS 스타일을 추가해 주세요 */
+
+body{
+position: absolute;
+width: 1046px;
+height: 1024px;
+left: calc(50% - 1046px/2);
+top: 0px;
+background: rgba(200, 200, 242, 0.3);
+justify-content: center
+}
+
+/*타이틀*/
+h1{
+position: absolute;
+height: 60px;
+left: calc(50% - 399px/2 - 0.5px);
+right: 500px;
+top: 220px;
+
+font-family: 'Actor';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 60px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: capitalize;
+justify-content: center
+color: #000000;
+
+box-sizing: border-box;
+
+position: absolute;
+width: 300px;
+height: 130px;
+left: calc(50% - 399px/2 - 0.5px);
+top: 220px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+border-radius: 10px;
+justify-content: center
+}
+#city{
+/* 시/도/ */
+position: absolute;
+width: 350px;
+height: 45px;
+left: 228px;
+top: 600px;
+
+font-family: 'Actor';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 36px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+box-sizing: border-box;
+
+position: absolute;
+width: 220px;
+height: 45px;
+left: calc(55% - 95px/2 - 444px);
+top: 600px;
+
+border: 1px solid #000000;
+border-radius: 5px;
+justify-content: center
+}
+#district{
+/* 시/구/군 */
+
+position: absolute;
+width: 137px;
+height: 45px;
+left: 481px;
+top: 600px;
+
+font-family: 'Actor';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 36px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+box-sizing: border-box;
+
+position: absolute;
+width: 220px;
+height: 45px;
+left: calc(53% - 150px/2 - 170px);
+top: 600px;
+
+border: 1px solid #000000;
+border-radius: 5px;
+justify-content: center
+}
+#address{
+/* 읍/면/동 */
+
+position: absolute;
+width: 131px;
+height: 43px;
+right: 534px;
+top: 600px;
+
+font-family: 'Actor';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 36px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: capitalize;
+
+color: #000000;
+
+box-sizing: border-box;
+
+position: absolute;
+width: 220px;
+height: 45px;
+left: calc(47% - 158px/2 + 120.5px);
+top: 600px;
+
+border: 1px solid #000000;
+border-radius: 5px;
+justify-content: center
+}
+
+.searchBtn{
+/* 검색 */
+
+background-color: #87CEEB;
+margin: 2px;
+border: none;
+color: black;
+text-align: center;
+text-decoration: none;
+
+position: absolute;
+width: 204px;
+height: 115px;
+left: 950px;
+top: 600px;
+font-family: 'Actor';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+
+box-sizing: border-box;
+border: 1px solid #000000;
+position: absolute;
+width: 131px;
+height: 45px;
+left: calc(73% - 220px/2 + 120.5px);
+top: 598px;
+
+display: inline-block;
+cursor: pointer;
+-webkit-transition-duration: 0.4s;
+transition-duration: 0.4s;
+
+border-radius: 10px;
+justify-content: center
+}
+.btn1:hover{
+background-color: #4169E1;
+color: white;
+}
+
+h2{
+position: absolute;
+height: 60px;
+left: calc(28% - 399px/2 - 0.5px);
+right: 400px;
+top: 520px;
+
+font-family: 'Actor';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 60px;
+display: flex;
+align-items: center;
+text-align: center;
+text-transform: capitalize;
+justify-content: center
+color: white;
+}
+
+.box{
+box-sizing: box;
+position: absolute;
+height: 190px;
+left: calc(20% - 399px/2 - 0.5px);
+right: 70px;
+top: 530px;
+background: #585858;
+border-radius: 10px;
+justify-content: center
+}
+
+    </style>
+</head>
+<body>
+<style>
+    select{ width: 200px; height: 41px; color: #999;
+    border:2px solid #ddd;
+    appearance:none; -webkit-appearance:none;
+    }
+</style>
+<h1>부동산 가격비교</h1>
+<h2 style="color:#FFFFFF;z-index:2;">검색하세요</h2>
+<div class="box">
+
+</div>
+<div id="addressForm">
+    <form action="addrget" method="POST">
+<!--        <label for="city">시/도:</label>-->
+        <select id="city" name="city">
+            <option value="">시/도 선택</option>
+            <option value="서울시">서울특별시</option>
+            <option value="대전시">대전광역시</option>
+            <option value="부산시">부산광역시</option>
+            <option value="인천시">인천광역시</option>
+            <option value="광주시">광주광역시</option>
+            <option value="대구시">대구광역시</option>
+            <option value="울산시">울산광역시</option>
+            <option value="세종시">세종특별자치시</option>
+            <option value="경기도">경기도</option>
+            <option value="강원도">강원도</option>
+            <option value="충청북도">충청북도</option>
+            <option value="충청남도">충청남도</option>
+            <option value="전라북도">전라북도</option>
+            <option value="전라남도">전라남도</option>
+            <option value="경상북도">경상북도</option>
+            <option value="경상남도">경상남도</option>
+            <option value="제주도">제주특별자치도</option>
+            <!-- 다른 시들을 추가해 주세요 -->
+        </select>
+
+<!--        <label for="district">시/구/군:</label>-->
+        <select id="district" name="district">
+            <option value="">시/구/군 선택</option>
+        </select>
+
+<!--        <label for="address">시/구/군:</label>-->
+        <select id="address" name="address">
+            <option value="">읍/면/동 선택</option>
+        </select>
+
+        <script src="../static/js/searchRegion.js"></script>
+
+<!--        <label for="address">상세 주소:</label>-->
+<!--        <input type="text" id="address" name="address">-->
+
+        <!--        <input type="submit" value="검색" id="searchBtn" name="searchBtn" onclick="searchBtn()" class="btn_submit">-->
+        <button class="searchBtn btn1" onclick="searchBtn btn1()">검색</button>
+        <script src="../static/js/searchBtn.js"></script>
+    </form>
+</div>
+
+</body>
+</html>
