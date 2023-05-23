@@ -1,7 +1,9 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from . import naver2, zigbang
+from . import naver2, zigbang, df
+from .models import Product
 
+result = ""  # 주소, 여러 메서드에서 사용 가능하게 전역 선언
 
 def index(request):
     return render(request, 'index.html')
@@ -48,10 +50,10 @@ def addr_get(request):
     # print(f'"{city}", "{district}", "{address}"')
     result = city + " " + district + " " + address
 
-    if city == "" or address == "":
-        pass
-    else:
-        zigbang.zigbang(result)
-        naver2.naver(result)
-    return redirect('/showlist')
+    zigbang.zigbang(result)
+    naver2.naver(result)
+
+    df.df_run(result)
+    return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))
+
     # return render(request, 'homealldata.html')
