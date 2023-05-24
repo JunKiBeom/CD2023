@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
+# 크롤링 데이터 모델
 class Product(models.Model):
     # name = models.CharField(max_length=100)
     # price = models.DecimalField(max_digits=8, decimal_places=2)
@@ -31,3 +32,18 @@ class Product(models.Model):
 
     def __str__(self):
         return str(self.flag) + ", " + str(self.item_id) + ", " + str(self.address)
+
+
+# 실거래가 DB 모델
+class ActualPrice(models.Model):
+    address = models.CharField(max_length=20)
+    service_type = models.CharField(max_length=10, null=True)
+    sales_type = models.CharField(max_length=4)
+    rent_price = models.IntegerField(null=True)
+    deposit = models.BigIntegerField(null=True)
+    use_area = models.IntegerField(null=True)
+    price_score = models.DecimalField(max_digits=9, decimal_places=2)
+    ppa = models.DecimalField(max_digits=9, decimal_places=2)
+
+    def __str__(self):
+        return str(self.address) + ", " + str(self.price_score) + ", " + str(self.ppa)
