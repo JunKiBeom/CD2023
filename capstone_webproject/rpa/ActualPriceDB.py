@@ -1,7 +1,7 @@
 import pandas as pd
 from rpa.models import ActualPrice
 
-file_name = 'ActualPrice.csv'
+file_name = 'rpa/ActualPrice.csv'
 
 df = pd.read_csv(file_name, encoding='UTF-8')
 
