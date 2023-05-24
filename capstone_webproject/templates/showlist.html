@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chart.js Line Chart Example</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    .container {
-      display: flex;
-    }
-    .chart-container {
-      flex: 1;
-      margin-right: 20px;
-    }
-    canvas {
-      width: 100%;
-      height: auto;
-    }
-    .property-list {
-      flex: 1;
-      width: 200px;
-      padding: 10px;
-      background-color: #f2f2f2;
-      font-size: 14px;
-    }
-    .property-item {
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Chart.js Line Chart Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .container {
+            display: flex;
+        }
+        .chart-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+        canvas {
+            width: 100%;
+            height: auto;
+        }
+        .property-list {
+            flex: 1;
+            width: 200px;
+            padding: 10px;
+            background-color: #f2f2f2;
+            font-size: 14px;
+        }
+        .property-item {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -67,8 +68,8 @@
 
         <script src="../static/js/searchRegion.js"></script>
 
-<!--        <label for="address">상세 주소:</label>-->
-<!--        <input type="text" id="address" name="address">-->
+        <!--        <label for="address">상세 주소:</label>-->
+        <!--        <input type="text" id="address" name="address">-->
 
         <!--        <input type="submit" value="검색" id="searchBtn" name="searchBtn" onclick="searchBtn()" class="btn_submit">-->
         <button id="searchBtn" onclick="searchBtn()">검색</button>
@@ -77,77 +78,77 @@
     </form>
 </div>
 
-  <div class="container">
+<div class="container">
     <div class="chart-container">
-      <canvas id="myChart"></canvas>
+        <canvas id="myChart"></canvas>
     </div>
     <div class="property-list">
-      <h2>매물 목록</h2>
-      <ul id="propertyItems">
-        <li class="property-item">매물 1</li>
-        <li class="property-item">매물 2</li>
-        <li class="property-item">매물 3</li>
-        <li class="property-item">매물 4</li>
-        <li class="property-item">매물 5</li>
-      </ul>
+        <h2>매물 목록</h2>
+        <ul id="propertyItems">
+            <li class="property-item">매물 1</li>
+            <li class="property-item">매물 2</li>
+            <li class="property-item">매물 3</li>
+            <li class="property-item">매물 4</li>
+            <li class="property-item">매물 5</li>
+        </ul>
     </div>
-  </div>
+</div>
 
-  <script>
+<script>
     // 차트 데이터
     var data = {
-      labels: ["실거래가 평균", "호가 평균", "현재 매물1"],
-      datasets: [{
-        label: "Sales",
-        data: [],
-        borderColor: "rgba(75, 192, 192, 1)",
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
-        fill: true
-      }]
+        labels: ["실거래가 평균", "호가 평균", "현재 매물1"],
+        datasets: [{
+            label: "Sales",
+            data: [],
+            borderColor: "rgba(75, 192, 192, 1)",
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            fill: true
+        }]
     };
 
     // 차트 옵션
     var options = {
-      responsive: true,
-      title: {
-        display: true,
-        text: "Monthly Sales"
-      },
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
-      }
+        responsive: true,
+        title: {
+            display: true,
+            text: "Monthly Sales"
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
     };
 
     // 차트 생성
     var ctx = document.getElementById("myChart").getContext("2d");
     var myChart = new Chart(ctx, {
-      type: "bar",
-      data: data,
-      options: options
+        type: "bar",
+        data: data,
+        options: options
     });
 
     // 매물 목록 클릭 이벤트 처리
     var propertyItems = document.getElementsByClassName("property-item");
     for (var i = 0; i < propertyItems.length; i++) {
-      propertyItems[i].addEventListener("click", function() {
-        // 클릭된 매물의 인덱스를 가져옴
-        var propertyIndex = Array.prototype.indexOf.call(propertyItems, this);
-        // 데이터 업데이트
-        if (propertyIndex === 0) {
-          myChart.data.datasets[0].data[2] = 120;
-        } else if (propertyIndex === 1) {
-          myChart.data.datasets[0].data[2] = 300;
-        }
-        myChart.data.datasets[0].data[0] = 300;
-        myChart.data.datasets[0].data[1] = 500;
-        // 차트 업데이트
-        myChart.update();
-      });
+        propertyItems[i].addEventListener("click", function() {
+            // 클릭된 매물의 인덱스를 가져옴
+            var propertyIndex = Array.prototype.indexOf.call(propertyItems, this);
+            // 데이터 업데이트
+            if (propertyIndex === 0) {
+                myChart.data.datasets[0].data[2] = 120;
+            } else if (propertyIndex === 1) {
+                myChart.data.datasets[0].data[2] = 300;
+            }
+            myChart.data.datasets[0].data[0] = 300;
+            myChart.data.datasets[0].data[1] = 500;
+            // 차트 업데이트
+            myChart.update();
+        });
     }
-  </script>
+</script>
 </body>
 </html>
