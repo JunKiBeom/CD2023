@@ -243,7 +243,7 @@ justify-content: center
 
 </div>
 <div id="addressForm">
-    <form action="addrget" method="POST">
+    <form action="addrget" method="POST"> {%csrf_token%}
 <!--        <label for="city">시/도:</label>-->
         <select id="city" name="city">
             <option value="">시/도 선택</option>
@@ -283,7 +283,7 @@ justify-content: center
 <!--        <input type="text" id="address" name="address">-->
 
         <!--        <input type="submit" value="검색" id="searchBtn" name="searchBtn" onclick="searchBtn()" class="btn_submit">-->
-        <button class="searchBtn btn1" onclick="searchBtn btn1()">검색</button>
+        <button class="searchBtn btn1" onclick="searchBtn()">검색</button>
         <script src="../static/js/searchBtn.js"></script>
     </form>
 </div>
