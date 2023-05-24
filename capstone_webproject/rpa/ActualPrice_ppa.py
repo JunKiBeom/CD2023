@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import re
 
-df = pd.read_csv('/content/경기도_실거래가.csv', encoding='cp949')
+df = pd.read_csv('C:/Users/ksc/Desktop/캡스톤 데이터 수집 및 전처리/실거래가_데이터프레임_최종/전체_실거래가.csv', encoding='euc-kr')
 print(df)
 
 # ppa, 가격점수
@@ -23,7 +23,7 @@ df["ppa"] = round(df["price_score"] / df["전용면적(㎡)"], 2)
 
 print(df)
 
-df.to_csv('경기도_실거래가(ppa).csv', encoding='euc-kr', index = None)
+df.to_csv('C:/Users/ksc/Desktop/캡스톤 데이터 수집 및 전처리/실거래가_데이터프레임_최종/전체_실거래가(ppa).csv', encoding='utf-8', index = None)
 
 
 
