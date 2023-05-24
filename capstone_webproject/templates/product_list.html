@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{%  if product_list %}
+<ul>
+    <li> 매물 리스트 </li>
+    <table border="3">
+        <th>구분</th>
+        <th>id</th>
+        <th>주거타입</th>
+        <th>거래유형</th>
+        <th>월세</th>
+        <th>보증금</th>
+        <!--        <th>전용면적</th>-->
+        <!--        <th>가격점수</th>-->
+        <!--        <th>면적당 가격</th>-->
+    </table>
+    {% for product in product_list %}
+    <!--        <li></li>-->
+    <table>
+        <tr><!-- 첫번째 줄 시작 -->
+            <td>{{product.flag}}</td>
+            <td><a href="{{ product.id }}/"> {{ product.item_id }}</a></td>
+            <td>{{ product.service_type }}</td>
+            <td>{{ product.sales_type }}</td>
+            <td>{{ product.rent_price }}</td>
+            <td>{{ product.deposit }}</td>
+            <!--            <td>{{product.use_area}}</td>-->
+            <!--            <td>{{product.price_score}}</td>-->
+            <!--            <td>{{product.ppa}}</td>-->
+        </tr>
+    </table>
+    <!--    <br>-->
+    {{product.content}}
+    <br>
+    <br>
+
+    {% endfor %}
+</ul>
+{% else %}
+<p>목록이 없습니다.</p>
+{% endif %}
+</body>
+</html>
