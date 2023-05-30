@@ -1,5 +1,7 @@
+import datetime as dt
 import time, os
 
+import django
 import pandas as pd
 from rpa.models import Product
 
@@ -159,8 +161,22 @@ def df_to_db(df):
         model_objects.append(model_obj)
 
     # MySQL에 모델 객체 저장
-    Product.objects.bulk_create(model_objects)
+    try:
+        model_obj.save()
+    except django.db.IntegrityError: # DB에 중복되는 내용이 있는 경우
+        pass
+    # bulk_create를 이용하면 객체를 한번에 생성해 시간이 줄어들지만 개별 체크가 불가능
+    # Product.objects.bulk_create(model_objects)
     # Product.objects.all().delete()
+
+def db_clean(address): # 조회 시점과 DB 저장 날짜가 일주일 이상 차이 나는 경우 삭제
+    # Product.objects.filter(address__contains="서울시 강남구 개포동")
+    checkList = Product.objects.filter(address__contains=address)
+    for i in checkList:
+        if (dt.date.today() - i.gen_date).days > 10: # DB 저장일이 10일이 지났을 경우 삭제
+            print("Delete : ", i)
+            i.delete()
+
 
 def df_run(address):
     global addr
@@ -168,5 +184,6 @@ def df_run(address):
     mk_fn()
     df_z = df_zig()
     df_n = df_naver()
+    db_clean(address)
     df_to_db(df_z)
     df_to_db(df_n)
