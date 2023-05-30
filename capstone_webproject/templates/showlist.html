@@ -30,7 +30,8 @@
     </style>
 </head>
 <body>
-
+<h1> 검색을 시도한 주소 : {{ addr }}</h1>
+<p> 실거래가 평균 : {{ act_average_ppa }}, 호가 평균 : {{ get_average_ppa }}</p>
 <div id="addressForm" style="margin: 50px">
     <form action="addrget" method="POST"> {%csrf_token%}
         <label for="city">시/도:</label>
@@ -96,11 +97,13 @@
 
 <script>
     // 차트 데이터
+    var get_average_ppa = '{{ get_average_ppa|escapejs }}';
+    var act_average_ppa = '{{ act_average_ppa|escapejs }}';
     var data = {
         labels: ["실거래가 평균", "호가 평균", "현재 매물1"],
         datasets: [{
             label: "Sales",
-            data: [],
+            data: [act_average_ppa, get_average_ppa],
             borderColor: "rgba(75, 192, 192, 1)",
             backgroundColor: "rgba(75, 192, 192, 0.2)",
             fill: true
@@ -143,8 +146,8 @@
             } else if (propertyIndex === 1) {
                 myChart.data.datasets[0].data[2] = 300;
             }
-            myChart.data.datasets[0].data[0] = 300;
-            myChart.data.datasets[0].data[1] = 500;
+            // myChart.data.datasets[0].data[0] = ;
+            // myChart.data.datasets[0].data[1] = ;
             // 차트 업데이트
             myChart.update();
         });
