@@ -1,5 +1,6 @@
 import json
 import os
+import time
 
 import pandas
 import requests
@@ -35,6 +36,7 @@ def mkdf(url, flag):
         if response2.json()["isMoreData"] == True:
             page += 1
             new_url = mkurl()[flag]
+            time.sleep(0.3)
             response2 = requests.get(new_url, headers=params)
             response2.encoding = "UTF-8"
             raw2 = response2.json()
