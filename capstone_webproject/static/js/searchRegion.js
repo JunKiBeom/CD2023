@@ -73,6 +73,7 @@ citySelect.addEventListener("change", function() {
         <option value="계양구">계양구</option>
         <option value="남동구">남동구</option>
         <option value="동구">동구</option>
+        <option value="미추홀구">미추홀구</option>
         <option value="부평구">부평구</option>
         <option value="서구">서구</option>
         <option value="연수구">연수구</option>
@@ -1293,13 +1294,13 @@ districtSelect.addEventListener("change", function() {
     }
     else if (citySelect.value=== '인천시' && districtSelect.value === '미추홀구') {
         addressselect.innerHTML = `
+            <option value='관교동'>관교동</option>
+            <option value='도화동'>도화동</option>
+            <option value='문학동'>문학동</option>
             <option value='숭의동'>숭의동</option>
             <option value='용현동'>용현동</option>
-            <option value='학익동'>학익동</option>
-            <option value='도화동'>도화동</option>
             <option value='주안동'>주안동</option>
-            <option value='관교동'>관교동</option>
-            <option value='문학동'>문학동</option>
+            <option value='학익동'>학익동</option>
         `;
     }
     else if (citySelect.value=== '인천시' && districtSelect.value === '부평구') {
@@ -1339,8 +1340,12 @@ districtSelect.addEventListener("change", function() {
     }
     else if (citySelect.value=== '인천시' && districtSelect.value === '연수구') {
         addressselect.innerHTML = `
-            <option value='연수동'>연수동</option>
             <option value='동춘동'>동춘동</option>
+            <option value='선학동'>선학동</option>
+            <option value='송도동'>송도동</option>
+            <option value='연수동'>연수동</option>
+            <option value='옥련동'>옥련동</option>
+            <option value='청학동'>청학동</option>
         `;
     }
     else if (citySelect.value=== '인천시' && districtSelect.value === '옹진군') {
