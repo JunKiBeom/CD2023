@@ -41,6 +41,8 @@ def df_zig():
     df_z['reg_date'] = pd.to_datetime(df_z['reg_date']).dt.date
     df_z['title'] = df_z['title'].str.replace(pat=r'[^\w\s]', repl=r'', regex=True)
     df_z['flag'] = "직방"
+    # 문제되는 값이라 판단하고 제거
+    df_z = df_z[df_z['rent'] < df_z['deposit']]
 
     deposit = df_z["deposit"].apply(float)
     month = df_z["rent"].apply(float)
@@ -115,8 +117,14 @@ def df_naver():
     # df_nav['content'] = df_nav['content'].str.replace(pat=r'[', repl=r'', regex=True)
     df_nav['content'] = df_nav['content'].str.replace(r'\r\n', '', regex=True)
 
+    # 문제되는 값이라 판단하고 제거, '월세'도 게산 함수 적용
+    df_nav["rentPrc"] = df_nav["rentPrc"].fillna(0).apply(str)
+    df_nav["rentPrc"] = df_nav["rentPrc"].str.replace(',', '')
+    df_nav['rentPrc'] = df_nav['rentPrc'].apply(calculate_deposit)
+    df_nav = df_nav[df_nav['rentPrc'] < df_nav['dealOrWarrantPrc']]
+
     deposit = df_nav["dealOrWarrantPrc"].apply(float)
-    df_nav["rentPrc"] = df_nav["rentPrc"].str.replace(',', '').fillna(0)
+    # df_nav["rentPrc"] = df_nav["rentPrc"].str.replace(',', '').fillna(0)
     month = df_nav["rentPrc"].apply(float)
     df_nav.loc[df_nav["tradeTypeName"] == "월세", "price_score"] = deposit + month * 100
     df_nav.loc[df_nav["tradeTypeName"] == "전세", "price_score"] = deposit
@@ -137,35 +145,39 @@ def df_naver():
 
 def df_to_db(df):
     print("Df to DB")
-    model_objects = []
-    for _, row in df.iterrows():
-        model_obj = Product(
-            flag=row['flag'],
-            item_id=row['item_id'],
-            address=row['address'],
-            service_type=row['service_type'],
-            sales_type=row['sales_type'],
-            floor=row['floor'],
-            rent_price=row['rent_price'],
-            deposit=row['deposit'],
-            supply_area=row['supply_area'],
-            use_area=row['use_area'],
-            content=row['content'],
-            url=row['url'],
-            date=row['date'],
-            latitude=row['latitude'],
-            longitude=row['longitude'],
-            price_score=row['price_score'],
-            ppa=row['ppa']
-        )
-        model_objects.append(model_obj)
-
-    # MySQL에 모델 객체 저장
+    # model_objects = []
     try:
-        model_obj.save()
-    except django.db.IntegrityError: # DB에 중복되는 내용이 있는 경우
-        pass
-    # bulk_create를 이용하면 객체를 한번에 생성해 시간이 줄어들지만 개별 체크가 불가능
+        for _, row in df.iterrows():
+            model_obj = Product(
+                flag=row['flag'],
+                item_id=row['item_id'],
+                address=row['address'],
+                service_type=row['service_type'],
+                sales_type=row['sales_type'],
+                floor=row['floor'],
+                rent_price=row['rent_price'],
+                deposit=row['deposit'],
+                supply_area=row['supply_area'],
+                use_area=row['use_area'],
+                content=row['content'],
+                url=row['url'],
+                date=row['date'],
+                latitude=row['latitude'],
+                longitude=row['longitude'],
+                price_score=row['price_score'],
+                ppa=row['ppa']
+            )
+            # model_objects.append(model_obj)
+
+        # MySQL에 모델 객체 저장
+            try:
+                model_obj.save()
+            except django.db.IntegrityError as e: # DB에 중복되는 내용이 있는 경우
+                # print(e, model_obj)
+                pass
+            # bulk_create를 이용하면 객체를 한번에 생성해 시간이 줄어들지만 개별 체크가 불가능
+    except AttributeError as e:
+        print(e)
     # Product.objects.bulk_create(model_objects)
     # Product.objects.all().delete()
 
