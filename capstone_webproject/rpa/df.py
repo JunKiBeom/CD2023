@@ -116,6 +116,7 @@ def df_naver():
                         df_nav['tagList'].astype(str) + " / " + df_nav['direction']
     # df_nav['content'] = df_nav['content'].str.replace(pat=r'[', repl=r'', regex=True)
     df_nav['content'] = df_nav['content'].str.replace(r'\r\n', '', regex=True)
+    df_nav['content'] = df_nav['content'].fillna("정보 없음")
 
     # 문제되는 값이라 판단하고 제거, '월세'도 게산 함수 적용
     df_nav["rentPrc"] = df_nav["rentPrc"].fillna(0).apply(str)
