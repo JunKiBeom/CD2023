@@ -5,13 +5,18 @@
     <title>매물차트</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        .container {
-            display: flex;
-        }
-        .chart-container {
-            flex: 1;
-            margin-right: 20px;
-        }
+.container {
+
+position: absolute;
+
+}
+.chart-container {
+flex: 1;
+position: absolute;
+top: 250px;
+left: -100px;
+}
+
 #propertyItems{
 color: #000000;
 }
@@ -19,18 +24,18 @@ color: #000000;
 .property-list {
 
 flex: 0.7;
-position: relative;
+position: absolute;
 padding: 15px;
 background-color: #dfd5cb;
 font-family: 'Actor';
 font-style: normal;
 font-weight: 100;
-font-size: 18px;
+font-size: 16px;
 color: black;
 box-sizing: border-box;
-top: -8px;
+top: 100px;
 height: 500px;
-left: calc(1%-158px/2 + 120.5px);
+left: 610px;
 border-radius: 10px;
 }
 
@@ -211,17 +216,17 @@ select{ width: 200px; height: 41px; color: #999;
     appearance:none; -webkit-appearance:none;
 }
 h2{
-position: relative;
+position: absolute;
 
 color: #000000;
-top: -25px;
+top: 0px;
 font-size: 22px;
 }
 span{
 color: #000000;
 }
 h1{
-position: relative;
+position: absolute;
 }
 
 
@@ -231,7 +236,6 @@ position: relative;
 <h1 style="z-index:3;"> 검색 주소 : {{ addr }}</h1>
 <div class="box"></div>
 <div style="z-index:0;" class="box1"></div>
-<span> 실거래가 평균 : {{ act_average_ppa }}, 호가 평균 : {{ get_average_ppa }}</span>
 <div id="addressForm" style="margin: 50px">
     <form action="showlist" method="POST"> {%csrf_token%}
         <select id="city" name="city">
