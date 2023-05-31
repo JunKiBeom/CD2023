@@ -50,8 +50,8 @@ def addr_get(request):
     # print(f'"{city}", "{district}", "{address}"')
     result = city + " " + district + " " + address
 
-    earliest_product = Product.objects.filter(address__contains=address).order_by('gen_date').first()
-    if (dt.date.today() - earliest_product.gen_date).days > 5:
+    earliest_product = Product.objects.filter(address__contains=result).order_by('gen_date').first()
+    if (dt.date.today() - earliest_product.gen_date).days > 10:
         zigbang.zigbang(result)
         naver2.naver(result)
         df.df_run(result)
