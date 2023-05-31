@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Chart.js Line Chart Example</title>
+    <title>매물차트</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         .container {
@@ -85,13 +85,36 @@
     </div>
     <div class="property-list">
         <h2>매물 목록</h2>
+        {% if product_list %}
         <ul id="propertyItems">
-            <li class="property-item">매물 1</li>
-            <li class="property-item">매물 2</li>
-            <li class="property-item">매물 3</li>
-            <li class="property-item">매물 4</li>
-            <li class="property-item">매물 5</li>
+<!--            <li class="property-item">매물 1</li>-->
+<!--            <li class="property-item">매물 2</li>-->
+<!--            <li class="property-item">매물 3</li>-->
+<!--            <li class="property-item">매물 4</li>-->
+<!--            <li class="property-item">매물 5</li>-->
+            {% for product in product_list %}
+                {% if product.address == addr %}
+                <li class="property-item">
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.address }}</td>
+                    <td>{{ product.flag }}</td>
+                    <td>{{ product.item_id }}</td>
+                    <td>{{ product.service_type }}</td>
+                    <td>{{ product.sales_type }}</td>
+                    <td>{{ product.rent_price }}</td>
+                    <td>{{ product.deposit }}</td>
+                    <p id="ppa", style="display: none;">{{ product.ppa }}</p>
+<!--                    {% if condition %}-->
+
+<!--                    {% endif %}-->
+
+                </li>
+                {% endif %}
+            {% endfor %}
         </ul>
+        {% else %}
+        <p>목록이 없습니다.</p>
+        {% endif %}
     </div>
 </div>
 
@@ -139,19 +162,28 @@
     for (var i = 0; i < propertyItems.length; i++) {
         propertyItems[i].addEventListener("click", function() {
             // 클릭된 매물의 인덱스를 가져옴
-            var propertyIndex = Array.prototype.indexOf.call(propertyItems, this);
+            // var propertyIndex = Array.prototype.indexOf.call(propertyItems, this);
             // 데이터 업데이트
-            if (propertyIndex === 0) {
-                myChart.data.datasets[0].data[2] = 120;
-            } else if (propertyIndex === 1) {
-                myChart.data.datasets[0].data[2] = 300;
-            }
+            // if (propertyIndex === 0) {
+            //     myChart.data.datasets[0].data[2] = 120;
+            // } else if (propertyIndex === 1) {
+            //     myChart.data.datasets[0].data[2] = 300;
+            // }
             // myChart.data.datasets[0].data[0] = ;
             // myChart.data.datasets[0].data[1] = ;
+
+            // 클릭된 매물의 인덱스를 가져옴
+            var propertyIndex = Array.prototype.indexOf.call(propertyItems, this);
+            // 선택한 매물의 ppa 값을 가져옴
+            var item_ppa = propertyItems[propertyIndex].querySelector("#ppa").innerText;
+            console.log(item_ppa, typeof parseFloat(item_ppa));
+            // 데이터 업데이트
+            myChart.data.datasets[0].data[2] = parseFloat(item_ppa);
             // 차트 업데이트
             myChart.update();
         });
     }
+
 </script>
 </body>
 </html>
