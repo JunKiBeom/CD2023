@@ -31,9 +31,9 @@
 </head>
 <body>
 <h1> 검색을 시도한 주소 : {{ addr }}</h1>
-<p> 실거래가 평균 : {{ act_average_ppa }}, 호가 평균 : {{ get_average_ppa }}</p>
+<p style='display: none'> 실거래가 평균 : {{ act_average_ppa }}, 호가 평균 : {{ get_average_ppa }}</p>
 <div id="addressForm" style="margin: 50px">
-    <form action="addrget" method="POST"> {%csrf_token%}
+    <form action="showlist" method="POST"> {%csrf_token%}
         <label for="city">시/도:</label>
         <select id="city" name="city">
             <option value="">시/도 선택</option>
@@ -83,33 +83,33 @@
     <div class="chart-container">
         <canvas id="myChart"></canvas>
     </div>
-    <div class="property-list">
+    <div class="property-list" style="overflow-y: scroll; height:400px;">
         <h2>매물 목록</h2>
         {% if product_list %}
         <ul id="propertyItems">
-<!--            <li class="property-item">매물 1</li>-->
-<!--            <li class="property-item">매물 2</li>-->
-<!--            <li class="property-item">매물 3</li>-->
-<!--            <li class="property-item">매물 4</li>-->
-<!--            <li class="property-item">매물 5</li>-->
             {% for product in product_list %}
-                {% if product.address == addr %}
-                <li class="property-item">
-                    <td>{{ product.id }}</td>
-                    <td>{{ product.address }}</td>
-                    <td>{{ product.flag }}</td>
-                    <td>{{ product.item_id }}</td>
-                    <td>{{ product.service_type }}</td>
-                    <td>{{ product.sales_type }}</td>
-                    <td>{{ product.rent_price }}</td>
-                    <td>{{ product.deposit }}</td>
-                    <p id="ppa", style="display: none;">{{ product.ppa }}</p>
-<!--                    {% if condition %}-->
-
-<!--                    {% endif %}-->
-
-                </li>
-                {% endif %}
+            {% if product.address == addr %}
+            <li class="property-item">
+                <input type="checkbox" name="property" class="property-check" value="{{ forloop.index0 }}">
+                <span style="display: inline-block; width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ product.content }}</span>
+                <span id="ppa{{ forloop.index0 }}" style="display: none;">{{ product.ppa }}</span>
+                <input type='button' value='>>!' id='btn_toggle{{ forloop.index0 }}' onclick='toggleBtn()'/>
+                <div id="data{{ forloop.index0 }}" style="display: inline-block">
+                    데이터 출처 : {{ product.flag }} <br>
+                    관리번호 : {{ product.item_id }} <br>
+                    주거타입 : {{ product.service_type }} <br>
+                    거래타입 : {{ product.sales_type }} <br>
+                    층 : {{ product.floor }} <br>
+                    월세 : {{ product.rent_price }} 만원<br>
+                    보증금 : {{ product.deposit }} 만원 <br>
+                    공급면적 / 전용면적: {{ product.supply_area }} ㎡ / {{ product.use_area }} ㎡<br>
+                    특이사항 : {{ product.content }} <br>
+                    URL : <a href="{{ product.url }}">{{ product.url }}</a> <br>
+                    등록날짜 : {{ product.date }} <br>
+                    면적당 가격 : {{ product.ppa }} 만원<br>
+                </div>
+            </li>
+            {% endif %}
             {% endfor %}
         </ul>
         {% else %}
@@ -118,14 +118,29 @@
     </div>
 </div>
 
+
+
+<script>
+    function toggleBtn() {
+        var dataDiv = document.getElementById("data{{ forloop.index0 }}");
+        if (dataDiv.style.display === "none") {
+            dataDiv.style.display = "inline-block";
+            // btn_toggle.value = "<<!";
+        } else {
+            dataDiv.style.display = "none";
+            // btn_toggle.value = ">>!";
+        }
+    }
+</script>
+
 <script>
     // 차트 데이터
     var get_average_ppa = '{{ get_average_ppa|escapejs }}';
     var act_average_ppa = '{{ act_average_ppa|escapejs }}';
     var data = {
-        labels: ["실거래가 평균", "호가 평균", "현재 매물1"],
+        labels: ["실거래가 평균 (구 단위 평균)", "호가 평균 (동 단위 평균)"],
         datasets: [{
-            label: "Sales",
+            label: "단위 (만 원)",
             data: [act_average_ppa, get_average_ppa],
             borderColor: "rgba(75, 192, 192, 1)",
             backgroundColor: "rgba(75, 192, 192, 0.2)",
@@ -157,33 +172,55 @@
         options: options
     });
 
-    // 매물 목록 클릭 이벤트 처리
+    // 체크박스 변경 이벤트 처리
     var propertyItems = document.getElementsByClassName("property-item");
-    for (var i = 0; i < propertyItems.length; i++) {
-        propertyItems[i].addEventListener("click", function() {
-            // 클릭된 매물의 인덱스를 가져옴
-            // var propertyIndex = Array.prototype.indexOf.call(propertyItems, this);
-            // 데이터 업데이트
-            // if (propertyIndex === 0) {
-            //     myChart.data.datasets[0].data[2] = 120;
-            // } else if (propertyIndex === 1) {
-            //     myChart.data.datasets[0].data[2] = 300;
-            // }
-            // myChart.data.datasets[0].data[0] = ;
-            // myChart.data.datasets[0].data[1] = ;
+    var checkedCount = 0;
 
+    // 매물 체크박스에 이벤트 리스너 등록
+    var propertyCheckboxes = document.getElementsByClassName("property-check");
+    for (var i = 0; i < propertyCheckboxes.length; i++) {
+        propertyCheckboxes[i].addEventListener("change", function () {
             // 클릭된 매물의 인덱스를 가져옴
-            var propertyIndex = Array.prototype.indexOf.call(propertyItems, this);
+            var propertyIndex = Array.prototype.indexOf.call(propertyCheckboxes, this);
             // 선택한 매물의 ppa 값을 가져옴
-            var item_ppa = propertyItems[propertyIndex].querySelector("#ppa").innerText;
-            console.log(item_ppa, typeof parseFloat(item_ppa));
-            // 데이터 업데이트
-            myChart.data.datasets[0].data[2] = parseFloat(item_ppa);
+            // var item_ppa = propertyItems[propertyIndex].querySelector("#ppa" + propertyIndex).innerText;
+            var item_ppa = propertyItems[propertyIndex].querySelector("#ppa").innerText
+            // var item_id = propertyItems[propertyIndex].querySelector("#item_id").innerText;
+
+            if (this.checked) {
+                checkedCount++;
+                // 데이터 업데이트
+                myChart.data.labels.push("선택 매물" + (propertyIndex+1));
+                // myChart.data.labels.push(item_id);
+                myChart.data.datasets[0].data.push(parseFloat(item_ppa));
+            } else {
+                checkedCount--;
+                // 체크가 해제된 아이템 삭제
+                myChart.data.labels = myChart.data.labels.filter((element) => element !== "선택 매물" + (propertyIndex+1))
+                myChart.data.datasets[0].data = myChart.data.datasets[0].data.filter((element) => element !== parseFloat(item_ppa))
+            }
+
             // 차트 업데이트
             myChart.update();
         });
     }
 
+    // // 매물 목록 클릭 이벤트 처리
+    // var propertyItems = document.getElementsByClassName("property-item");
+    // for (var i = 0; i < propertyItems.length; i++) {
+    //     propertyItems[i].addEventListener("click", function() {
+    //         // 클릭된 매물의 인덱스를 가져옴
+    //         var propertyIndex = Array.prototype.indexOf.call(propertyItems, this);
+    //         // 선택한 매물의 ppa 값을 가져옴
+    //         var item_ppa = propertyItems[propertyIndex].querySelector("#ppa").innerText;
+    //         console.log(item_ppa, typeof parseFloat(item_ppa));
+    //         // 데이터 업데이트
+    //         myChart.data.datasets[0].data[2] = parseFloat(item_ppa);
+    //         myChart.data.datasets[0].data[3] = 400;
+    //         // 차트 업데이트
+    //         myChart.update();
+    //     });
+    // }
 </script>
 </body>
 </html>
