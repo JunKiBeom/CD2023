@@ -29,7 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     ".ap-northeast-2.compute.amazonaws.com",
-    "127.0.0.1"
+    "127.0.0.1",
+    ".꿀방.메인.한국",
+    ".xn--3v0bj9u.xn--h32bi4v.xn--3e0b707e"
 ]
 
 
