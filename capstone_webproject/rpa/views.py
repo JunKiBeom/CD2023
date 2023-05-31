@@ -1,3 +1,5 @@
+import datetime as dt
+
 from django.db.models import Avg
 from django.shortcuts import render
 
@@ -48,10 +50,14 @@ def addr_get(request):
     # print(f'"{city}", "{district}", "{address}"')
     result = city + " " + district + " " + address
 
-    zigbang.zigbang(result)
-    naver2.naver(result)
-
-    df.df_run(result)
+    earliest_product = Product.objects.filter(address__contains=address).order_by('gen_date').first()
+    if (dt.date.today() - earliest_product.gen_date).days > 5:
+        zigbang.zigbang(result)
+        naver2.naver(result)
+        df.df_run(result)
+    else:
+        print("Pass Df to DB")
+        pass
     # return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))
 
     print('-' * 10, 'ppa 연산')
