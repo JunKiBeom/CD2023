@@ -30,7 +30,7 @@ def skyscanner(request):
 
 
 def showlist(request):
-    return render(request, 'showlist.html')
+    return addr_get(request)
 
 
 def product_list(request):
@@ -50,14 +50,21 @@ def addr_get(request):
     # print(f'"{city}", "{district}", "{address}"')
     result = city + " " + district + " " + address
 
-    earliest_product = Product.objects.filter(address__contains=result).order_by('gen_date').first()
-    if (dt.date.today() - earliest_product.gen_date).days > 10:
+    try:
+        earliest_product = Product.objects.filter(address__contains=result).order_by('gen_date').first()
+        if (dt.date.today() - earliest_product.gen_date).days > 10:
+            zigbang.zigbang(result)
+            naver2.naver(result)
+            df.df_run(result)
+        else:
+            print("Pass Df to DB")
+            pass
+
+    except AttributeError:
         zigbang.zigbang(result)
         naver2.naver(result)
         df.df_run(result)
-    else:
-        print("Pass Df to DB")
-        pass
+
     # return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))
 
     print('-' * 10, 'ppa 연산')
