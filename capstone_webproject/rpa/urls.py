@@ -21,14 +21,14 @@ from . import views
 app_name = 'rpa'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('home', views.home, name='home'),
-    path('addrget', views.addr_get, name='addrget'),
+    # path('', views.index, name='index'),
+    path('', views.home, name='home'),
+    # path('addrget', views.addr_get, name='addrget'),
+    path('showlist', views.showlist, name='showlist'),
 
     path('test_home/', views.test_home, name='test_home'),
     path('djangotest/', views.djangotest, name='djangotest'),
     path('skyscanner/', views.skyscanner, name='skyscanner'),
-    path('showlist', views.showlist, name='showlist'),
     path('products/', views.product_list, name='product_list'),
     path('products/<int:pk>/', views.product_detail, name='product_detail'),
 ]
