@@ -297,6 +297,7 @@
                 <span id="ppa{{ forloop.index0 }}" style="display: none;">{{ product.ppa }}</span>
                 <input type='button' value='>>|' id='btn_toggle{{ forloop.counter }}' onclick=toggleBtn({{ forloop.counter }})>
                 <div id="data{{ forloop.counter }}" style="display: none">
+                    <br>
                     데이터 출처 : {{ product.flag }} <br>
                     관리번호 : {{ product.item_id }} <br>
                     주거타입 : {{ product.service_type }} <br>
@@ -309,6 +310,7 @@
                     URL : <a href="{{ product.url }}">{{ product.url }}</a> <br>
                     등록날짜 : {{ product.date }} <br>
                     면적당 가격 : {{ product.ppa }} 만원<br>
+                    <br>
                 </div>
             </li>
             {% endif %}
@@ -346,7 +348,7 @@
 <script>
     function toggleBtn(counter) {
         var dataDiv = document.getElementById("data"+counter);
-        // var button = document.getElementById("btn_toggle" + counter);
+        var button = document.getElementById("btn_toggle" + counter);
         // console.log(1, dataDiv)
         // console.log(2, button)
         console.log(3, counter)
@@ -355,10 +357,10 @@
 
         if (dataDiv.style.display === "none") {
             dataDiv.style.display = "inline-block";
-            // button.value = "|<<";
+            button.value = "|<<";
         } else {
             dataDiv.style.display = "none";
-            // button.value = ">>|";
+            button.value = ">>|";
         }
     }
 </script>
