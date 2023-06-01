@@ -65,7 +65,7 @@
 
         #data {
             position: absolute;
-            top:600px;
+            top:630px;
         }
 
         /*.box{*/
@@ -167,7 +167,7 @@
             text-align: center;
             text-decoration: none;
 
-           position: absolute;
+            position: absolute;
             width: 131px;
             height: 45px;
             left: calc(62% - 220px/2 + 120.5px);
@@ -290,13 +290,26 @@
             {% for product in product_list %}
             {% if product.address == addr %}
             <li class="property-item">
-                <input type="checkbox" name="property" class="property-check" value="{{ forloop.index0 }}">
+                <input type="checkbox" name="property" class="property-check" value="{{ forloop.index0 }}" onclick="limitCheckboxSelection(3)">
                 <span style="display: inline-block; width: 320px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                     {{ product.sales_type }} &nbsp;&nbsp; 보증금 {{ product.deposit }} / {{ product.rent_price }} &nbsp;&nbsp; {{ product.use_area }} ㎡ / {{ product.use_area|div:3.3025|floatformat }} 평
                 </span>
                 <span id="ppa{{ forloop.index0 }}" style="display: none;">{{ product.ppa }}</span>
-                <input type='button' value='>>|' id='btn_toggle{{ forloop.counter }}' onclick=toggleBtn({{ product.item_id }})>
-<!--                <p>{{ forloop.counter }}</p>-->
+                <input type='button' value='>>|' id='btn_toggle{{ forloop.counter }}' onclick=toggleBtn({{ forloop.counter }})>
+                <div id="data{{ forloop.counter }}" style="display: none">
+                    데이터 출처 : {{ product.flag }} <br>
+                    관리번호 : {{ product.item_id }} <br>
+                    주거타입 : {{ product.service_type }} <br>
+                    거래타입 : {{ product.sales_type }} <br>
+                    층 : {{ product.floor }} <br>
+                    월세 : {{ product.rent_price }} 만원<br>
+                    보증금 : {{ product.deposit }} 만원 <br>
+                    공급면적 / 전용면적: {{ product.supply_area }} ㎡ / {{ product.use_area }} ㎡<br>
+                    특이사항 : {{ product.content }} <br>
+                    URL : <a href="{{ product.url }}">{{ product.url }}</a> <br>
+                    등록날짜 : {{ product.date }} <br>
+                    면적당 가격 : {{ product.ppa }} 만원<br>
+                </div>
             </li>
             {% endif %}
             {% endfor %}
@@ -307,35 +320,32 @@
     </div>
 </div>
 
-<div id="data" style="display: inline-block;">
-    {{ counter }}
-    {% for product in product_list %}
-    {% if product.address == addr %}
-    {% if product.item_id == counter %}
-    <ul>
-    데이터 출처 : {{ product.flag }} <br>
-    관리번호 : {{ product.item_id }} <br>
-    주거타입 : {{ product.service_type }} <br>
-    거래타입 : {{ product.sales_type }} <br>
-    층 : {{ product.floor }} <br>
-    월세 : {{ product.rent_price }} 만원<br>
-    보증금 : {{ product.deposit }} 만원 <br>
-    공급면적 / 전용면적: {{ product.supply_area }} ㎡ / {{ product.use_area }} ㎡<br>
-    특이사항 : {{ product.content }} <br>
-    URL : <a href="{{ product.url }}">{{ product.url }}</a> <br>
-    등록날짜 : {{ product.date }} <br>
-    면적당 가격 : {{ product.ppa }} 만원<br>
-    </ul>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
-</div>
+<!--<div id="data" style="display: none;">-->
+<!--    {% for product in product_list %}-->
+<!--    {% if product.address == addr %}-->
+<!--    <ul>-->
+<!--        데이터 출처 : {{ product.flag }} <br>-->
+<!--        관리번호 : {{ product.item_id }} <br>-->
+<!--        주거타입 : {{ product.service_type }} <br>-->
+<!--        거래타입 : {{ product.sales_type }} <br>-->
+<!--        층 : {{ product.floor }} <br>-->
+<!--        월세 : {{ product.rent_price }} 만원<br>-->
+<!--        보증금 : {{ product.deposit }} 만원 <br>-->
+<!--        공급면적 / 전용면적: {{ product.supply_area }} ㎡ / {{ product.use_area }} ㎡<br>-->
+<!--        특이사항 : {{ product.content }} <br>-->
+<!--        URL : <a href="{{ product.url }}">{{ product.url }}</a> <br>-->
+<!--        등록날짜 : {{ product.date }} <br>-->
+<!--        면적당 가격 : {{ product.ppa }} 만원<br>-->
+<!--    </ul>-->
+<!--    {% endif %}-->
+<!--    {% endfor %}-->
+<!--</div>-->
 
 
 
 <script>
     function toggleBtn(counter) {
-        var dataDiv = document.getElementById("data");
+        var dataDiv = document.getElementById("data"+counter);
         // var button = document.getElementById("btn_toggle" + counter);
         // console.log(1, dataDiv)
         // console.log(2, button)
@@ -423,6 +433,23 @@
             // 차트 업데이트
             myChart.update();
         });
+
+        function limitCheckboxSelection(maxSelection) {
+        var checkboxes = document.getElementsByName('property');
+        var checkedCount = 0;
+
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                checkedCount++;
+            }
+        }
+
+        if (checkedCount > maxSelection) {
+            alert('최대 ' + maxSelection + '개의 매물만 선택할 수 있습니다.');
+            event.preventDefault();
+            return false;
+        }
+    }
     }
 
     // // 매물 목록 클릭 이벤트 처리
