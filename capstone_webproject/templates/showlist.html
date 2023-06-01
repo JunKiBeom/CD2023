@@ -292,7 +292,7 @@
             <li class="property-item">
                 <input type="checkbox" name="property" class="property-check" value="{{ forloop.index0 }}">
                 <span style="display: inline-block; width: 320px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                    {{ product.sales_type }} _ 보증금 {{ product.deposit }} / {{ product.rent_price }} _ {{ product.use_area }} ㎡ _ {{ product.use_area|div:3.3025|floatformat }} 평
+                    {{ product.sales_type }} &nbsp;&nbsp; 보증금 {{ product.deposit }} / {{ product.rent_price }} &nbsp;&nbsp; {{ product.use_area }} ㎡ / {{ product.use_area|div:3.3025|floatformat }} 평
                 </span>
                 <span id="ppa{{ forloop.index0 }}" style="display: none;">{{ product.ppa }}</span>
                 <input type='button' value='>>|' id='btn_toggle{{ forloop.counter }}' onclick=toggleBtn({{ product.item_id }})>
