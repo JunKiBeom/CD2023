@@ -41,7 +41,7 @@
             display: inline-flex;
             position: relative;
             padding: 10px;
-            background-color: #dfd5cb;
+            background-color: rgba(223, 213, 203, 0.71);
             font-family: 'Actor';
             font-style: normal;
             /*font-weight: 100;*/
@@ -377,7 +377,7 @@
             label: "단위 (만 원)",
             data: [act_average_ppa, get_average_ppa],
             borderColor: "rgba(75, 192, 192, 1)",
-            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            backgroundColor: ["rgb(247,76,157, 0.4)", "rgba(75, 192, 192, 0.6)"],
             fill: true
         }]
     };
@@ -427,11 +427,17 @@
                 myChart.data.labels.push("선택 매물" + (propertyIndex+1));
                 // myChart.data.labels.push(item_id);
                 myChart.data.datasets[0].data.push(parseFloat(item_ppa));
+                var randomColor = 'rgba(' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', ' + Math.random() + ')';
+                // console.log(randomColor)
+                myChart.data.datasets[0].backgroundColor.push(randomColor);
             } else {
                 checkedCount--;
                 // 체크가 해제된 아이템 삭제
+                var selectedPropertyIndex = myChart.data.labels.findIndex((element) => element === "선택 매물" + (propertyIndex + 1));
                 myChart.data.labels = myChart.data.labels.filter((element) => element !== "선택 매물" + (propertyIndex+1))
                 myChart.data.datasets[0].data = myChart.data.datasets[0].data.filter((element) => element !== parseFloat(item_ppa))
+                // console.log(selectedPropertyIndex)
+                myChart.data.datasets[0].backgroundColor.splice(selectedPropertyIndex, 1);
             }
 
             // 차트 업데이트
