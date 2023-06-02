@@ -50,7 +50,7 @@
             box-sizing: border-box;
             top: 170px;
             height: 400px;
-            width: 450px;
+            width: 470px;
             left: calc(50% + 200px);
             border-radius: 10px;
             justify-content: center;
@@ -222,7 +222,7 @@
 
         h1{
             position: absolute;
-            left: calc(50% - 200px);
+            left: calc(35%);
             justify-content: center;
         }
 
@@ -293,7 +293,7 @@
             {% if product.address == addr %}
             <li class="property-item">
                 <input type="checkbox" name="property" class="property-check" value="{{ forloop.index0 }}" onclick="limitCheckboxSelection(3)">
-                <span style="display: inline-block; width: 320px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                <span style="display: inline-block; width: 340px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                     {{ product.sales_type }} &nbsp;&nbsp; 보증금 {{ product.deposit }} / {{ product.rent_price }} &nbsp;&nbsp; {{ product.use_area }} ㎡ / {{ product.use_area|div:3.3025|floatformat }} 평
                 </span>
                 <span id="ppa{{ forloop.index0 }}" style="display: none;">{{ product.ppa }}</span>
@@ -301,7 +301,7 @@
                 <div id="data{{ forloop.counter }}" style="display: none">
                     <br>
                     데이터 출처 : {{ product.flag }} <br>
-                    관리번호 : {{ product.item_id }} <br>
+<!--                    관리번호 : {{ product.item_id }} <br>-->
                     주거타입 : {{ product.service_type }} <br>
                     거래타입 : {{ product.sales_type }} <br>
                     층 : {{ product.floor }} <br>
