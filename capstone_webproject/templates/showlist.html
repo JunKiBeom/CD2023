@@ -294,24 +294,24 @@
             <li class="property-item">
                 <input type="checkbox" name="property" class="property-check" value="{{ forloop.index0 }}" onclick="limitCheckboxSelection(3)">
                 <span style="display: inline-block; width: 340px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                    {{ product.sales_type }} &nbsp;&nbsp; 보증금 {{ product.deposit }} / {{ product.rent_price }} &nbsp;&nbsp; {{ product.use_area }} ㎡ / {{ product.use_area|div:3.3025|floatformat }} 평
+                    {{ product.sales_type }} &nbsp;&nbsp; 보증금 {{ product.deposit }} / {{ product.rent_price }} &nbsp;&nbsp; {{ product.use_area }} ㎡ ({{ product.use_area|div:3.3025|floatformat }} 평)
                 </span>
                 <span id="ppa{{ forloop.index0 }}" style="display: none;">{{ product.ppa }}</span>
                 <input type='button' value='>>|' id='btn_toggle{{ forloop.counter }}' onclick=toggleBtn({{ forloop.counter }})>
                 <div id="data{{ forloop.counter }}" style="display: none">
                     <br>
-                    데이터 출처 : {{ product.flag }} <br>
 <!--                    관리번호 : {{ product.item_id }} <br>-->
                     주거타입 : {{ product.service_type }} <br>
                     거래타입 : {{ product.sales_type }} <br>
-                    층 : {{ product.floor }} <br>
-                    월세 : {{ product.rent_price }} 만원<br>
                     보증금 : {{ product.deposit }} 만원 <br>
-                    공급면적 / 전용면적: {{ product.supply_area }} ㎡ / {{ product.use_area }} ㎡<br>
+                    월세 : {{ product.rent_price }} 만원<br>
+                    공급면적 / 전용면적 : {{ product.supply_area }} ㎡ / {{ product.use_area }} ㎡<br>
+                    층 : {{ product.floor }} <br>
                     특이사항 : {{ product.content }} <br>
-                    URL : <a href="{{ product.url }}">{{ product.url }}</a> <br>
-                    등록날짜 : {{ product.date }} <br>
                     면적당 가격 : {{ product.ppa }} 만원<br>
+                    등록날짜 : {{ product.date }} <br>
+                    데이터 출처 : {{ product.flag }} <br>
+                    URL : <a href="{{ product.url }}">{{ product.url }}</a> <br>
                     <br>
                 </div>
             </li>
